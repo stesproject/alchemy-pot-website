@@ -1,18 +1,13 @@
 ---
 import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
 import Navigation from "./Navigation.astro";
-import { SITE } from "@consts";
+import Logo from "./Logo.astro";
 ---
 
 <header transition:persist>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.TITLE}&nbsp; 🧪
-        </div>
-      </Link>
+      <Logo />
       <Navigation>
         <button
           id="magnifying-glass"
