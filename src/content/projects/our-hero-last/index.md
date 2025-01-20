@@ -2,7 +2,9 @@
 title: "Our Hero! Last"
 description: "Our Hero! is a funny Hack and Slash Adventure game with RPG mechanics starred by cute and colorful characters: dive into this light-hearted story-driven world, full of treasures, puzzles, secret places and boss fights!"
 date: "10/14/2022"
-demoURL: "https://store.steampowered.com/app/2076920/Our_Hero_Last/"
+downloadURL:
+  - label: "Steam"
+    url: "https://store.steampowered.com/app/2076920/Our_Hero_Last/"
 ---
 
 ![Astro Sphere](/astro-sphere.jpg)

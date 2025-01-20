@@ -18,10 +18,6 @@ export const NAVIGATION = [
     title: "Resources",
     href: "/resources",
   },
-  // {
-  //   title: "Blog",
-  //   href: "/blog",
-  // },
 ];
 
 export const HOME: Metadata = {
@@ -58,7 +54,23 @@ export const GODOT_2D_TOPDOWN_TEMPLATE: Metadata = {
 
 export const SOCIALS: Socials = [
   {
+    NAME: "BlueSky",
+    HREF: "https://bsky.app/profile/stefhhh.bsky.social",
+    ICON: "/icons/bluesky.svg",
+  },
+  {
+    NAME: "Mastodon",
+    HREF: "https://mastodon.gamedev.place/@stefh",
+    ICON: "/icons/mastodon.svg",
+  },
+  {
     NAME: "GitHub",
     HREF: "https://github.com/stesproject",
+    ICON: "/icons/github.svg",
   },
+  {
+    NAME: "Email",
+    HREF: `mailto:${SITE.EMAIL}`,
+    ICON: "/icons/email.svg",
+  }
 ];
