@@ -2,11 +2,11 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"blog"> | CollectionEntry<"projects"> | CollectionEntry<"resources"> | CollectionEntry<"assets"> | CollectionEntry<"godot2dTopdownTemplate">;
 };
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"blog"> | CollectionEntry<"projects"> | CollectionEntry<"resources"> | CollectionEntry<"assets"> | CollectionEntry<"godot2dTopdownTemplate">;
 };
 ---
 
