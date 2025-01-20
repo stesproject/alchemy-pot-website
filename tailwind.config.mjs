@@ -10,13 +10,22 @@ export default {
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        primaryDark: {
-          DEFAULT: "#1f2024"
+        neutral: {
+          DEFAULT: "#2e2e2e",
+          100: "#f8f8f8",
+          900: "#1f2024",
         },
-        primaryLight: {
-          DEFAULT: "#f8f8f8"
+        black: {
+          DEFAULT: "#1f2024",
         },
-      }
+        white: {
+          DEFAULT: "#f8f8f8",
+        },
+        secondary: {
+          dark: "#c83f41",
+          light: "#028090",
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
