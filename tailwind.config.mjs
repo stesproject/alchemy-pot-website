@@ -23,7 +23,7 @@ export default {
         },
         secondary: {
           dark: "#c83f41",
-          light: "#348AA7",
+          light: "#028090",
         },
       },
     },
