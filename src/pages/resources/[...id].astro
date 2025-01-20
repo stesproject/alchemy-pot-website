@@ -9,51 +9,39 @@ import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  const projects = (await getCollection("projects"))
-    .filter((post) => !post.data.draft)
+  const resources = (await getCollection("resources"))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return projects.map((project) => ({
-    params: { id: project.id },
-    props: project,
+  return resources.map((resource) => ({
+    params: { id: resource.id },
+    props: resource,
   }));
 }
-type Props = CollectionEntry<"projects">;
+type Props = CollectionEntry<"resources">;
 
-const project = Astro.props;
-const { Content, headings } = await render(project);
+const resource = Astro.props;
+const { Content, headings } = await render(resource);
 ---
 
-<Layout title={project.data.title} description={project.data.description}>
+<Layout title={resource.data.title} description={resource.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/projects">Back to projects</BackToPrevious>
+      <BackToPrevious href="/resources">Back to resources</BackToPrevious>
     </div>
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <FormattedDate date={project.data.date} />
+          <FormattedDate date={resource.data.date} />
         </div>
         &bull;
-        {project.body && (
+        {resource.body && (
           <div class="font-base text-sm">
-            {readingTime(project.body)}
+            {readingTime(resource.body)}
           </div>
         )}     
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
-        {project.data.title}
+        {resource.data.title}
       </h1>
-      {
-        (project.data.downloadURL) && (
-          <nav class="flex gap-1">
-            {project.data.downloadURL && (
-              <Link href={project.data.downloadURL} external>
-                demo
-              </Link>
-            )}
-          </nav>
-        )
-      }
     </div>
     <TableOfContents headings={headings} />
     <article class="animate">

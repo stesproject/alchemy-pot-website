@@ -1,26 +1,23 @@
 ---
-title: "Astro Nano"
-description: "Minimal portfolio and blog build with astro and no frameworks."
-date: "2024-03-26"
-demoURL: "https://astro-nano-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-nano"
+title: "Our Hero! Last"
+description: "Our Hero! is a funny Hack and Slash Adventure game with RPG mechanics starred by cute and colorful characters: dive into this light-hearted story-driven world, full of treasures, puzzles, secret places and boss fights!"
+date: "10/14/2022"
+demoURL: "https://store.steampowered.com/app/2076920/Our_Hero_Last/"
 ---
 
-![Astro Nano](/astro-nano.png)
+![Astro Sphere](/astro-sphere.jpg)
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+Astro Sphere is a static, minimalist, lightweight, lightning fast portfolio and blog theme based on Mark Horn's personal website.
 
-Built with Astro, Tailwind and Typescript, and no frameworks.
-
-It was designed as an even more minimal theme than Mark Horn's popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+It is primarily Astro, Tailwind and Typescript, with a very small amount of SolidJS for stateful components.
 
 ## 🚀 Deploy your own
 
 <div class="flex gap-2">
-  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano">
+  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-sphere">
     <img src="/deploy_vercel.svg" />
   </a>
-  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano">
+  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-sphere">
     <img src="/deploy_netlify.svg" />
   </a>
 </div>
@@ -40,14 +37,15 @@ It was designed as an even more minimal theme than Mark Horn's popular theme [As
 - ✅ Auto generated RSS Feed
 - ✅ Markdown support
 - ✅ MDX Support (components in your markdown)
+- ✅ Searchable content (posts and projects)
 
 ## 💯 Lighthouse score
 
-![Astro Nano Lighthouse Score](/astro-nano-lighthouse.jpg)
+![Astro Sphere Lighthouse Score](/lighthouse-nano.jpg)
 
 ## 🕊️ Lightweight
 
-No frameworks or added bulk
+All pages under 100kb (including fonts)
 
 ## ⚡︎ Fast
 
@@ -67,11 +65,9 @@ Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, e
 | :------------------------ | :------------------------------------------------ |
 | `npm install`             | Installs dependencies                             |
 | `npm run dev`             | Starts local dev server at `localhost:4321`       |
-| `npm run dev:network`     | Starts local dev server on local network          |
 | `npm run sync`            | Generates TypeScript types for all Astro modules. |
 | `npm run build`           | Build your production site to `./dist/`           |
 | `npm run preview`         | Preview your build locally, before deploying      |
-| `npm run preview:network` | Preview build on local network                    |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`  |
 | `npm run astro -- --help` | Get help using the Astro CLI                      |
 | `npm run lint`            | Run ESLint                                        |

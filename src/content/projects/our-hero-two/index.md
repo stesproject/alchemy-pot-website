@@ -1,9 +1,8 @@
 ---
-title: "Astro Sphere"
-description: "Portfolio and blog build with astro."
-date: "03/18/2024"
-demoURL: "https://astro-sphere-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
+title: "Our Hero! Two"
+description: "Our Hero! is a funny Hack and Slash Adventure game with RPG mechanics starred by cute and colorful characters: dive into this light-hearted story-driven world, full of treasures, puzzles, secret places and boss fights!"
+date: "10/29/2021"
+demoURL: "https://store.steampowered.com/app/1408050/Our_Hero_Two/"
 ---
 
 ![Astro Sphere](/astro-sphere.jpg)

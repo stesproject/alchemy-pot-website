@@ -9,46 +9,45 @@ import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  const projects = (await getCollection("projects"))
-    .filter((post) => !post.data.draft)
+  const assets = (await getCollection("assets"))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return projects.map((project) => ({
-    params: { id: project.id },
-    props: project,
+  return assets.map((asset) => ({
+    params: { id: asset.id },
+    props: asset,
   }));
 }
-type Props = CollectionEntry<"projects">;
+type Props = CollectionEntry<"assets">;
 
-const project = Astro.props;
-const { Content, headings } = await render(project);
+const asset = Astro.props;
+const { Content, headings } = await render(asset);
 ---
 
-<Layout title={project.data.title} description={project.data.description}>
+<Layout title={asset.data.title} description={asset.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/projects">Back to projects</BackToPrevious>
+      <BackToPrevious href="/assets">Back to assets</BackToPrevious>
     </div>
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <FormattedDate date={project.data.date} />
+          <FormattedDate date={asset.data.date} />
         </div>
         &bull;
-        {project.body && (
+        {asset.body && (
           <div class="font-base text-sm">
-            {readingTime(project.body)}
+            {readingTime(asset.body)}
           </div>
         )}     
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
-        {project.data.title}
+        {asset.data.title}
       </h1>
       {
-        (project.data.downloadURL) && (
+        (asset.data.downloadURL) && (
           <nav class="flex gap-1">
-            {project.data.downloadURL && (
-              <Link href={project.data.downloadURL} external>
-                demo
+            {asset.data.downloadURL && (
+              <Link href={asset.data.downloadURL} external>
+                Get it
               </Link>
             )}
           </nav>
