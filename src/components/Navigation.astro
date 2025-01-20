@@ -1,0 +1,16 @@
+---
+import Link from "@components/Link.astro";
+import { NAVIGATION } from "@consts";
+---
+
+<nav class="flex items-center gap-1 text-sm">
+  {
+    NAVIGATION.map((item, index) => (
+      <>
+        <Link href={item.href}>{item.title}</Link>
+        {index < NAVIGATION.length - 1 && <span>{`/`}</span>}
+      </>
+    ))
+  }
+  <slot />
+</nav>
