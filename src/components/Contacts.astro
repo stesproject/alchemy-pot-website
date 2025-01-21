@@ -1,6 +1,12 @@
 ---
 import { SOCIALS, SITE } from "@consts";
 import Link from "./Link.astro";
+import BlueSkyIcon from "../icons/bluesky.svg";
+import MastodonIcon from "../icons/mastodon.svg";
+import GithubIcon from "../icons/github.svg";
+import EmailIcon from "../icons/email.svg";
+
+const SOCIAL_ICON_SIZE = 26;
 ---
 
 <section class="animate space-y-4">
@@ -14,18 +20,21 @@ import Link from "./Link.astro";
   <ul class="not-prose flex flex-wrap gap-2">
     {
       SOCIALS.map((SOCIAL) => (
-        <li class="flex gap-x-2 text-nowrap">
+        <li class="flex gap-x-2 text-nowrap" title={SOCIAL.NAME}>
           <Link
             href={SOCIAL.HREF}
             external
             aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
           >
-            <img
-              src={SOCIAL.ICON}
-              alt={SOCIAL.NAME}
-              class="social-icon size-6"
-              title={SOCIAL.NAME}
-            />
+            {SOCIAL.NAME === "BlueSky" ? (
+              <BlueSkyIcon size={SOCIAL_ICON_SIZE} />
+            ) : SOCIAL.NAME === "Mastodon" ? (
+              <MastodonIcon size={SOCIAL_ICON_SIZE} />
+            ) : SOCIAL.NAME === "GitHub" ? (
+              <GithubIcon size={SOCIAL_ICON_SIZE} />
+            ) : SOCIAL.NAME === "Email" ? (
+              <EmailIcon size={SOCIAL_ICON_SIZE} />
+            ) : null}
           </Link>
         </li>
       ))

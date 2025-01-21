@@ -119,6 +119,6 @@ pre {
   @apply scale-90 transition-transform;
 }
 
-html.dark #logo, html.dark .social-icon {
+html.dark #logo {
   filter: invert(1);
 }
