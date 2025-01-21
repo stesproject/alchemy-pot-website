@@ -1,0 +1,24 @@
+---
+import ArrowCard from "./ArrowCard.astro";
+import Link from "./Link.astro";
+
+const { contents, title } = Astro.props;
+---
+
+<section class="animate space-y-6">
+  <div class="flex flex-wrap items-center justify-between gap-y-2">
+    <h2 class="font-semibold text-black dark:text-white">
+      {title}
+    </h2>
+    <Link href="/projects"> See all ➜ </Link>
+  </div>
+  <ul class="not-prose flex flex-col gap-4">
+    {
+      contents.map((content: any) => (
+        <li>
+          <ArrowCard entry={content} />
+        </li>
+      ))
+    }
+  </ul>
+</section>

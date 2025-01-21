@@ -14,4 +14,7 @@ export default defineConfig({
       theme: "css-variables",
     },
   },
+  experimental: {
+    svg: true,
+  },
 });
