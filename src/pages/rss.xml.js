@@ -3,14 +3,29 @@ import { SITE } from "@consts";
 import { getCollection } from "astro:content";
 
 export async function GET(context) {
-  const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
+  // const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
 
   const projects = (await getCollection("projects")).filter(
     (project) => !project.data.draft,
   );
 
-  const items = [...blog, ...projects].sort(
-    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  const resources = await getCollection("resources");
+
+  const assets = await getCollection("assets");
+
+  const godot2dTopdownTemplate = (
+    await getCollection("godot2dTopdownTemplate")
+  ).filter((project) => !project.data.draft);
+
+  const items = [
+    ...projects,
+    ...resources,
+    ...assets,
+    ...godot2dTopdownTemplate,
+  ].sort((a, b) =>
+    a.data.date
+      ? new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+      : a.data.index - b.data.index,
   );
 
   return rss({

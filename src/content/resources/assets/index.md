@@ -1,7 +1,7 @@
 ---
 title: "Assets"
-description: "Hit the ground running."
-date: "01/13/2025"
+description: "Unique assets for your games, such as tilesets and more, compatible with Rpg Maker and other engines."
+index: 1
 ---
 
 Discover many assets.

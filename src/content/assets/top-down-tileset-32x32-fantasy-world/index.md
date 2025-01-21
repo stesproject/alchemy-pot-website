@@ -2,7 +2,7 @@
 title: "Getting started"
 description: "Hit the ground running."
 downloadURL: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
-date: "01/13/2025"
+index: 0
 ---
 
 This 2D top-down 32x32 pixels tileset includes:

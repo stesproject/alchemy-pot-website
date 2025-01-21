@@ -16,7 +16,7 @@ const { contents, title } = Astro.props;
     {
       contents.map((content: any) => (
         <li>
-          <ArrowCard entry={content} />
+          <ArrowCard entry={content} truncate />
         </li>
       ))
     }

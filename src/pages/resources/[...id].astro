@@ -2,14 +2,14 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  const resources = (await getCollection("resources"))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const resources = (await getCollection("resources")).sort(
+    (a, b) => a.data.index - b.data.index
+  );
   return resources.map((resource) => ({
     params: { id: resource.id },
     props: resource,
@@ -28,15 +28,11 @@ const { Content, headings } = await render(resource);
     </div>
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={resource.data.date} />
-        </div>
-        &bull;
-        {resource.body && (
-          <div class="font-base text-sm">
-            {readingTime(resource.body)}
-          </div>
-        )}     
+        {
+          resource.body && (
+            <div class="font-base text-sm">{readingTime(resource.body)}</div>
+          )
+        }
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {resource.data.title}

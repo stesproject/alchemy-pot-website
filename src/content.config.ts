@@ -28,7 +28,7 @@ const resources = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.coerce.date(),
+    index: z.number(),
   }),
 });
 
@@ -37,8 +37,8 @@ const assets = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.coerce.date(),
     downloadURL: z.string(),
+    index: z.number(),
   }),
 });
 
@@ -52,7 +52,7 @@ const godot2dTopdownTemplate = defineCollection({
     description: z.string(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
-    date: z.coerce.date(),
+    index: z.number(),
   }),
 });
 
