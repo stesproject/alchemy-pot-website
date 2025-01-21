@@ -3,14 +3,19 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
-import { PROJECTS } from "@consts";
 
 const assets = (await getCollection("assets")).sort(
   (a, b) => a.data.index - b.data.index
 );
+
+const resources = await getCollection("resources");
+const resource = resources.find((resource) => resource.id === "assets");
 ---
 
-<Layout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+<Layout
+  title={resource?.data.title || ""}
+  description={resource?.data.description || ""}
+>
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-10">

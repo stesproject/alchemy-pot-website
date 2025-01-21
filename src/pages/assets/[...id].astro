@@ -2,11 +2,8 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
-import { readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Link from "@components/Link.astro";
-import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
   const assets = (await getCollection("assets")).sort(
@@ -20,13 +17,13 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"assets">;
 
 const asset = Astro.props;
-const { Content, headings } = await render(asset);
+const { Content } = await render(asset);
 ---
 
 <Layout title={asset.data.title} description={asset.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/assets">Back to assets</BackToPrevious>
+      <BackToPrevious href="/resources/assets">Back to assets</BackToPrevious>
     </div>
     <div class="animate my-10 space-y-1">
       <h1 class="text-3xl font-semibold text-black dark:text-white">
@@ -35,16 +32,16 @@ const { Content, headings } = await render(asset);
       {
         asset.data.downloadUrl && (
           <nav class="flex gap-1">
-            {asset.data.downloadUrl && (
-              <Link href={asset.data.downloadUrl} external>
-                Get it
-              </Link>
-            )}
+          <strong>Get it on </strong>
+          {asset.data.downloadUrl.map((download) => (
+            <Link href={download.url} external>
+              {download.label}
+            </Link>
+          ))}
           </nav>
         )
       }
     </div>
-    <TableOfContents headings={headings} />
     <article class="animate">
       <Content />
     </article>

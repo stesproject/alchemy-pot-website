@@ -40,7 +40,7 @@ const { Content } = await render(project);
       {
         project.data.downloadUrl && (
           <nav class="flex gap-1">
-            <strong>Download: </strong>
+            <strong>Get it on </strong>
             {project.data.downloadUrl.map((download) => (
               <Link href={download.url} external>
                 {download.label}
