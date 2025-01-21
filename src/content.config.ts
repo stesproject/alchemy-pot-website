@@ -31,6 +31,12 @@ const resources = defineCollection({
     downloadUrl: z
       .array(z.object({ label: z.string(), url: z.string() }))
       .optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
     index: z.number(),
   }),
 });
@@ -42,6 +48,12 @@ const assets = defineCollection({
     description: z.string(),
     downloadUrl: z
       .array(z.object({ label: z.string(), url: z.string() }))
+      .optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
       .optional(),
     index: z.number(),
   }),
@@ -57,6 +69,12 @@ const godot2dtopdowntemplate = defineCollection({
     description: z.string(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
     index: z.number(),
   }),
 });

@@ -16,3 +16,8 @@ export type Socials = {
   NAME: string;
   HREF: string;
 }[];
+
+export type Image = {
+  src: string;
+  alt: string;
+}

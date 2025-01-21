@@ -4,6 +4,9 @@ description: "A free 2D top-down 32x32 pixels tileset that also includes a versi
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
+image:
+  src: "/images/2d-autotiles-fantasy-world.png"
+  alt: "2d autotiles fantasy world"
 index: 0
 ---
 
