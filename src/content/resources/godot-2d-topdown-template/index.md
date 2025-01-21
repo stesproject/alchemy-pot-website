@@ -1,14 +1,14 @@
 ---
 title: "Godot 2D Top-Down Template"
-description: "A game template for Godot 4 that offers everything a 2D top-down game might need to get started."
+description: "A comprehensive game template designed for Godot 4, providing everything you need to kickstart your 2D top-down game development journey."
 downloadUrl:
   - label: "GitHub"
     url: "https://github.com/stesproject/godot-2d-topdown-template"
 index: 0
 ---
 
-The Godot 2D Top-Down Template is a game template for __Godot 4__ that offers everything a __2D top-down game__ might need to get started.
+The Godot 2D Top-Down Template is a comprehensive game template designed for **Godot 4**, providing everything you need to kickstart your **2D top-down game** development journey.
 
-The template has been tested up to __Godot 4.4beta1__.
+This template has been rigorously tested up to **Godot 4.4beta1**.
 
-Check the topics below to discover all the features this template offers.
+Explore the features below to discover what the template has to offer.

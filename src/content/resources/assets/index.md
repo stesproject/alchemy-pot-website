@@ -1,7 +1,7 @@
 ---
 title: "Assets"
-description: "Unique assets for your games, such as tilesets and more, compatible with Rpg Maker and other engines."
+description: "Unique assets to enhance your games, including tilesets and more, all fully compatible with RPG Maker and other game engines."
 index: 1
 ---
 
-Here you can find unique assets for your games, such as tilesets and more, compatible with Rpg Maker and other engines.
+Discover a variety of unique assets to enhance your games, including tilesets and more, all fully compatible with RPG Maker and other game engines.

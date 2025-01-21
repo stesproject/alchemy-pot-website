@@ -1,6 +1,6 @@
 ---
 title: "Top-down Tileset 32x32 - Fantasy World"
-description: "A free 2D top-down 32x32 pixels tileset that also includes a version RPGMaker-ready of each autotile."
+description: "A free 2D top-down 32x32 pixels tileset that also includes a RPG Maker-ready format of each autotile."
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
@@ -10,9 +10,14 @@ image:
 index: 0
 ---
 
-This 2D top-down 32x32 pixels tileset includes:
+This 2D top-down tileset features **32x32 pixel tiles** and includes the following:
 
-- 5 wall+top autotiles (RPGMaker A4): Garden, Castle external, Valley, Forest, Castle internal
-- 1 grass autotile (RPGMaker A2)
+- 5 Wall + Top Autotiles (RPG Maker A4):
+  - Garden
+  - Castle Exterior
+  - Valley
+  - Forest
+  - Castle Interior
+- 1 Grass Autotile (RPG Maker A2)
 
-Includes a version RPGMaker-ready of each autotile.
+Each autotile is also provided in an RPG Maker-ready format for seamless integration.
