@@ -5,8 +5,9 @@ import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
 
-const assets = (await getCollection("assets"))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const assets = (await getCollection("assets")).sort(
+  (a, b) => a.data.index - b.data.index
+);
 ---
 
 <Layout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>

@@ -9,8 +9,9 @@ import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  const assets = (await getCollection("assets"))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const assets = (await getCollection("assets")).sort(
+    (a, b) => a.data.index - b.data.index
+  );
   return assets.map((asset) => ({
     params: { id: asset.id },
     props: asset,
@@ -28,25 +29,14 @@ const { Content, headings } = await render(asset);
       <BackToPrevious href="/assets">Back to assets</BackToPrevious>
     </div>
     <div class="animate my-10 space-y-1">
-      <div class="flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={asset.data.date} />
-        </div>
-        &bull;
-        {asset.body && (
-          <div class="font-base text-sm">
-            {readingTime(asset.body)}
-          </div>
-        )}     
-      </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {asset.data.title}
       </h1>
       {
-        (asset.data.downloadURL) && (
+        asset.data.downloadUrl && (
           <nav class="flex gap-1">
-            {asset.data.downloadURL && (
-              <Link href={asset.data.downloadURL} external>
+            {asset.data.downloadUrl && (
+              <Link href={asset.data.downloadUrl} external>
                 Get it
               </Link>
             )}

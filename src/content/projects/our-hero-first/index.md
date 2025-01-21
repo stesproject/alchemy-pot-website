@@ -2,7 +2,7 @@
 title: "Our Hero! First"
 description: "Our Hero! is a funny Hack and Slash Adventure game with RPG mechanics starred by cute and colorful characters: dive into this light-hearted story-driven world, full of treasures, puzzles, secret places and boss fights!"
 date: "07/31/2020"
-downloadURL:
+downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/847560/Our_Hero_First/"
 ---

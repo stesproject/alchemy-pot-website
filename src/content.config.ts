@@ -19,7 +19,7 @@ const projects = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     draft: z.boolean().optional(),
-    downloadURL: z.array(z.object({ label: z.string(), url: z.string() })),
+    downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
   }),
 });
 
@@ -28,6 +28,9 @@ const resources = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    downloadUrl: z
+      .array(z.object({ label: z.string(), url: z.string() }))
+      .optional(),
     index: z.number(),
   }),
 });
@@ -37,12 +40,12 @@ const assets = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    downloadURL: z.string(),
+    downloadUrl: z.string(),
     index: z.number(),
   }),
 });
 
-const godot2dTopdownTemplate = defineCollection({
+const godot2dtopdowntemplate = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
     base: "./src/content/godot-2d-topdown-template",
@@ -61,5 +64,5 @@ export const collections = {
   projects,
   resources,
   assets,
-  godot2dTopdownTemplate,
+  "godot-2d-topdown-template": godot2dtopdowntemplate,
 };

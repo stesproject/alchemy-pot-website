@@ -1,7 +1,7 @@
 ---
 title: "Getting started"
 description: "Hit the ground running."
-downloadURL: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
+downloadUrl: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
 index: 0
 ---
 

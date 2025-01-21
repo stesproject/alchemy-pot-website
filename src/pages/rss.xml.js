@@ -13,15 +13,15 @@ export async function GET(context) {
 
   const assets = await getCollection("assets");
 
-  const godot2dTopdownTemplate = (
-    await getCollection("godot2dTopdownTemplate")
+  const godot2dtopdowntemplate = (
+    await getCollection("godot-2d-topdown-template")
   ).filter((project) => !project.data.draft);
 
   const items = [
     ...projects,
     ...resources,
     ...assets,
-    ...godot2dTopdownTemplate,
+    ...godot2dtopdowntemplate,
   ].sort((a, b) =>
     a.data.date
       ? new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()

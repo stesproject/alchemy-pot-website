@@ -2,22 +2,21 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  const docs = (await getCollection("godot2dTopdownTemplate"))
+  const docs = (await getCollection("godot-2d-topdown-template"))
     .filter((post) => !post.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort((a, b) => a.data.index - b.data.index);
   return docs.map((doc) => ({
     params: { id: doc.id },
     props: doc,
   }));
 }
-type Props = CollectionEntry<"godot2dTopdownTemplate">;
+type Props = CollectionEntry<"godot-2d-topdown-template">;
 
 const doc = Astro.props;
 const { Content, headings } = await render(doc);
@@ -26,19 +25,17 @@ const { Content, headings } = await render(doc);
 <Layout title={doc.data.title} description={doc.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/godot2dTopdownTemplate">Back to index</BackToPrevious>
+      <BackToPrevious href="/resources/godot-2d-topdown-template"
+        >Back to index</BackToPrevious
+      >
     </div>
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={doc.data.date} />
-        </div>
-        &bull;
-        {doc.body && (
-          <div class="font-base text-sm">
-            {readingTime(doc.body)}
-          </div>
-        )}     
+        {
+          doc.body && (
+            <div class="font-base text-sm">{readingTime(doc.body)}</div>
+          )
+        }
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {doc.data.title}

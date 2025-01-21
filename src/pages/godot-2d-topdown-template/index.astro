@@ -5,9 +5,9 @@ import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
 
-const docs = (await getCollection("godot2dTopdownTemplate"))
+const docs = (await getCollection("godot-2d-topdown-template"))
   .filter((doc) => !doc.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort((a, b) => a.data.index - b.data.index);
 ---
 
 <Layout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
