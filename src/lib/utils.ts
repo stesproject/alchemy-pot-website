@@ -19,3 +19,17 @@ export function readingTime(html: string) {
   const readingTimeMinutes = (wordCount / 200 + 1).toFixed();
   return `${readingTimeMinutes} min read`;
 }
+
+export function isFileImage(filePath: string) {
+  const file = filePath.match(/[^/\\&?]+\.\w{3,4}(?=([\?&].*$|$))/);
+  if (!file) return false;
+  const ext = file[0].split(".").pop();
+  return ext ? ["jpg", "jpeg", "png", "gif", "webp"].includes(ext) : false;
+}
+
+export function isFileVideo(filePath: string) {
+  const file = filePath.match(/[^/\\&?]+\.\w{3,4}(?=([\?&].*$|$))/);
+  if (!file) return false;
+  const ext = file[0].split(".").pop();
+  return ext ? ["mp4", "webm"].includes(ext) : false;
+}

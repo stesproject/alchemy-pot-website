@@ -1,6 +1,7 @@
 ---
 import ArrowRight from "../icons/arrow-right.svg";
 import clsx from "clsx";
+import MediaContent from "./MediaContent.astro";
 
 type Props = {
   entry: {
@@ -9,7 +10,7 @@ type Props = {
     data: {
       title: string;
       description: string;
-      image?: {
+      media?: {
         src: string;
         alt: string;
       };
@@ -25,16 +26,10 @@ const { entry, truncate = false } = Astro.props as Props;
   href={`/${entry.collection}/${entry.id}`}
   class="not-prose group relative flex flex-nowrap rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
 >
-  {
-    entry.data.image && (
-      <img
-        src={entry.data.image.src}
-        alt={entry.data.image.alt}
-        class="mr-4 size-24 rounded-md object-cover"
-      />
-    )
-  }
-  <div class={clsx("flex flex-1 flex-col justify-center", truncate && "truncate")}>
+  {entry.data.media && <MediaContent media={entry.data.media} />}
+  <div
+    class={clsx("flex flex-1 flex-col justify-center", truncate && "truncate")}
+  >
     <div class="font-semibold text-secondary-light dark:text-secondary-dark">
       {entry.data.title}
     </div>

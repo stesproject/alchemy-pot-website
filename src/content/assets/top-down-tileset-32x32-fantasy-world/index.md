@@ -4,7 +4,7 @@ description: "A 2D top-down 32x32 pixels tileset that also includes a RPG Maker-
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
-image:
+media:
   src: "/images/2d-topdown-autotiles-fantasy-world.jpg"
   alt: "2d topdown autotiles fantasy world"
 date: "2025-01-21"

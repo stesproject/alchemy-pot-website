@@ -1,0 +1,31 @@
+---
+import { isFileVideo } from "../lib/utils";
+
+type Props = {
+  media: {
+    src: string;
+    alt: string;
+  };
+};
+
+const { media } = Astro.props as Props;
+const isVideo = isFileVideo(media.src);
+---
+
+{
+  !isVideo ? (
+    <img src={media.src} alt={media.alt} class="media" />
+  ) : isVideo ? (
+    <video src={media.src} class="media" autoplay loop muted />
+  ) : null
+}
+
+<style>
+  .media {
+    object-fit: cover;
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+    border-radius: 0.375rem;
+  }
+</style>

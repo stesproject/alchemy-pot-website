@@ -4,7 +4,7 @@ description: "A 2D top-down 48x48 pixels tileset that includes autotiles and pro
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-green-forest-2"
-image:
+media:
   src: "/images/2d-topdown-tileset-forest.jpg"
   alt: "2d topdown tileset Green Forest"
 date: "2024-09-30"

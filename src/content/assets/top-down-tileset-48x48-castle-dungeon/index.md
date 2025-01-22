@@ -4,7 +4,7 @@ description: "A 2D top-down 48x48 pixels tileset that includes autotiles and pro
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-castles-dungeons"
-image:
+media:
   src: "/images/2d-topdown-tileset-dungeons.jpg"
   alt: "2d topdown tileset castle's dungeon"
 date: "2024-11-30"

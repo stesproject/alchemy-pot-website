@@ -4,7 +4,7 @@ description: "A 2D top-down 48x48 pixels tileset that includes autotiles and pro
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-wild-valley"
-image:
+media:
   src: "/images/2d-topdown-tileset-valley.jpg"
   alt: "2d topdown tileset Wild Valley"
 date: "2024-10-30"

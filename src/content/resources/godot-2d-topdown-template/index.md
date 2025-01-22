@@ -9,6 +9,6 @@ date: "2025-01-22"
 
 The Godot 2D Top-Down Template is a comprehensive game template designed for **Godot 4**, providing everything you need to kickstart your **2D top-down game** development journey.
 
-This template has been rigorously tested up to **Godot 4.4beta1**.
+This template has been rigorously tested up to **Godot 4.4dev7**.
 
 Explore the features below to discover what the template has to offer.

@@ -4,7 +4,7 @@ description: "A 2D top-down 48x48 pixels tileset that includes autotiles and pro
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-royal-gardens"
-image:
+media:
   src: "/images/2d-topdown-tileset-gardens.jpg"
   alt: "2d topdown tileset Royal Gardens"
 date: "2023-08-30"

@@ -4,7 +4,7 @@ description: "A 2D top-down 48x48 pixels bundle that includes: King's Castle, Ca
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-game-world-bundle"
-image:
+media:
   src: "/images/2d-topdown-tileset-world-bundle.jpg"
   alt: "2d topdown tileset bundle Game World"
 date: "2025-01-22"
