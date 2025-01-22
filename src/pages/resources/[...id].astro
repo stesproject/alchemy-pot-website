@@ -8,7 +8,7 @@ import ArrowCard from "@components/ArrowCard.astro";
 
 export async function getStaticPaths() {
   const resources = (await getCollection("resources")).sort(
-    (a, b) => a.data.index - b.data.index
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   return resources.map((resource) => ({
     params: { id: resource.id },
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 const resource = Astro.props;
 const id = resource.id as any;
 const resourceContents = (await getCollection(id)).sort(
-  (a: any, b: any) => a.data.index - b.data.index
+  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 const { Content } = await render(resource);
 ---

@@ -5,7 +5,7 @@ import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 
 const assets = (await getCollection("assets")).sort(
-  (a, b) => a.data.index - b.data.index
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
 const resources = await getCollection("resources");

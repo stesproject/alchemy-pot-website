@@ -7,7 +7,7 @@ import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const assets = (await getCollection("assets")).sort(
-    (a, b) => a.data.index - b.data.index
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   return assets.map((asset) => ({
     params: { id: asset.id },
@@ -32,12 +32,12 @@ const { Content } = await render(asset);
       {
         asset.data.downloadUrl && (
           <nav class="flex gap-1">
-          <strong>Get it on </strong>
-          {asset.data.downloadUrl.map((download) => (
-            <Link href={download.url} external>
-              {download.label}
-            </Link>
-          ))}
+            <strong>Get it on </strong>
+            {asset.data.downloadUrl.map((download) => (
+              <Link href={download.url} external>
+                {download.label}
+              </Link>
+            ))}
           </nav>
         )
       }

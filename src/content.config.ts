@@ -37,7 +37,7 @@ const resources = defineCollection({
         alt: z.string(),
       })
       .optional(),
-    index: z.number(),
+    date: z.coerce.date(),
   }),
 });
 
@@ -55,7 +55,7 @@ const assets = defineCollection({
         alt: z.string(),
       })
       .optional(),
-    index: z.number(),
+    date: z.coerce.date(),
   }),
 });
 
@@ -75,7 +75,7 @@ const godot2dtopdowntemplate = defineCollection({
         alt: z.string(),
       })
       .optional(),
-    index: z.number(),
+    date: z.coerce.date(),
   }),
 });
 

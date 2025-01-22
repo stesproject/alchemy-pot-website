@@ -10,7 +10,7 @@ import TableOfContents from "@components/TableOfContents.astro";
 export async function getStaticPaths() {
   const docs = (await getCollection("godot-2d-topdown-template"))
     .filter((post) => !post.data.draft)
-    .sort((a, b) => a.data.index - b.data.index);
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return docs.map((doc) => ({
     params: { id: doc.id },
     props: doc,

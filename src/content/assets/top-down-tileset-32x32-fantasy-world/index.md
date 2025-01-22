@@ -1,13 +1,13 @@
 ---
 title: "Top-down Tileset 32x32 - Fantasy World"
-description: "A free 2D top-down 32x32 pixels tileset that also includes a RPG Maker-ready format of each autotile."
+description: "A 2D top-down 32x32 pixels tileset that also includes a RPG Maker-ready format of each autotile."
 downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-32x32-fantasy-world"
 image:
-  src: "/images/2d-autotiles-fantasy-world.png"
-  alt: "2d autotiles fantasy world"
-index: 0
+  src: "/images/2d-topdown-autotiles-fantasy-world.jpg"
+  alt: "2d topdown autotiles fantasy world"
+date: "2025-01-21"
 ---
 
 This 2D top-down tileset features **32x32 pixel tiles** and includes the following:
