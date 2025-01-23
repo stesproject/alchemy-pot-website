@@ -2,7 +2,8 @@
 import ArrowCard from "./ArrowCard.astro";
 import Link from "./Link.astro";
 
-const { contents, title } = Astro.props;
+const { contents, title, collection } = Astro.props;
+const link = `/${collection}`;
 ---
 
 <section class="animate space-y-6">
@@ -10,7 +11,7 @@ const { contents, title } = Astro.props;
     <h2 class="font-semibold text-black dark:text-white">
       {title}
     </h2>
-    <Link href="/projects"> See all ➜ </Link>
+    <Link href={link}> See all ➜ </Link>
   </div>
   <ul class="not-prose flex flex-col gap-4">
     {

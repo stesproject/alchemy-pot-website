@@ -8,12 +8,18 @@ import type { CollectionEntry } from "astro:content";
 import Contacts from "@components/Contacts.astro";
 import FeaturedContents from "@components/FeaturedContents.astro";
 
-const projects: CollectionEntry<"projects">[] = (
+const featuredProjects: CollectionEntry<"projects">[] = (
   await getCollection("projects")
 )
-  .filter((project) => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .filter((project) => !project.data.draft && project.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const resources: CollectionEntry<"resources">[] =
+  await getCollection("resources");
+const assets: CollectionEntry<"assets">[] = await getCollection("assets");
+const featuredResources = [...resources, ...assets]
+  .filter((item) => item.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -55,7 +61,16 @@ const projects: CollectionEntry<"projects">[] = (
             </span>
           </article>
         </section>
-        <FeaturedContents title="Featured Projects" contents={projects} />
+        <FeaturedContents
+          title="Featured Resources"
+          contents={featuredResources}
+          collection="resources"
+        />
+        <FeaturedContents
+          title="Featured Projects"
+          contents={featuredProjects}
+          collection="projects"
+        />
         <Contacts />
       </div>
     </aside>

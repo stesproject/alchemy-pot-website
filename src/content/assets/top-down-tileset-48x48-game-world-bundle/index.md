@@ -7,6 +7,7 @@ downloadUrl:
 media:
   src: "/images/2d-topdown-tileset-world-bundle.jpg"
   alt: "2d topdown tileset bundle Game World"
+featured: true
 date: "2025-01-22"
 ---
 

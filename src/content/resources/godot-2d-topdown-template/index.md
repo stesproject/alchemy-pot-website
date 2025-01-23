@@ -4,6 +4,7 @@ description: "A comprehensive game template designed for Godot 4, providing ever
 downloadUrl:
   - label: "GitHub"
     url: "https://github.com/stesproject/godot-2d-topdown-template"
+featured: true
 date: "2025-01-22"
 ---
 
