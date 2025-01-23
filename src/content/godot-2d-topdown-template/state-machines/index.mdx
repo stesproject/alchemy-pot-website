@@ -1,0 +1,132 @@
+---
+title: "State Machines"
+description: "State machines form the backbone of this template, controlling characters, NPCs, enemies, objects, and more. Each state focuses on a single behavior, allowing you to decide when and how states are activated."
+media:
+  src: "/images/godot-2d-template-state-machine.webm"
+  alt: "Godot 2d template state machine"
+date: "2025-01-22"
+---
+
+import Callout from "@/components/Callout.astro";
+
+---
+
+## Intro
+
+A State Machine allows you to manage different states for any game element.
+Examples include:
+
+- A chest: initially closed and interactable. When the player interacts with it, it opens.
+  The chest has two states: _closed_ and _opened_.
+
+- An enemy: patrols an area initially. When the player enters its detection area, it begins to follow the player.
+  The enemy has two states: _patrolling_ and _following_.
+
+- The player: initially alive and controlled via inputs. When health reaches 0, the player dies and can no longer move.
+  The player has two states: _alive_ and _dead_.
+
+Each state defines a specific behavior for an entity. States are implemented as scripts that inherit from the `State` class, enabling them to be managed by a State Machine.
+
+## The StateMachine Class
+
+The `StateMachine` class is responsible for grouping multiple states (as child nodes) and managing their lifecycle.
+While a single State Machine is typically sufficient, you can add as many State Machines as needed under any node. Each State Machine independently handles the activation, deactivation, and processing of a single state.
+
+## Adding States
+
+Once you have added a `StateMachine` to a node, you need to add one or more states under it to start managing the node's behavior.
+To add a state:
+
+1. Add the desired state scripts as children of the State Machine.
+2. Assign the initial state to the current_state property of the State Machine.
+
+The State Machine automatically manages the rest, including state transitions and processing.
+
+<Callout type="default">
+  A state can contain multiple nested states. When the parent state is
+  activated, all its nested states are automatically activated and processed
+  alongside it. When the parent state is deactivated, all nested states are also
+  disabled.
+</Callout>
+
+## State Lifecycle
+
+Each state has specific lifecycle functions that define its behavior:
+
+### enter()
+
+Defines what happens when the state is activated.
+
+### exit()
+
+Defines what happens when the state is deactivated.
+
+### update()
+
+Defines what happens during each process frame while the state is active.
+
+### physics_update()
+
+Defines what happens during each physics process frame while the state is active.
+
+## Changing States
+
+To transition between states you can:
+
+1. Call the `enable()` function on the desired state:
+   this will activate the state and deactivate the current state.
+   This is useful when a state needs to be activated immediately.
+
+2. Call the `complete()` function of the current state:
+   this will mark the state as "completed", meaning it will activate the states defined
+   in its `on_completion` array.
+   This is useful when a state needs to perform some actions before transitioning to another state
+   and can be considered "completed" when those actions are done.
+   For example, a dialogue state can be considered "completed" when the dialogue ends.
+
+3. Set a timer:
+   set the `time_range` property of the state.
+   The current state will transition to the `on_completion` states when the timer expires.
+   This is useful when a state have to be activated after a certain amount of time.
+   For example, the enemy can follow the player for a limited time before returning to the patrol state.
+
+<Callout type="warning">
+  Under the same State Machine, when a new state is activated the current state
+  is always automatically disabled.
+</Callout>
+
+## Pre-built States
+
+The template includes several pre-built states that you can use out of the box:
+
+- **StateAnimation**: starts an animation defined in an `AnimationPlayer` or `AnimationTree`.
+- **StateCallable**: invokes a method from another node.
+- **StateDebug**: prints a message in the terminal for debugging purposes.
+- **StateDialogue**: starts a dialogue defined using the [Dialogue System](/godot-2d-topdown-template/dialogue-system).
+- **StateInteract**: manages interactions using the [Interaction System](/godot-2d-topdown-template/interaction-system).
+- **StateMaterial**: changes the material of a Sprite2D node.
+- **StateParamsSetter**: sets properties of a node upon entering and/or exiting the state.
+- **StateTween**: defines and calls a tween on a node.
+- **StateEntity**: the base state from which all specific entity states extend.
+
+The states that extend `StateEntity` are:
+
+- **StateFollow**: makes the entity follow a target (without using `NavigationAgent2D`).
+- **StateIdle**: stops the entity and possibly disables it.
+- **StateImpulse**: applies an impulse to the entity.
+- **StateInputListener**: handles inputs to move and control the entity (eg: the player).
+- **StateNavigation**: makes the entity follow a target using a `NavigationAgent2D` (useful for avoiding obstacles).
+- **StatePath**: makes the entity follow a path defined in a `Path2D`.
+- **StateWander**: makes the entity wander around randomly.
+
+<Callout type="default">
+  You can always create new states by extending the base scripts `state.gd` or
+  `state_entity.gd`.
+</Callout>
+
+## Listening for State Changes
+
+The `ChangeStateListener` node allows you to listen for state changes in another node's State Machine.
+For each listening state, you can associate a state to enable.
+This functionality is useful for managing interactions between different game elements.
+For example, a door can listen to the states of a lever and open or close based on the lever's state.
