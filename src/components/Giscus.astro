@@ -1,13 +1,23 @@
+---
+const { repoName, repoId, categoryId } = Astro.props;
+
+const repo = `stesproject/${repoName}`;
+
+// repoName: "alchemy-pot-website"
+// repoId: "R_kgDONs2sTg"
+// categoryId: "DIC_kwDONs2sTs4CmSRv"
+---
+
 <div class="giscus"></div>
 
 <script
   is:inline
   data-astro-rerun
   src="https://giscus.app/client.js"
-  data-repo="trevortylerlee/astro-micro"
-  data-repo-id="R_kgDOL_6l9Q"
+  data-repo={repo}
+  data-repo-id={repoId}
   data-category="Announcements"
-  data-category-id="DIC_kwDOL_6l9c4Cfk55"
+  data-category-id={categoryId}
   data-mapping="pathname"
   data-strict="0"
   data-reactions-enabled="1"
