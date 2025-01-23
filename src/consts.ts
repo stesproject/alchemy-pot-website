@@ -9,17 +9,6 @@ export const SITE: Site = {
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
-export const NAVIGATION = [
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "Resources",
-    href: "/resources",
-  },
-];
-
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
