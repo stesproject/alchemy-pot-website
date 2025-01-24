@@ -5,7 +5,7 @@ downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-kings-castle"
 media:
-  src: "/images/2d-topdown-tileset-castle.jpg"
+  src: "./2d-topdown-tileset-castle.jpg"
   alt: "2d topdown tileset king's castle"
 date: "2024-12-30"
 ---

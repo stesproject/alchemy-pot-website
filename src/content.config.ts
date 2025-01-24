@@ -14,58 +14,61 @@ const blog = defineCollection({
 
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    draft: z.boolean().optional(),
-    featured: z.boolean().optional(),
-    downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
-    media: z
-    .object({
-      src: z.string(),
-      alt: z.string(),
-    })
-    .optional(),
-    date: z.coerce.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      draft: z.boolean().optional(),
+      featured: z.boolean().optional(),
+      downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
+      media: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      date: z.coerce.date(),
+    }),
 });
 
 const resources = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/resources" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    downloadUrl: z
-      .array(z.object({ label: z.string(), url: z.string() }))
-      .optional(),
-    featured: z.boolean().optional(),
-    media: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
-    date: z.coerce.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      downloadUrl: z
+        .array(z.object({ label: z.string(), url: z.string() }))
+        .optional(),
+      featured: z.boolean().optional(),
+      media: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      date: z.coerce.date(),
+    }),
 });
 
 const assets = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/assets" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    downloadUrl: z
-      .array(z.object({ label: z.string(), url: z.string() }))
-      .optional(),
-    featured: z.boolean().optional(),
-    media: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
-    date: z.coerce.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      downloadUrl: z
+        .array(z.object({ label: z.string(), url: z.string() }))
+        .optional(),
+      featured: z.boolean().optional(),
+      media: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      date: z.coerce.date(),
+    }),
 });
 
 const godot2dtopdowntemplate = defineCollection({
@@ -73,20 +76,21 @@ const godot2dtopdowntemplate = defineCollection({
     pattern: "**/*.{md,mdx}",
     base: "./src/content/godot-2d-topdown-template",
   }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    draft: z.boolean().optional(),
-    tags: z.array(z.string()).optional(),
-    featured: z.boolean().optional(),
-    media: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
-    date: z.coerce.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      draft: z.boolean().optional(),
+      tags: z.array(z.string()).optional(),
+      featured: z.boolean().optional(),
+      media: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      date: z.coerce.date(),
+    }),
 });
 
 export const collections = {

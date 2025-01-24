@@ -5,7 +5,7 @@ downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-royal-gardens"
 media:
-  src: "/images/2d-topdown-tileset-gardens.jpg"
+  src: "./2d-topdown-tileset-gardens.jpg"
   alt: "2d topdown tileset Royal Gardens"
 date: "2023-08-30"
 ---

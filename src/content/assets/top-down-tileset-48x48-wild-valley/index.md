@@ -5,7 +5,7 @@ downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-wild-valley"
 media:
-  src: "/images/2d-topdown-tileset-valley.jpg"
+  src: "./2d-topdown-tileset-valley.jpg"
   alt: "2d topdown tileset Wild Valley"
 date: "2024-10-30"
 ---

@@ -5,7 +5,7 @@ downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-castles-dungeons"
 media:
-  src: "/images/2d-topdown-tileset-dungeons.jpg"
+  src: "./2d-topdown-tileset-dungeons.jpg"
   alt: "2d topdown tileset castle's dungeon"
 date: "2024-11-30"
 ---

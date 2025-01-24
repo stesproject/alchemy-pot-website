@@ -5,7 +5,7 @@ downloadUrl:
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-green-forest-2"
 media:
-  src: "/images/2d-topdown-tileset-forest.jpg"
+  src: "./2d-topdown-tileset-forest.jpg"
   alt: "2d topdown tileset Green Forest"
 date: "2024-09-30"
 ---

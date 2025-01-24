@@ -13,3 +13,13 @@ The Godot 2D Top-Down Template is a comprehensive game template designed for **G
 This template has been rigorously tested up to **Godot 4.4dev7**.
 
 Explore the features below to discover what the template has to offer.
+
+<div class="w-full flex justify-center pb-6">
+  <a
+    href="https://alchemy-pot.web.app/files/godot-2d-topdown-template/play"
+    target="_blank"
+    class="button secondary"
+  >
+    Play the Demo
+  </a>
+</div>
