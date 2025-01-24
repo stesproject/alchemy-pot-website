@@ -17,7 +17,7 @@ export type Socials = {
   HREF: string;
 }[];
 
-export type Image = {
-  src: string;
+export type Media = {
+  src: ImageMetadata | string;
   alt: string;
 }

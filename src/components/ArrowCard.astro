@@ -2,6 +2,7 @@
 import ArrowRight from "..//icons/arrow-right.svg";
 import clsx from "clsx";
 import MediaContent from "./MediaContent.astro";
+import type { Media } from "@types";
 
 type Props = {
   entry: {
@@ -10,10 +11,7 @@ type Props = {
     data: {
       title: string;
       description: string;
-      media?: {
-        src: string;
-        alt: string;
-      };
+      media?: Media
     };
   };
   truncate?: boolean;

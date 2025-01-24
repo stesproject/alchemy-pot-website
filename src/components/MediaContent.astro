@@ -2,12 +2,10 @@
 import { Image } from "astro:assets";
 import { isFileVideo } from "../lib/utils";
 import type { ImageMetadata } from "astro";
+import type { Media } from "@types";
 
 type Props = {
-  media: {
-    src: ImageMetadata | string;
-    alt: string;
-  };
+  media: Media
 };
 
 const { media } = Astro.props as Props;
