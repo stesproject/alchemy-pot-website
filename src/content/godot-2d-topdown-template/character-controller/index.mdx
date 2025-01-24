@@ -1,0 +1,104 @@
+---
+title: "Character Controller"
+description: "Take full control of your characters: make them move, run, attack, jump, and flash while managing their states seamlessly."
+media:
+  src: "/res/godot-2d-template-character-controller.mp4"
+  alt: "Godot 2d template character controller"
+date: "2024-12-20"
+---
+
+import Video from "@/components/Video.astro";
+import { Image } from "astro:assets";
+
+import char_walk from "./char-walk.webm";
+import char_run from "./char-run.webm";
+import char_jump from "./char-jump.webm";
+import char_attack from "./char-attack.webm";
+import char_flash from "./char-flash.webm";
+import char_interact from "./char-interact.webm";
+import new_inherited_scene from "./new-inherited-scene.png";
+
+---
+
+## What is a Character
+
+Characters in your game are dynamic entities capable of moving and performing various actions within a level. By using a [StateMachine](/godot-2d-topdown-template/state-machines) node, you can configure and manage different states to control their behavior seamlessly.
+
+State scripts interact with functions defined in the `CharacterEntity` class (or any script that extends from it).
+The pre-built system allows your characters to:
+
+- Move
+  <Video src={char_walk} class="my-0 object-none" width="100" height="100" />
+- Run
+  <Video src={char_run} class="my-0 object-none" width="100" height="100" />
+- Jump
+  <Video src={char_jump} class="my-0 object-none" width="100" height="100" />
+- Attack
+  <Video src={char_attack} class="my-0 object-none" width="100" height="100" />
+- Flash (for example, when receiving damage)
+  <Video src={char_flash} class="my-0 object-none" width="100" height="100" />
+- Interact with other game elements and entities
+  <Video
+    src={char_interact}
+    class="my-0 object-none"
+    width="100"
+    height="100"
+  />
+
+These capabilities can be further expanded by adding new functions to the character's script and customizing the states defined in the character's StateMachine.
+
+Additionally, you can integrate a HealthController node to manage a character's health points, making it easy to handle damage, healing, or showing a custom health bar.
+
+## Pre-built Characters
+
+The template includes two pre-built characters: a **player** (`player.tscn`) and an **enemy** (`enemy.tscn`).
+Both characters share the same base script, `character_entity.gd`. The difference lies in their implementation:
+
+- The player extends the `CharacterEntity` class through the `player_entity.gd` script.
+- The enemy uses the `character_entity.gd` script directly.
+
+You're free to create a custom `enemy_entity.gd` script that extends from `CharacterEntity` to add specific functionality for enemies that are not present in the base class.
+
+### Player
+
+What makes the player character unique is the ability to respond to user inputs.
+This functionality is managed by a specialized state called `StateInputListener`.
+By adding this state to any character, you can make it responsive to inputs, not just the player.
+The actions that `StateInputListener` listens for are defined in _Project Settings > Input Map_.
+You can customize the controls to fit your needs.
+
+### Create a New Character
+
+To create new characters, simply create a new scene inheriting from the `entity.tscn `scene.
+
+<Image
+  src={new_inherited_scene}
+  alt="Inheriting from the entity.tscn scene"
+  class="mx-auto" />
+This scene serves as the foundation for all characters, including the pre-built ones in the template.
+Features of the `entity.tscn` scene include:
+
+- Pre-Built animations: idle, walk, run, jump, and attack animations managed by an `AnimationPlayer` node and an `AnimationTree`.
+- Dynamic shadow: a `Shadow` node that adjusts its size dynamically based on the character's height (e.g., when the character jumps).
+- Flash shader: a shader applied to the AnimatedSprite2D node that creates a flash effect, useful for visual feedback (e.g., when the character takes damage).
+- Collision detection:
+  - the `BlocksDetector` node detects collisions with walls and obstacles.
+  - the `FallDetector` node identifies when the character has jumped into a non-walkable area.
+- Combat features:
+  - the `HitBox` node detects collisions with enemies.
+  - the `HurtBox` node detects collisions with enemy hitboxes.
+
+For more specialized characters, you can also inherit from the `player.tscn` or `enemy.tscn` scenes:
+
+- `player.tscn`:
+  - Includes a `SmokeParticles` node for visual effects when the character runs.
+  - Includes a `StateMachine` node with pre-built states to handle movement, attack, hurt, fall and death.
+  - Features an `Inventory` node for managing items.
+  - Includes a `HealthController` node to manage health points.
+
+- `enemy.tscn`:
+  - Simplified compared to the player scene but still customizable for unique enemy behaviors.
+  - Also includes a `HealthController` node.
+
+Try inheriting from these scenes to create and customize characters to suit your game's specific needs.
+

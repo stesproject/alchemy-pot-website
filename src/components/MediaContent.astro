@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { isFileVideo } from "../lib/utils";
 import type { ImageMetadata } from "astro";
 import type { Media } from "@types";
+import Video from "./Video.astro";
 
 type Props = {
   media: Media
@@ -16,7 +17,7 @@ const isVideo = typeof media.src === "string" && isFileVideo(media.src);
   !isVideo ? (
     <Image src={media.src as ImageMetadata} alt={media.alt} class="media" />
   ) : isVideo ? (
-    <video src={media.src as string} class="media" autoplay loop muted />
+    <Video src={media.src as string} class="media" />
   ) : null
 }
 

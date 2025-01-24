@@ -1,0 +1,7 @@
+---
+const { src, ...rest } = Astro.props;
+---
+
+<video {...rest} autoplay loop muted>
+  <source src={src} />
+</video>
