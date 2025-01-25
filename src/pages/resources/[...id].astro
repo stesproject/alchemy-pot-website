@@ -5,6 +5,10 @@ import Container from "@components/Container.astro";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Link from "@components/Link.astro";
 import ArrowCard from "@components/ArrowCard.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 export async function getStaticPaths() {
   const resources = (await getCollection("resources")).sort(
@@ -27,7 +31,9 @@ const { Content } = await render(resource);
 <Layout title={resource.data.title} description={resource.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/resources">Back to resources</BackToPrevious>
+      <BackToPrevious href="/resources">{t("back.to", {
+        to: t("content.resources"),
+      })}</BackToPrevious>
     </div>
     <div class="animate my-10 space-y-1">
       <h1 class="text-3xl font-semibold text-black dark:text-white">
@@ -37,7 +43,7 @@ const { Content } = await render(resource);
     {
       resource.data.downloadUrl && (
         <nav class="flex gap-1">
-          <strong>Get it on </strong>
+          <strong>{t("content.download")} </strong>
           {resource.data.downloadUrl.map((download) => (
             <Link href={download.url} external>
               {download.label}

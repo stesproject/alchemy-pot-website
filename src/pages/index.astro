@@ -7,6 +7,10 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Contacts from "@components/Contacts.astro";
 import FeaturedContents from "@components/FeaturedContents.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const featuredProjects: CollectionEntry<"projects">[] = (
   await getCollection("projects")
@@ -26,19 +30,21 @@ const featuredResources = [...resources, ...assets]
   <Container>
     <aside data-pagefind-ignore>
       <h1 class="font-semibold text-black dark:text-white">
-        Welcome to {SITE.TITLE}!
+        {
+          t("home.intro.1", {
+            title: SITE.TITLE,
+          })
+        }
       </h1>
       <div class="space-y-16">
         <section>
           <article class="space-y-4">
             <span>
               <p>
-                Hi, I'm Ste, a passionate Full-Stack Developer who loves to
-                build web apps, websites and games.
+                {t("home.intro.2")}
               </p>
               <p>
-                I built this little corner of the internet to showcase my
-                projects and share valuable resources with you.
+                {t("home.intro.3")}
               </p>
             </span>
             <span class="animate">
@@ -62,12 +68,16 @@ const featuredResources = [...resources, ...assets]
           </article>
         </section>
         <FeaturedContents
-          title="Featured Resources"
+          title={t("featured.content", {
+            content: t("content.resources"),
+          })}
           contents={featuredResources}
           collection="resources"
         />
         <FeaturedContents
-          title="Featured Projects"
+          title={t("featured.content", {
+            content: t("content.projects"),
+          })}
           contents={featuredProjects}
           collection="projects"
         />

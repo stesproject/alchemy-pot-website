@@ -6,6 +6,10 @@ import { readingTime, readingTimeValue } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 export async function getStaticPaths() {
   const docs = (await getCollection("godot-2d-topdown-template"))
@@ -26,7 +30,11 @@ const { Content, headings } = await render(doc);
   <Container>
     <div class="animate">
       <BackToPrevious href="/resources/godot-2d-topdown-template"
-        >Back to index</BackToPrevious
+        >{
+          t("back.to", {
+            to: t("docs.index"),
+          })
+        }</BackToPrevious
       >
     </div>
     <div class="animate my-10 space-y-1">
