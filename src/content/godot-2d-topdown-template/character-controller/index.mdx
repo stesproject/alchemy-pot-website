@@ -7,6 +7,7 @@ media:
 date: "2024-12-20"
 ---
 
+import Callout from "@/components/Callout.astro";
 import Video from "@/components/Video.astro";
 import { Image } from "astro:assets";
 
@@ -66,6 +67,19 @@ This functionality is managed by a specialized state called `StateInputListener`
 By adding this state to any character, you can make it responsive to inputs, not just the player.
 The actions that `StateInputListener` listens for are defined in _Project Settings > Input Map_.
 You can customize the controls to fit your needs.
+Furthermore, the player character includes:
+
+- a `StateMachine` node with pre-built states to handle movement, attack, hurt, fall, and death.
+- a `InteractionTrigger` node to [detect interactions](/godot-2d-topdown-template/interaction-system) with other game elements.
+- a `SmokeParticles` node for visual effects when the character runs.
+- an `Inventory` node for managing items.
+- a `HealthController` node to manage health points.
+
+### Enemy
+
+The enemy character is a simplified version of the player character.
+It includes a `StateMachine` node to handle death.
+The enemy character also includes a `HealthController` node to manage health points.
 
 ## Create a New Character
 
@@ -74,9 +88,10 @@ To create new characters, simply create a new scene inheriting from the `entity.
 <Image
   src={new_inherited_scene}
   alt="Inheriting from the entity.tscn scene"
-  class="mx-auto" />
-This scene serves as the foundation for all characters, including the pre-built ones in the template.
-Features of the `entity.tscn` scene include:
+  class="mx-auto"
+/>
+This scene serves as the foundation for all characters, including the pre-built
+ones in the template. Features of the `entity.tscn` scene include:
 
 - Pre-Built animations: idle, walk, run, jump, and attack animations managed by an `AnimationPlayer` node and an `AnimationTree`.
 - Dynamic shadow: a `Shadow` node that adjusts its size dynamically based on the character's height (e.g., when the character jumps).
@@ -88,17 +103,54 @@ Features of the `entity.tscn` scene include:
   - the `HitBox` node detects collisions with enemies.
   - the `HurtBox` node detects collisions with enemy hitboxes.
 
-For more specialized characters, you can also inherit from the `player.tscn` or `enemy.tscn` scenes:
+<Callout type="default">
+  For more specialized characters, you can also inherit from the `player.tscn`
+  or `enemy.tscn` scenes.
+</Callout>
 
-- `player.tscn`:
-  - Includes a `SmokeParticles` node for visual effects when the character runs.
-  - Includes a `StateMachine` node with pre-built states to handle movement, attack, hurt, fall and death.
-  - Features an `Inventory` node for managing items.
-  - Includes a `HealthController` node to manage health points.
+## Character Actions
 
-- `enemy.tscn`:
-  - Simplified compared to the player scene but still customizable for unique enemy behaviors.
-  - Also includes a `HealthController` node.
+The `CharacterEntity` class includes several functions that you can call to perform actions on the character.
 
-Try inheriting from these scenes to create and customize characters to suit your game's specific needs.
+### Move
 
+The `move()` function moves the character in a given direction.
+This function is used by the `StateInputListener` state to move the player character based on user inputs and also by other states to move the character in a specific direction.
+When the character moves, the `facing` property is updated to reflect the direction of movement and the `is_moving` property is set to `true`.
+
+### Run
+
+To make the character run, you just need to pass a value higher than 1 to the property `speed_multiplier`.
+This value is used to multiply the character's speed when moving.
+In the `StateInputListener` state the `speed_multiplier` property is updated to make the character run when the `run` action is pressed.
+When the character runs, the `is_running` property is set to `true` and the `running_particles`, if present, are activated.
+
+### Jump
+
+The `jump()` function makes the character jump.
+In the `StateInputListener` state the `jump()` function is called when the `jump` action is pressed.
+In the `jump()` function, the `is_jumping` property is set to `true` and other properties are updated to manage the jump.
+At the end of the jump, you have to call the `end_jump()` function to reset the character's properties. Ideally this function should be called when the character lands on the ground.
+In a `CharacterEntity` this is handled by the `jump` animation of the `AnimationPlayer`.
+
+### Attack
+
+The `attack()` function makes the character attack.
+In the `StateInputListener` state the `attack()` function is called when the `attack` action is pressed.
+In the `PlayerEntity`, the value of the `is_attacking` is handled by the `attack` state of the `StateMachine` with a `StateParamsSetter` state.
+At the end of the attack, you have to call the `end_attack()` function to reset the character's properties. Ideally this function should be called when the attack animation ends.
+In a `CharacterEntity` this is handled by the `char-attack/` animations of the `AnimationPlayer`.
+
+### Flash
+
+The `flash()` function makes the character sprites flash.
+To make the sprites flash:
+- The sprites must have a shader material with the `flash.gdshader` shader.
+- The sprites must be in the `flash` group.
+
+### Interact
+
+To enable interactions, a character requires the following:
+- An `Area2D` node with the `monitorable` property set to `true`.
+- The `collision_layer` property of the `Area2D` must match the `collision_mask` property of an `InteractionArea` defined within a `StateInteract` state.
+<br/>Check the [Interaction System](/godot-2d-topdown-template/interaction-system) for more details.
