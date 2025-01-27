@@ -55,7 +55,8 @@ const { Content, headings } = await render(doc);
     </article>
     {
       readingTimeValue(doc.body || "") !== "1" && (
-        <div class="mt-24">
+        <p class="text-center mt-12">{t("docs.comments.feedback")}</p>
+        <div class="mt-16">
           <Giscus
             repoName="godot-2d-topdown-template"
             repoId="R_kgDOMmiJ2A"

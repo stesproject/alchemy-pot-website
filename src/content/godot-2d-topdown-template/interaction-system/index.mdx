@@ -1,0 +1,57 @@
+---
+title: "Interaction System"
+description: "Enable your characters to interact with the game world. Trigger actions such as opening a chest, activating switches, or unlocking doors using the flexible interaction system."
+media:
+  src: "/res/godot-2d-template-interaction-system.mp4"
+  alt: "Godot 2d template interaction system"
+date: "2024-11-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import interaction_trigger from "./interaction-trigger.png";
+import state_interact from "./state-interact.png";
+import interaction_area from "./interaction-area.png";
+
+---
+
+## Features
+
+Interactions with other elements in the level, such as levers, objects, NPCs or transfers, are possible thanks to an Area2D added to the character. The interaction is managed by a `StateInteract` state that offers different configurations, such as:
+
+- The interaction area
+- The states to enable on interaction
+- The states to enable when leaving the interaction area
+- Activate the interaction via the input of an action (defined in _Input Map_)
+- Activate the interaction only if all conditions are met (for example: the character must face a certain direction or an item must be in the inventory)
+
+## Configuration
+
+### Who triggers the Interaction
+
+A character (or any other game element) that initiates an interaction must have:
+
+- An `Area2D` node with the `monitorable` property set to `true`.
+- The `collision_layer` property of the `Area2D` must match the `collision_mask` property of an `InteractionArea` defined within a `StateInteract` state.
+
+<Image src={interaction_trigger} alt="Interaction Trigger" class="mx-auto" />
+
+### The element to Interact with
+
+An element that wants to responds to interactions must meet the following requirements:
+
+- A `StateMachine` with at least one `StateInteract` state enabled.
+
+<Image src={state_interact} alt="State Interact" class="mx-auto" />
+
+- The `StateInteract` state must have its `interaction_area` property linked to an `Area2D` node.
+- The `Area2D` node must have the `monitoring` property set to `true`.
+- The `collision_mask` property of the `Area2D` must match the `collision_layer` property of the areas triggering the interaction.
+
+<Image src={interaction_area} alt="Interaction Area" class="mx-auto" />
+
+<Callout type="default">
+  An `InteractionArea` node is available to quickly add a pre-configured Area2D,
+  ready to be set as an `interaction_area` in a `StateInteract`.
+</Callout>
