@@ -13,6 +13,7 @@ import { Image } from "astro:assets";
 import interaction_trigger from "./interaction-trigger.png";
 import state_interact from "./state-interact.png";
 import interaction_area from "./interaction-area.png";
+import add_check from "./add-check.png";
 
 ---
 
@@ -24,7 +25,7 @@ Interactions with other elements in the level, such as levers, objects, NPCs or 
 - The states to enable on interaction
 - The states to enable when leaving the interaction area
 - Activate the interaction via the input of an action (defined in _Input Map_)
-- Activate the interaction only if all conditions are met (for example: the character must face a certain direction or an item must be in the inventory)
+- Activate the interaction only if all [conditions](#conditions) are met (for example: the character must face a certain direction or an item must be in the inventory)
 
 ## Configuration
 
@@ -35,7 +36,7 @@ A character (or any other game element) that initiates an interaction must have:
 - An `Area2D` node with the `monitorable` property set to `true`.
 - The `collision_layer` property of the `Area2D` must match the `collision_mask` property of an `InteractionArea` defined within a `StateInteract` state.
 
-<Image src={interaction_trigger} alt="Interaction Trigger" class="mx-auto" />
+<Image src={interaction_trigger} alt="Interaction Trigger" />
 
 ### The element to Interact with
 
@@ -43,15 +44,33 @@ An element that wants to responds to interactions must meet the following requir
 
 - A `StateMachine` with at least one `StateInteract` state enabled.
 
-<Image src={state_interact} alt="State Interact" class="mx-auto" />
+<Image src={state_interact} alt="State Interact" />
 
 - The `StateInteract` state must have its `interaction_area` property linked to an `Area2D` node.
 - The `Area2D` node must have the `monitoring` property set to `true`.
 - The `collision_mask` property of the `Area2D` must match the `collision_layer` property of the areas triggering the interaction.
 
-<Image src={interaction_area} alt="Interaction Area" class="mx-auto" />
+<Image src={interaction_area} alt="Interaction Area" />
 
 <Callout type="default">
   An `InteractionArea` node is available to quickly add a pre-configured Area2D,
   ready to be set as an `interaction_area` in a `StateInteract`.
 </Callout>
+
+## Conditions
+
+Conditions are a set of rules that must be met to trigger an interaction.
+You can add a new condition by adding a new element to the `conditions` list of a `StateInteract` state.
+
+<Image src={add_check} alt="add new condition to interaction" />
+
+### Pre-Built Conditions
+
+- **CheckDirection**: Ensures the character is facing a specific direction.
+- **CheckItems**: Requires the character to have specific items in their inventory.
+
+### Custom Conditions
+
+You can create custom conditions by extending the `Check` class and implementing the `check` method in your script.
+The `check` method should return `true` if the condition is met, and `false` otherwise.
+You can check the `check_direction.gd` and `check_items.gd` scripts for reference.

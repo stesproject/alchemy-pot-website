@@ -85,11 +85,7 @@ The enemy character also includes a `HealthController` node to manage health poi
 
 To create new characters, simply create a new scene inheriting from the `entity.tscn `scene.
 
-<Image
-  src={new_inherited_scene}
-  alt="Inheriting from the entity.tscn scene"
-  class="mx-auto"
-/>
+<Image src={new_inherited_scene} alt="Inheriting from the entity.tscn scene" />
 This scene serves as the foundation for all characters, including the pre-built
 ones in the template. Features of the `entity.tscn` scene include:
 
@@ -145,12 +141,15 @@ In a `CharacterEntity` this is handled by the `char-attack/` animations of the `
 
 The `flash()` function makes the character sprites flash.
 To make the sprites flash:
+
 - The sprites must have a shader material with the `flash.gdshader` shader.
 - The sprites must be in the `flash` group.
 
 ### Interact
 
 To enable interactions, a character requires the following:
+
 - An `Area2D` node with the `monitorable` property set to `true`.
 - The `collision_layer` property of the `Area2D` must match the `collision_mask` property of an `InteractionArea` defined within a `StateInteract` state.
-<br/>Check the [Interaction System](/godot-2d-topdown-template/interaction-system) for more details.
+
+Check the [Interaction System](/godot-2d-topdown-template/interaction-system) for more details.

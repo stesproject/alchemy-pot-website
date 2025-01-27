@@ -25,7 +25,7 @@ export const ui = {
     "contacts.text.2":
       "Feel free to reach out! You can connect with me on social media or send me an email using the links below. I'd love to hear from you!",
     "docs.comments.feedback":
-      "Is something unclear, or do you have suggestions to improve a part of the documentation? Feel free to share your thoughts in the comments below!",
+      "Is something unclear, or do you have suggestions to improve a part of this document? Feel free to share your thoughts leaving a comment below!",
   },
   it: {},
 } as any;

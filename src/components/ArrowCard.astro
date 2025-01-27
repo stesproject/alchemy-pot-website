@@ -22,7 +22,7 @@ const { entry, truncate = false } = Astro.props as Props;
 
 <a
   href={`/${entry.collection}/${entry.id}`}
-  class="not-prose group relative flex flex-nowrap rounded-lg bg-black/5 dark:bg-white/5 border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/10 hover:text-black focus-visible:bg-black/10 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:bg-white/10 dark:focus-visible:text-white"
+  class="card with-hover not-prose group relative flex flex-nowrap px-4 py-3 pr-10"
 >
   {entry.data.media && <MediaContent media={entry.data.media} />}
   <div

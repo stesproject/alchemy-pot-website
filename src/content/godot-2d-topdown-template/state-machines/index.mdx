@@ -8,39 +8,45 @@ date: "2025-01-22"
 ---
 
 import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import state_machine from "./state-machine.png";
+import change_state_listener from "./change-state-listener.png";
 
 ---
 
 ## What is a State Machine
 
-A State Machine allows you to manage different states for any game element.
+A `StateMachine` allows you to manage different states for any game element.
 Examples include:
 
-- A chest: initially closed and interactable. When the player interacts with it, it opens.
+- A **chest**: initially closed and interactable. When the player interacts with it, it opens.
   The chest has two states: _closed_ and _opened_.
 
-- An enemy: patrols an area initially. When the player enters its detection area, it begins to follow the player.
+- An **enemy**: patrols an area initially. When the player enters its detection area, it begins to follow the player.
   The enemy has two states: _patrolling_ and _following_.
 
-- The player: initially alive and controlled via inputs. When health reaches 0, the player dies and can no longer move.
+- The **player**: initially alive and controlled via inputs. When health reaches 0, the player dies and can no longer move.
   The player has two states: _alive_ and _dead_.
 
 Each state defines a specific behavior for an entity. States are implemented as scripts that inherit from the `State` class, enabling them to be managed by a State Machine.
 
-## The StateMachine Class
+## The StateMachine node
 
-The `StateMachine` class is responsible for grouping multiple states (as child nodes) and managing their lifecycle.
-While a single State Machine is typically sufficient, you can add as many State Machines as needed under any node. Each State Machine independently handles the activation, deactivation, and processing of a single state.
+The `StateMachine` node is responsible for grouping multiple states (as child nodes) and managing their lifecycle.
+While a single `StateMachine` node is typically sufficient, you can add as many State Machines as needed under any node. Each `StateMachine` independently handles the activation, deactivation, and processing of a single state under it.
+
+<Image src={state_machine} alt="State Machine" />
 
 ## Adding States
 
 Once you have added a `StateMachine` to a node, you need to add one or more states under it to start managing the node's behavior.
 To add a state:
 
-1. Add the desired state scripts as children of the State Machine.
-2. Assign the initial state to the current_state property of the State Machine.
+1. Add the desired state scripts as children of the `StateMachine`.
+2. Assign the initial state to the `current_state` property of the `StateMachine`.
 
-The State Machine automatically manages the rest, including state transitions and processing.
+The `StateMachine` automatically manages the rest, including state transitions and processing.
 
 <Callout type="default">
   A state can contain multiple nested states. When the parent state is
@@ -91,7 +97,7 @@ To transition between states you can:
    For example, the enemy can follow the player for a limited time before returning to the patrol state.
 
 <Callout type="warning">
-  Under the same State Machine, when a new state is activated the current state
+  Under the same `StateMachine`, when a new state is activated the current state
   is always automatically disabled.
 </Callout>
 
@@ -126,7 +132,15 @@ The states that extend `StateEntity` are:
 
 ## Listening for State Changes
 
-The `ChangeStateListener` node allows you to listen for state changes in another node's State Machine.
+The `ChangeStateListener` node allows you to listen for state changes in another node's `StateMachine`.
 For each listening state, you can associate a state to enable.
 This functionality is useful for managing interactions between different game elements.
-For example, a door can listen to the states of a lever and open or close based on the lever's state.
+
+For example, a door can listen to the states of a switch and open or close based
+on the active state of the switch. Adding a `ChangeStateListener` node to a door
+we'll have a situation as shown in the image below:
+
+<Image src={change_state_listener} alt="Change State Listener" />
+
+- When the state "off" of the switch is activated, the state "up" of the door is activated.
+- When the state "on" of the switch is activated, the state "down" of the door is activated.
