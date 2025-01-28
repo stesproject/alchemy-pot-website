@@ -5,7 +5,7 @@ downloadUrl:
   - label: "GitHub"
     url: "https://github.com/stesproject/godot-2d-topdown-template"
 media:
-  src: "./godot-2d-template-preview.jpg"
+  src: "./godot-2d-template-preview.png"
   alt: "Godot 2d top-down template preview"
 featured: true
 date: "2025-01-30"
