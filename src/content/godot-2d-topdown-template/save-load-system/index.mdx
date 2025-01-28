@@ -26,7 +26,7 @@ However, you can easily extend its functionality by extending the `DataManager.g
 ### Save functions
 
 - `save_game`: Saves the current game state to a file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
-- `save_level_data`: Saves the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Transfer` node when leaving the current level.
+- `save_level_data`: Stores the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Transfer` node when leaving the current level.
 
 Theoretically, you will call `save_level_data` first and `save_game` a later time to save the game state to a file.
 
@@ -38,7 +38,7 @@ Theoretically, you will call `save_level_data` first and `save_game` a later tim
 ### Load functions
 
 - `load_game`: Loads the game state from the file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
-- `load_level_data`: Loads the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Level` node when entering a level.
+- `load_level_data`: Updates the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Level` node when entering a level.
 
 Theoretically, you will call `load_game` first and `load_level_data` a later time to load the game state from a file.
 
@@ -97,7 +97,6 @@ From the editor:
 - Press **F2** to return to the main title screen and then select **Continue** to load the saved session.
 
 <Callout type="info">
-  In your project, you can call the save and load functions as needed to suit
-  the specific requirements of your game, or leave the system as is to handle
-  saving and loading automatically.
+  In your project, call the save and load functions as needed to suit
+  the specific requirements of your game.
 </Callout>
