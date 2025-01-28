@@ -1,0 +1,95 @@
+---
+title: "Save/Load System"
+description: "Easily save and load game progress, including player data, entity positions, and the current state of state machines. Saved data persists across levels and can be stored in a file for later retrieval, allowing players to continue from where they left off."
+media:
+  src: "/res/godot-2d-template-save-load-system.webm"
+  alt: "Godot 2d template save load system"
+date: "2024-10-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import save_group from "./save-group.png";
+import player_group from "./player-group.png";
+
+---
+
+## Manage Game Data
+
+The project includes a simple yet powerful data management system that handles saving and loading data for nodes within the current level based on their group assignment.
+This functionality is managed by the `DataManager` singleton.
+
+By default, the system processes data for **StateMachine** and **CharacterEntity** nodes, which should cover most use cases.
+However, you can easily extend its functionality by extending the `DataManager.gd` script.
+
+### Save functions
+
+- `save_game`: Saves the current game state to a file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
+- `save_level_data`: Saves the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Transfer` node when leaving the current level.
+
+### Load functions
+
+- `load_game`: Loads the game state from the file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
+- `load_level_data`: Loads the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Level` node when entering a level.
+
+## Groups
+
+Nodes are saved based on their group assignment. The following groups are used for saving data:
+
+### "save" Group
+
+Nodes in the **"save"** group are automatically processed by the save/load system when calling the save or load functions.
+
+<Image src={save_group} alt="The save group" />
+
+Based on their type, these nodes are saved and restored in different ways:
+
+- **StateMachine**:  
+  Adding a `StateMachine` to the **"save"** group ensures its current state is saved and restored when transitioning between levels or saving/loading the game.
+  This is ideal for managing the state of objects or game events, such as whether a chest or door is open or closed.
+
+- **CharacterEntity**:  
+  Assigning a `CharacterEntity` to the **"save"** group saves its current position and facing direction.
+  This is useful for saving the position of enemies or NPCs.
+
+### "player" Group
+
+The **"player"** group is reserved for handling player data, which is processed differently from other saved nodes.
+
+<Image src={player_group} alt="The player group" />
+
+Unlike other nodes, nodes in the **"player"** group don't need to be also in the **"save"** group to save or load their data.
+
+The pre-built player node that is in the **"player"** group is `player.tscn` that uses the `player_entity.gd` script, which defines the following functions:
+
+- `get_data`: Specifies what player data should be saved to the save file.
+- `receive_data`: Handles incoming data loaded from the save file.
+
+The player data saved includes:
+
+- Position
+- Facing direction
+- Current HP
+- Max HP
+- Inventory
+- Equipped weapon ID
+
+You can extend the `PlayerEntity` class to include additional data as needed.
+
+## Data Persistence
+
+The data management system ensures that saved data persists between levels and across game sessions.
+
+In the template, to quickly save or load data, you can use the [Debugger](/godot-2d-topdown-template/debugger) singleton.
+From the editor:
+
+- Press **F1** to save the current session.
+- Press **F2** to return to the main title screen and then select **Continue** to load the saved session.
+
+In your project, you can call the save and load functions as needed to suit the specific requirements of your game.
+
+<Callout type="warning">
+  Game data will be lost if the game is closed without calling the `save_game`
+  function.
+</Callout>
