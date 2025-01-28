@@ -5,6 +5,9 @@ first of a 3 chapters saga!"
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/847560/Our_Hero_First/"
+media:
+  src: "./hero_capsule-our-hero-first.jpg"
+  alt: "our hero first capsule"
 featured: true
 date: "07/31/2020"
 ---
