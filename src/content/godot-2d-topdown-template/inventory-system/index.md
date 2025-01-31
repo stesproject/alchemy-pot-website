@@ -7,4 +7,4 @@ media:
 date: "2024-09-20"
 ---
 
-This is a doc about...
+An inventory manages all the items owned by a player. The template provides a simple node `Inventory.tscn` assigned as a child of the player, which shows all the items owned by him.

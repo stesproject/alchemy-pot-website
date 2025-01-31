@@ -15,88 +15,89 @@ import player_group from "./player-group.png";
 
 ---
 
-## Manage Game Data
+## Game Data Management
 
-The project includes a simple yet powerful data management system that handles saving and loading data for nodes within the current level based on their group assignment.
-This functionality is managed by the `DataManager` singleton.
+The template includes a simple yet powerful data management system that manages saving and loading operations for nodes that require data persistence.
+This functionality is orchestrated by the `DataManager` singleton.
 
-By default, the system processes data for **StateMachine** and **CharacterEntity** nodes, which should cover most use cases.
-However, you can easily extend its functionality by extending the `DataManager.gd` script.
+The system already processes data for `StateMachine`, `CharacterEntity`, and `PlayerEntity` classes, covering most common use cases.
+You can extend it to any additional class, as described below.
 
-### Save functions
+### Data Handling Functions
 
-- `save_game`: Saves the current game state to a file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
-- `save_level_data`: Stores the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Transfer` node when leaving the current level.
+Nodes requiring data persistence must:
 
-Theoretically, you will call `save_level_data` first and `save_game` a later time to save the game state to a file.
+- Belong to the `save` group
+- Implement these functions:
+  - `get_data`: Defines what data to save.
+  - `receive_data`: Processes loaded data.
+
+The `DataManager` singleton handles all the rest.
+
+<Image src={save_group} alt="The save group" />
+
+The classes that already have the `get_data` and `receive_data` functions implemented will process these data:
+
+- **StateMachine**:
+
+  - The index of the current state.
+
+- **CharacterEntity**:
+
+  - Position
+  - Facing direction
+
+- **PlayerEntity**:
+  - Position
+  - Facing direction
+  - Current HP
+  - Max HP
+  - Inventory
+  - Equipped weapon ID
+
+Modify the `get_data` and `receive_data` functions to customize the data being saved and loaded.  
+You can assign the `save` group and implement these functions in any script to define exactly what data should be stored and retrieved.
+
+### Save Data
+
+| Function          | Description                                                                                                           |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `save_game`       | Saves the current game data to the file path defined in `Const.SAVE_FILE_BASE_PATH`.                                  |
+| `save_level_data` | Stores the data of all nodes in the `save` group present in the current level that implement the `get_data` function. |
+
+<Callout type="info">
+  The `save_level_data` function is called automatically by any `Transfer` node
+  when leaving the current level.
+</Callout>
+
+A typical workflow will call `save_level_data` first and `save_game` a later time to save the game data to a file.
 
 <Callout type="warning">
   Game data will be lost if the game is closed without calling the `save_game`
   function.
 </Callout>
 
-### Load functions
+### Load Data
 
-- `load_game`: Loads the game state from the file at the path specified in the `SAVE_FILE_BASE_PATH` constant of the `Const.gd` script.
-- `load_level_data`: Updates the data of all `StateMachine`, `CharacterEntity` and `PlayerEntity` nodes present in the current level. This function is called automatically by any `Level` node when entering a level.
-
-Theoretically, you will call `load_game` first and `load_level_data` a later time to load the game state from a file.
-
-## Groups
-
-Nodes are saved based on their group assignment. The following groups are used for saving data:
-
-### "save" Group
-
-Nodes in the **"save"** group are automatically processed by the save/load system when calling the save or load functions.
-
-<Image src={save_group} alt="The save group" />
-
-Based on their type, these nodes are saved and restored in different ways:
-
-- **StateMachine**:  
-  Adding a `StateMachine` to the **"save"** group ensures its current state is saved and restored when transitioning between levels or saving/loading the game.
-  This is ideal for managing the state of objects or game events, such as whether a chest or door is open or closed.
-
-- **CharacterEntity**:  
-  Assigning a `CharacterEntity` to the **"save"** group saves its current position and facing direction.
-  This is useful for saving the position of enemies or NPCs.
-
-### "player" Group
-
-The **"player"** group is reserved for handling player data, which is processed differently from other saved nodes.
-
-<Image src={player_group} alt="The player group" />
-
-Unlike other nodes, nodes in the **"player"** group don't need to be also in the **"save"** group to save or load their data.
-
-The pre-built player node that is in the **"player"** group is `player.tscn` that uses the `player_entity.gd` script, which defines the following functions:
-
-- `get_data`: Specifies what player data should be saved to the save file.
-- `receive_data`: Handles incoming data loaded from the save file.
-
-The player data saved includes:
-
-- Position
-- Facing direction
-- Current HP
-- Max HP
-- Inventory
-- Equipped weapon ID
-
-You can extend the `PlayerEntity` class to include additional data as needed.
-
-## Data Persistence
-
-The data management system ensures that saved data persists between levels and across game sessions.
-
-In the template, to quickly save or load data, you can use the [Debugger](/godot-2d-topdown-template/debugger) singleton.
-From the editor:
-
-- Press **F1** to save the current session.
-- Press **F2** to return to the main title screen and then select **Continue** to load the saved session.
+| Function          | Description                                                                                                                |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `load_game`       | Restores the full game data from the file path defined in `Const.SAVE_FILE_BASE_PATH`.                                     |
+| `load_level_data` | Updates the data of all nodes in the `save` group present in the current level that implement the `receive_data` function. |
 
 <Callout type="info">
-  In your project, call the save and load functions as needed to suit
-  the specific requirements of your game.
+  The `load_level_data` function is called automatically by any `Level` node
+  when entering a level.
+</Callout>
+
+A typical workflow will call `load_game` first and `load_level_data` a later time to load the level data from a file.
+
+## Summary
+
+- Add nodes to the `save` group for data persistence and implement `get_data` and `receive_data` functions to handle the data.
+- The `DataManager` singleton handles the saving and loading operations, you just need to call the appropriate functions.
+- The data management system ensures that saved data persists between levels and across game sessions.
+
+<Callout type="info">
+  You decide when to call the save and load functions based on the requirements
+  of your game.
 </Callout>
