@@ -37,3 +37,23 @@ export function isFileVideo(filePath: string) {
   const ext = file[0].split(".").pop();
   return ext ? ["mp4", "webm"].includes(ext) : false;
 }
+
+export function getNextPost(collection: any, id: string) {
+  let postIndex;
+  for (const post of collection) {
+    if (post.id === id) {
+      postIndex = collection.indexOf(post);
+      return collection[postIndex + 1];
+    }
+  }
+}
+
+export function getPrevPost(collection: any, id: string) {
+  let postIndex;
+  for (const post of collection) {
+    if (post.id === id) {
+      postIndex = collection.indexOf(post);
+      return collection[postIndex - 1];
+    }
+  }
+}
