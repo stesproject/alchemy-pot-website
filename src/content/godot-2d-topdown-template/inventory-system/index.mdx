@@ -1,0 +1,90 @@
+---
+title: "Inventory System"
+description: "Manage and visualize items with a simple inventory system that lets you store acquired items and track their quantities."
+media:
+  src: "/res/godot-2d-template-inventory-system.webm"
+  alt: "Godot 2d template inventory system"
+date: "2024-09-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import create_dataitem_resource from "./create-dataitem-resource.png";
+import create_new_item from "./create-new-item.png";
+import godot_create_new_resource from "./godot-create-new-resource.png";
+import dataitem_inspector from "./dataitem-inspector.png";
+import chest_contents from "./chest_contents.png";
+import state_interact_check_items from "./state_interact_check_items.png";
+
+---
+
+## Overview
+
+An inventory is responsible for managing owned items and their quantities.
+The template provides a basic `inventory.tscn` scene that can be added to any node. Its data can be saved and loaded using the [Save/Load System](/godot-2d-topdown-template/save-load-system) as is already done for the `player.tscn` node.
+
+Each Inventory node allows you to assign an `action_trigger` to open and close the inventory, making it accessible via a user interface.
+If a UI is not required or you prefer to create your own, you can simply create a new node using the `inventory.gd` script. This script provides all necessary functions to manage inventory contents, as all items are stored in the `items` array.
+
+## Main Functions
+
+### is_item_in_inventory
+
+Checks if an item is in the inventory. Returns the item index if at least one instance of the item exists.
+If a quantity is specified, it returns the index only if the item exists in the required amount or more.
+
+### add_item
+
+Adds an item with the specified quantity to the inventory.
+
+### remove_item
+
+Removes the specified quantity of an item from the inventory.
+
+## Creating a New Item
+
+Items in this system are Godot resources. To create a new item:
+
+1. Navigate to the _items_ folder in the _FileSystem_.
+2. Right-click and select _Create New → Resource..._.
+
+<Image src={godot_create_new_resource} alt="Create a new resource in Godot" />
+
+3. Choose `DataItem` as the resource type.
+
+<Image src={create_dataitem_resource} alt="Create a new DataItem" />
+
+4. Type a name for your item and click _Save_
+
+<Image src={create_new_item} alt="Create a new Item" />
+
+A `DataItem` resource allows you to define:
+
+- `icon`: The visual representation of the item.
+- `change_hp`: Determines whether the item affects HP (only applicable if the node has a `HealthController`).
+  Use a negative value to decrease HP and a positive value to increase it.
+- `hide_from_inventory`: If enabled, the item is managed by the inventory system but remains hidden in the UI.
+
+<Image src={dataitem_inspector} alt="Inspecting DataItem resource" />
+
+## Handling Contents
+
+Contents are resources that track the **quantity** of an item. They are Godot resources of type `ContentItem`.
+You usually don't need to create these manually in the _FileSystem_, as the inventory system handles them automatically.
+The `items` array in the inventory is an array of `ContentItem` objects.
+
+Other places where `ContentItem` resources are used:
+
+- `get_contents.gd`: Used to define a list of items and their quantities (e.g., as seen in `chest.tscn`).
+
+<Image src={chest_contents} alt="Chest contents" />
+
+- `StateInteract`: When configuring a `CheckItems` condition to validate required inventory contents in the **Conditions** section.
+
+<Image src={state_interact_check_items} alt="Check items in State Interact" />
+
+<Callout type="default">
+  Both `DataItem` and `ContentItem` can be expanded or modified to fit your
+  specific game needs.
+</Callout>
