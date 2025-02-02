@@ -13,7 +13,8 @@ import { Image } from "astro:assets";
 import interaction_trigger from "./interaction-trigger.png";
 import state_interact from "./state-interact.png";
 import interaction_area from "./interaction-area.png";
-import add_check from "./add-check.png";
+import add_condition from "./add_condition.png";
+import condition_not_met from "./condition_not_met.png";
 
 ---
 
@@ -62,7 +63,17 @@ An element that wants to responds to interactions must meet the following requir
 Conditions are a set of rules that must be met to trigger an interaction.
 You can add a new condition by adding a new element to the `conditions` list of a `StateInteract` state.
 
-<Image src={add_check} alt="add new condition to interaction" />
+<Image src={add_condition} alt="add new condition to interaction" />
+
+You can optionally define a list of states to activate when a condition is not met.
+To do this, add a new entry to the `on_condition_not_met` dictionary, specifying:
+
+- _Key_: The name of the condition to monitor.
+- _Value_: The State to enable if the condition is not met.
+
+Make sure that the `resource_name` of the `ContentItem` resource is set and that the Key of the entry matches it accordingly.
+
+<Image src={condition_not_met} alt="set condition not met" />
 
 ### Pre-Built Conditions
 
@@ -74,4 +85,4 @@ You can add a new condition by adding a new element to the `conditions` list of 
 
 You can create custom conditions by extending the `Check` class and implementing the `check` method in your script.
 The `check` method should return `true` if the condition is met, and `false` otherwise.
-You can check the `check_direction.gd` and `check_items.gd` scripts for reference.
+You can check the pre-built conditions scripts for reference.
