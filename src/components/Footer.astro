@@ -3,6 +3,7 @@ import Container from "@components/Container.astro";
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
 import ThemeButtons from "./ThemeButtons.astro";
+import Link from "./Link.astro";
 ---
 
 <footer class="animate">
@@ -13,7 +14,22 @@ import ThemeButtons from "./ThemeButtons.astro";
       </div>
     </div>
     <div class="flex items-center justify-between">
-      <div>&copy; {new Date().getFullYear()} • {SITE.TITLE} | Made by {SITE.AUTHOR}</div>
+      <div>
+        <span class="mb-4">
+          &copy; {new Date().getFullYear()} • {SITE.TITLE} | Made by {
+            SITE.AUTHOR
+          }
+        </span>
+        <span class="absolute -top-4">
+          <Link href="https://ko-fi.com/stesproject">
+            <img
+              src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+              alt="ko-fi"
+              width="145px"
+            />
+          </Link>
+        </span>
+      </div>
       <ThemeButtons />
     </div>
   </Container>
