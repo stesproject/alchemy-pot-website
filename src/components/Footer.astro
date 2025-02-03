@@ -12,24 +12,20 @@ import Link from "./Link.astro";
       <div class="absolute -top-12 right-0">
         <BackToTop />
       </div>
+      <span class="absolute -top-12 left-0">
+        <Link href="https://ko-fi.com/stesproject">
+          <img
+            src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+            alt="ko-fi"
+            width="145px"
+          />
+        </Link>
+      </span>
     </div>
     <div class="flex items-center justify-between">
-      <div>
-        <span class="mb-4">
-          &copy; {new Date().getFullYear()} • {SITE.TITLE} | Made by {
-            SITE.AUTHOR
-          }
-        </span>
-        <span class="absolute -top-4">
-          <Link href="https://ko-fi.com/stesproject">
-            <img
-              src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
-              alt="ko-fi"
-              width="145px"
-            />
-          </Link>
-        </span>
-      </div>
+      <span class="mb-4">
+        &copy; {new Date().getFullYear()} • {SITE.TITLE} | Made by {SITE.AUTHOR}
+      </span>
       <ThemeButtons />
     </div>
   </Container>
