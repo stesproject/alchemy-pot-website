@@ -81,7 +81,7 @@ These nodes help maintain a structured and organized level layout,
 with the exception of **GameCamera2D** and the parent node **Layer**
 (which you can name whatever you like to identify your level) and which contains the `level.gd` script, responsible for initializing the player upon entering the level.
 
-### Layers node
+### Pre-built Layers
 
 The **Layers** node is particularly important as it contains several pre-configured `TileMapLayer` nodes for level design.
 
@@ -97,4 +97,18 @@ The `TileMapLayer` nodes are structured as follows:
   You are free to configure the pre-built layers as needed, starting from
   `Level.tscn`, keeping in mind that in your **inherited levels** you can
   **add** new layers but you **cannot remove** the existing ones.
+</Callout>
+
+### Adding Players to the Level
+
+Players are added to the level through the _P1_ node, a `Marker2D` node with the `player_instantiator.gd` script attached.  
+This node determines where a player will be placed within the level.
+
+If your game supports multiple players, you can duplicate this node to spawn additional players, ensuring that each one has a unique `player_id`.  
+The `player_instantiator.gd` script takes care of instantiating a player at the `Marker2D` position with the assigned `player_id`.
+
+<Callout type="warning">
+  Although you can manually instantiate the `player.tscn` scene, it is
+  recommended to use this node for better management of `player_id` assignments
+  and to maintain consistency in player handling.
 </Callout>
