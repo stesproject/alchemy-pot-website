@@ -7,6 +7,7 @@ import { getNextPost, getPrevPost, readingTime } from "@lib/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import PostNavigation from "@components/PostNavigation.astro";
 import TableOfContents from "@components/TableOfContents.astro";
+import Link from "@components/Link.astro";
 // import Giscus from "@components/Giscus.astro";
 
 export async function getStaticPaths() {
@@ -68,7 +69,7 @@ const { Content, headings } = await render(post);
     </div>
     {headings.length > 0 && <TableOfContents headings={headings} />}
     <article class="animate">
-      <Content />
+      <Content components={{ a: Link }} />
       <div class="mt-24">
         <PostNavigation
           prevPost={prevPost}

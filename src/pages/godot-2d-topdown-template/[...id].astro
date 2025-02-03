@@ -8,6 +8,7 @@ import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
 import PostNavigation from "@components/PostNavigation.astro";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Link from "@components/Link.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -59,7 +60,7 @@ const { Content, headings } = await render(doc);
     </div>
     <TableOfContents headings={headings} />
     <article class="animate">
-      <Content />
+      <Content components={{a: Link}} />
       <div class="mt-24">
         <PostNavigation prevPost={prevPost} nextPost={nextPost} collection="godot-2d-topdown-template" />
       </div>

@@ -28,9 +28,11 @@ const { Content } = await render(asset);
   <Container>
     <div class="animate">
       <BackToPrevious href="/resources/assets"
-        >{t("back.to", {
-          to: t("content.assets"),
-        })}</BackToPrevious
+        >{
+          t("back.to", {
+            to: t("content.assets"),
+          })
+        }</BackToPrevious
       >
     </div>
     <div class="animate my-10 space-y-1">
@@ -42,16 +44,14 @@ const { Content } = await render(asset);
           <nav class="flex gap-1">
             <strong>{t("content.download")} </strong>
             {asset.data.downloadUrl.map((download) => (
-              <Link href={download.url} external>
-                {download.label}
-              </Link>
+              <Link href={download.url}>{download.label}</Link>
             ))}
           </nav>
         )
       }
     </div>
     <article class="animate">
-      <Content />
+      <Content components={{ a: Link }} />
     </article>
   </Container>
 </Layout>

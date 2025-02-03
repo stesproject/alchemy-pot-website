@@ -61,16 +61,14 @@ const { Content } = await render(project);
           <nav class="flex gap-1">
             <strong>{t("content.download")} </strong>
             {project.data.downloadUrl.map((download) => (
-              <Link href={download.url} external>
-                {download.label}
-              </Link>
+              <Link href={download.url}>{download.label}</Link>
             ))}
           </nav>
         )
       }
     </div>
     <article class="animate">
-      <Content />
+      <Content components={{a: Link}} />
       <div class="mt-24">
         <PostNavigation
           prevPost={nextPost}

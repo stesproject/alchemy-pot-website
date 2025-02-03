@@ -16,30 +16,29 @@ const SOCIAL_ICON_SIZE = 26;
 <section class="animate space-y-4">
   <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
   <article>
-    <p>{t("contacts.text.1")}</br>{t("contacts.text.2")}</p>
+    <p>{t("contacts.text.1")}</p>{t("contacts.text.2")}
   </article>
-  <ul class="not-prose flex flex-wrap gap-2">
-    {
-      SOCIALS.map((SOCIAL) => (
-        <li class="flex gap-x-2 text-nowrap" title={SOCIAL.NAME}>
-          <Link
-            href={SOCIAL.HREF}
-            external
-            aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-            rel="me"
-          >
-            {SOCIAL.NAME === "BlueSky" ? (
-              <BlueSkyIcon size={SOCIAL_ICON_SIZE} />
-            ) : SOCIAL.NAME === "Mastodon" ? (
-              <MastodonIcon size={SOCIAL_ICON_SIZE} />
-            ) : SOCIAL.NAME === "GitHub" ? (
-              <GithubIcon size={SOCIAL_ICON_SIZE} />
-            ) : SOCIAL.NAME === "Email" ? (
-              <EmailIcon size={SOCIAL_ICON_SIZE} />
-            ) : null}
-          </Link>
-        </li>
-      ))
-    }
-  </ul>
 </section>
+<ul class="not-prose flex flex-wrap gap-2">
+  {
+    SOCIALS.map((SOCIAL) => (
+      <li class="flex gap-x-2 text-nowrap" title={SOCIAL.NAME}>
+        <Link
+          href={SOCIAL.HREF}
+          aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+          rel="me"
+        >
+          {SOCIAL.NAME === "BlueSky" ? (
+            <BlueSkyIcon size={SOCIAL_ICON_SIZE} />
+          ) : SOCIAL.NAME === "Mastodon" ? (
+            <MastodonIcon size={SOCIAL_ICON_SIZE} />
+          ) : SOCIAL.NAME === "GitHub" ? (
+            <GithubIcon size={SOCIAL_ICON_SIZE} />
+          ) : SOCIAL.NAME === "Email" ? (
+            <EmailIcon size={SOCIAL_ICON_SIZE} />
+          ) : null}
+        </Link>
+      </li>
+    ))
+  }
+</ul>

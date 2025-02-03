@@ -45,7 +45,7 @@ const { Content } = await render(resource);
         <nav class="flex gap-1">
           <strong>{t("content.download")} </strong>
           {resource.data.downloadUrl.map((download) => (
-            <Link href={download.url} external>
+            <Link href={download.url}>
               {download.label}
             </Link>
           ))}
@@ -53,7 +53,7 @@ const { Content } = await render(resource);
       )
     }
     <article class="animate">
-      <Content />
+      <Content components={{a: Link}} />
     </article>
     <ul class="animate not-prose flex flex-col gap-4">
       {

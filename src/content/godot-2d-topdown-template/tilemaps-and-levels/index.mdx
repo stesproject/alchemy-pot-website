@@ -1,0 +1,100 @@
+---
+title: "Tilemaps and Levels"
+description: "If you plan to use Tilemaps and the pre-built Level scene to build your levels, here you can discover some useful tips to create new levels and setting up autotiles in no time."
+media:
+  src: "/res/godot-2d-template-tilemaps.webm"
+  alt: "Godot 2d template tilemaps"
+date: "2024-08-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import _1_add_tilemap_layer from "./1-add-tilemap-layer.png";
+import _2_create_new_tileset from "./2-create-new-tileset.png";
+import _3_add_new_terrain_set from "./3-add-new-terrain-set.png";
+import _4_tileset_tab from "./4-tileset-tab.png";
+import _5_apply_terrain_template from "./5-apply-terrain-template.png";
+import _6_draw_terrain from "./6-draw-terrain.png";
+
+---
+
+## About Autotiles
+
+Autotiles are a special type of tiles that automatically adapt their appearance based on their placement in the map.
+This system makes mapping easier by dynamically adjusting the edges and corners of terrain-like tiles such as water, grass, cliffs, and walls.
+Instead of placing multiple tile variations manually, auto tiles blend seamlessly to create natural-looking environments.
+
+### Setting Up Autotiles with TileBitTools
+
+The template includes a handy plugin that allows you to quickly set up **Terrain Sets** for your **Tileset**.
+This is especially useful if you want to design levels using **autotiles**.
+
+With the [TileBitTools](https://godotengine.org/asset-library/asset/1757) plugin by [dandeliondino](https://github.com/dandeliondino),
+configuring an autotile is quick and easy:
+
+1. Create a new node of type `TileMapLayer`.
+   <Image src={_1_add_tilemap_layer} alt="add tilemap layer node" />
+2. Select the newly added `TileMapLayer` and create a new `tile_set`.
+   <Image src={_2_create_new_tileset} alt="create new tileset" />
+3. Click on the newly created Tile Set, expand the **_Terrain Sets_** section, add a new terrain, and then add a new element.
+   <Image src={_3_add_new_terrain_set} alt="add new terrain set" />
+4. Select the **_TileSet_** tab, add a new **Tile Source** of type **Atlas**, and go to the **_Select_** tab.
+   <Image src={_4_tileset_tab} alt="select tileset tab" />
+5. In the **_Select_** tab:
+   - Select all your tiles.
+   - Navigate to the **_TileBitTools_** section (if it doesn't appear automatically, switch tabs and then return to **_Select_**).
+   - Expand **_Apply Terrain Template_** and choose the template that matches your tileset.
+   - Select the terrain created in step (3) and click **_Apply Changes_**.
+     <Image src={_5_apply_terrain_template} alt="apply terrain template" />
+6. Now, go to the **_TileMap_** tab, open the **_Terrains_** section, and select the terrain you just created.  
+    You can now draw in your `TileMapLayer` using autotiling!
+   <Image src={_6_draw_terrain} alt="draw terrains" />
+
+<Callout type="warning">
+  When creating a new TileSet, make sure to correctly set the `tile_size` value
+  according to the dimensions of your tiles.
+</Callout>
+
+## Creating a New Level
+
+The template includes a **`Level.tscn`** scene that serves as a starting point for creating all your game levels.
+
+To create a new level:
+
+1. Locate `Level.tscn` in the **FileSystem**.
+2. Right-click on it and select **"New Inherited Scene"**.
+3. This will create a new scene based on `Level.tscn`, inheriting all its nodes and structure.
+
+### Level Structure
+
+A `Level.tscn` scene is organized as follows:
+
+- **GameCamera2D**: The main game camera, with the `game_camera.gd` script attached, which allows it to follow a specified target.
+- **Layers**: Contains all `TileMapLayer` nodes.
+- **Props**: Contains the decorative elements and environmental props.
+- **Entities**: Contains all level entities, including the player, NPCs, and enemies.
+- **Transfers**: Contains level transition nodes. Check the [Scenes Transition](/godot-2d-topdown-template/scenes-transition) page to learn more about **Transfers**.
+- **Events**: Contains level-specific events, typically structured using a [State Machine](/godot-2d-topdown-template/state-machines).
+
+These nodes help maintain a structured and organized level layout,
+with the exception of **GameCamera2D** and the parent node **Layer**
+(which you can name whatever you like to identify your level) and which contains the `level.gd` script, responsible for initializing the player upon entering the level.
+
+### Layers node
+
+The **Layers** node is particularly important as it contains several pre-configured `TileMapLayer` nodes for level design.
+
+The `TileMapLayer` nodes are structured as follows:
+
+- **terrain**: The base ground layer.
+- **water**: Used for water or other elements that sit above the base terrain.
+- **terrain2**: A secondary terrain layer, useful for elements like shadows or additional details.
+- **walls**: Defines walls and solid structures.
+- **top**: The highest layer in the hierarchy. This layer always appears above characters, props, and other elements.
+
+<Callout type="info">
+  You are free to configure the pre-built layers as needed, starting from
+  `Level.tscn`, keeping in mind that in your **inherited levels** you can
+  **add** new layers but you **cannot remove** the existing ones.
+</Callout>
