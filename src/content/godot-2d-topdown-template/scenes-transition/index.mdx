@@ -1,0 +1,110 @@
+---
+title: "Scenes Transition"
+description: "Seamlessly move between scenes, whether transitioning from a title screen to a level or from one level to another. Customize the transition effects to match your game’s aesthetic."
+media:
+  src: "/res/godot-2d-template-scenes-transition.webm"
+  alt: "Godot 2d template scenes transition"
+date: "2024-07-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import add_transfer from "./add_transfer.png";
+import transfer_editable_children from "./transfer_editable_children.png";
+import loading_screen_animation from "./loading_screen_animation.png";
+
+---
+
+## Managing Scene Transitions
+
+Smooth transitions between scenes, such as moving from the title screen to the first level or switching between game levels, enhance the player experience.
+This process is handled by the `SceneManager` autoload from the [Godot4 Game Template](https://github.com/baconandgames/godot4-game-template) by [baconandgames](https://github.com/baconandgames).
+
+### Loading a Scene
+
+To load a scene with a transition effect, simply call the `swap_scenes` function as follows:
+
+```gdscript
+SceneManager.swap_scenes(scene_to_load: String, load_into: Node, scene_to_unload: Node, transition_type: String)
+```
+
+The `swap_scenes` function takes the following arguments:
+
+- **`scene_to_load`**: The file path of the scene to load.
+- **`load_into`**: The parent node where the new scene will be loaded.
+- **`scene_to_unload`**: Usually the current scene that needs to be removed.
+- **`transition_type`**: The type of transition effect to use.
+
+### Transition Types
+
+The `SceneManager` includes several built-in transition effects by default:
+
+- `fade_to_black`
+- `fade_from_black`
+- `fade_to_white`
+- `fade_from_white`
+- `no_from_transition`
+- `no_to_transition`
+- `wipe_from_right`
+- `wipe_to_right`
+
+You're free to create and add your own transition effects. To do this:
+
+1. Open the `loading_canvass.tscn` scene.
+2. Add a new animation to the `AnimationPlayer` node.
+3. Use the name of the new animation as the `transition_type` parameter when calling `swap_scenes`.
+
+<Image src={loading_screen_animation} alt="animations in loading screen" />
+
+<Callout type="info">
+  If loading a scene takes too long, the `SceneManager` will automatically
+  display a loading bar. You can customize this loading bar by modifying the
+  `loading_canvass.tscn` scene.
+</Callout>
+
+For more details about the `SceneManager`, check out the video by [Bacon and Games](https://www.youtube.com/@baconandgames):
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/tNqFLmbWW-Y?si=fwUU1puGPl5IZMFp"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
+
+## Transfers
+
+The template includes a pre-built scene, **`transfer.tscn`**, designed to handle automatic transitions between levels.
+
+To integrate it into a level:
+
+1. **Add the `transfer.tscn` scene** to your level.
+2. **Position it** where you want the transfer to occur.
+3. **Configure the parameters** exposed by the `transfer.gd` script.
+
+<Image src={add_transfer} alt="add transfer scene" />
+
+By default, the level transition is triggered when the player enters the designated **`InteractionArea`**.
+This interaction is managed by the **`StateInteract`** state of a [StateMachine](/godot-2d-topdown-template/state-machines).
+
+Each `Transfer` instance can be customized to fit your level's needs.
+To modify an individual `Transfer`:
+
+1. **Right-click** on the `Transfer` node in the scene hierarchy.
+2. Select **_Editable Children_** to access and adjust its properties.
+
+<Image
+  src={transfer_editable_children}
+  alt="allow editable children in transfer"
+/>
+
+This allows you to define custom conditions for triggering the level transition.
+
+<Callout type="warning">
+  To maintain a well-organized level, it's recommended to place all Transfers
+  under the designated *Transfers* node in your level hierarchy.
+</Callout>
