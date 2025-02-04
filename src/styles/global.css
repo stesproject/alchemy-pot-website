@@ -131,7 +131,7 @@ pre {
 }
 
 html.dark #logo {
-  filter: invert(1);
+  fill: #FFF;
 }
 
 .button {

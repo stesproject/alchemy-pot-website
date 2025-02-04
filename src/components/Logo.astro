@@ -1,17 +1,12 @@
 ---
 import Link from "./Link.astro";
+import LogoIcon from "..//icons/logo.svg";
 ---
 
 <Link href="/" underline={false}>
   <div
     class="font-semibold opacity-80 transition-opacity duration-300 ease-in-out hover:opacity-100"
   >
-    <img
-      src="/alchemy-pot-logo.png"
-      alt="Logo"
-      id="logo"
-      class="absolute h-8 lg:h-12"
-    />
-    <img src="/ap-below.png" alt="Logo" class="absolute h-8 lg:h-12" />
+    <LogoIcon id="logo" class="h-8 lg:h-12" />
   </div>
 </Link>
