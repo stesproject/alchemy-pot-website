@@ -12,14 +12,14 @@ export default {
       colors: {
         neutral: {
           DEFAULT: "#2e2e2e",
-          100: "#f8f8f8",
+          100: "#f3f1f0",
           900: "#1f2024",
         },
         black: {
           DEFAULT: "#1f2024",
         },
         white: {
-          DEFAULT: "#f8f8f8",
+          DEFAULT: "#f3f1f0",
         },
         secondary: {
           dark: "#CD5153",
