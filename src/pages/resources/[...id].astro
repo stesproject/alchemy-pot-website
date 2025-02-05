@@ -20,40 +20,46 @@ export async function getStaticPaths() {
   }));
 }
 
-const resource = Astro.props;
-const id = resource.id as any;
+const content = Astro.props;
+const id = content.id as any;
 const resourceContents = (await getCollection(id)).sort(
   (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf()
 );
-const { Content } = await render(resource);
+const { Content } = await render(content);
 ---
 
-<Layout title={resource.data.title} description={resource.data.description}>
+<Layout
+  title={content.data.title}
+  description={content.data.description}
+  image={content.data.image?.src}
+>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/resources">{t("back.to", {
-        to: t("content.resources"),
-      })}</BackToPrevious>
+      <BackToPrevious href="/resources"
+        >{
+          t("back.to", {
+            to: t("content.resources"),
+          })
+        }</BackToPrevious
+      >
     </div>
     <div class="animate my-10 space-y-1">
       <h1 class="text-3xl font-semibold text-black dark:text-white">
-        {resource.data.title}
+        {content.data.title}
       </h1>
     </div>
     {
-      resource.data.downloadUrl && (
+      content.data.downloadUrl && (
         <nav class="flex gap-1">
           <strong>{t("content.download")} </strong>
-          {resource.data.downloadUrl.map((download) => (
-            <Link href={download.url}>
-              {download.label}
-            </Link>
+          {content.data.downloadUrl.map((download) => (
+            <Link href={download.url}>{download.label}</Link>
           ))}
         </nav>
       )
     }
     <article class="animate">
-      <Content components={{a: Link}} />
+      <Content components={{ a: Link }} />
     </article>
     <ul class="animate not-prose flex flex-col gap-4">
       {

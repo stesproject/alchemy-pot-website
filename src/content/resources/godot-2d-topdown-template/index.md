@@ -7,6 +7,9 @@ downloadUrl:
 media:
   src: "./godot-2d-template-preview.png"
   alt: "Godot 2d top-down template preview"
+image:
+  src: "/res/2d-topdown-template-godot4.png"
+  alt: "Godot 2d top-down template preview"
 featured: true
 date: "2025-01-30"
 ---

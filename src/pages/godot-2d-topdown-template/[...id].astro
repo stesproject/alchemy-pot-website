@@ -31,11 +31,11 @@ const collection = (await getCollection("godot-2d-topdown-template"))
 const nextPost = getNextPost(collection, Astro.params.id);
 const prevPost = getPrevPost(collection, Astro.params.id);
 
-const doc = Astro.props;
-const { Content, headings } = await render(doc);
+const content = Astro.props;
+const { Content, headings } = await render(content);
 ---
 
-<Layout title={doc.data.title} description={doc.data.description}>
+<Layout title={content.data.title} description={content.data.description} image={"/res/2d-topdown-template-godot4.png"}>
   <Container>
     <div class="animate">
       <BackToPrevious href="/resources/godot-2d-topdown-template"
@@ -49,13 +49,13 @@ const { Content, headings } = await render(doc);
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
         {
-          doc.body && (
-            <div class="font-base text-sm">{readingTime(doc.body)}</div>
+          content.body && (
+            <div class="font-base text-sm">{readingTime(content.body)}</div>
           )
         }
       </div>
       <h1 class="text-3xl font-semibold text-black dark:text-white">
-        {doc.data.title}
+        {content.data.title}
       </h1>
     </div>
     <TableOfContents headings={headings} />
@@ -66,7 +66,7 @@ const { Content, headings } = await render(doc);
       </div>
     </article>
     {
-      readingTimeValue(doc.body || "") !== "1" && (
+      readingTimeValue(content.body || "") !== "1" && (
         <div class="card mt-12 py-3">
           <p class="text-center">{t("docs.comments.feedback")}</p>
         </div>

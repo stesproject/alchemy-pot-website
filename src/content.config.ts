@@ -47,6 +47,12 @@ const resources = defineCollection({
           alt: z.string(),
         })
         .optional(),
+      image: z
+        .object({
+          src: z.string(),
+          alt: z.string(),
+        })
+        .optional(),
       date: z.coerce.date(),
     }),
 });

@@ -30,11 +30,11 @@ const collection = (await getCollection("projects"))
 const nextPost = getNextPost(collection, Astro.params.id);
 const prevPost = getPrevPost(collection, Astro.params.id);
 
-const project = Astro.props;
-const { Content } = await render(project);
+const content = Astro.props;
+const { Content } = await render(content);
 ---
 
-<Layout title={project.data.title} description={project.data.description}>
+<Layout title={content.data.title} description={content.data.description}>
   <Container>
     <div class="animate">
       <BackToPrevious href="/projects"
@@ -47,20 +47,20 @@ const { Content } = await render(project);
     </div>
     <div class="animate my-10 space-y-1">
       <h1 class="text-3xl font-semibold text-black dark:text-white">
-        {project.data.title}
+        {content.data.title}
       </h1>
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
           <strong>Release date: </strong><FormattedDate
-            date={project.data.date}
+            date={content.data.date}
           />
         </div>
       </div>
       {
-        project.data.downloadUrl && (
+        content.data.downloadUrl && (
           <nav class="flex gap-1">
             <strong>{t("content.download")} </strong>
-            {project.data.downloadUrl.map((download) => (
+            {content.data.downloadUrl.map((download) => (
               <Link href={download.url}>{download.label}</Link>
             ))}
           </nav>
