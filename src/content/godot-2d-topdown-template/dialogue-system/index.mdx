@@ -1,0 +1,70 @@
+---
+title: "Dialogue System"
+description: "Integrate a robust dialogue system to display message boxes and manage dialogues between game characters, enhancing narrative depth and player engagement."
+media:
+  src: "/res/godot-2d-template-dialogue-system.webm"
+  alt: "Godot 2d template dialogue system"
+date: "2024-06-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import _1_create_dialogue_resource from "./1_create_dialogue_resource.png";
+import _3_dialogue_title from "./3_dialogue_title.png";
+import _4_state_dialogue from "./4_state_dialogue.png";
+import _5_dialogue_balloon from "./5_dialogue_balloon.png";
+
+---
+
+## Dialogue System Overview
+
+Dialogues in the template are managed using [Godot Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) (version 3) by [nathanhoad](https://github.com/nathanhoad).
+This powerful plugin allows for easy integration of dialogues into your game.
+
+### Starting a Dialogue
+
+To trigger a dialogue, call the following function:
+
+```gdscript
+DialogueManager.show_dialogue_balloon(resource: DialogueResource, title: String = "")
+```
+
+A `DialogueResource` is required to define the conversation. To create one, open the _Dialogue_ tab in the Godot editor and create a new file.
+
+<Image src={_1_create_dialogue_resource} alt="create a dialogue resource" />
+
+The newly created file serves as the resource that needs to be passed to `show_dialogue_balloon`.
+The optional `title` parameter references a specific dialogue section within the file. Titles must begin with the `~` symbol.
+
+<Image src={_3_dialogue_title} alt="dialogue title" />
+
+For a full overview of the plugin's functionalities, check the [official documentation](https://github.com/nathanhoad/godot_dialogue_manager/tree/main/docs)
+or watch [nathanhoad](https://www.youtube.com/@nathan_hoad) explanation video:
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/Ydzj1bT_pC8?si=EubquRRYnm0sD7uP"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
+
+## Using `StateDialogue` for Dialogue Sequences
+
+In the template, the best way to integrate dialogues into gameplay is by using the `StateDialogue` state within a [StateMachine](/godot-2d-topdown-template/state-machines).
+This state allows you to specify both the `DialogueResource` and `title` for the conversation.
+Additionally, you can configure it to wait for the dialogue to complete before transitioning to the next state.
+
+<Image src={_4_state_dialogue} alt="state dialogue in state machine" />
+
+## Customizing the Dialogue Balloon
+
+The appearance of the default dialogue balloon can be modified by opening the `dialogue_balloon.tscn` scene.
+The balloon consists of multiple _Control_ nodes that can be adjusted to fit your game's style.
+You can change its visual design, apply a new theme, or override the default one.
+
+<Image src={_5_dialogue_balloon} alt="customize dialogue balloon" />
