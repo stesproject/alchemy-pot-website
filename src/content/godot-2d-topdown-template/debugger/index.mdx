@@ -1,0 +1,61 @@
+---
+title: "Debugger"
+description: "Simplify testing with a configurable debugger. Test features like saving sessions, toggling player collisions, restoring health, or blocking enemies. The debugger is extendable, so you can add custom functionalities as needed."
+media:
+  src: "/res/godot-2d-template-debugger.webm"
+  alt: "Godot 2d template debugger"
+date: "2024-04-20"
+---
+
+The debugger is designed to **streamline and accelerate** the testing process for your game. 
+It is provided as an **autoload** via the `Debugger` singleton, implemented from the `debugger.gd` script.
+
+## Built-in Debugging Functions
+
+The script includes several **pre-configured debug functions**, each mapped to specific keys for quick access:
+
+- **F1** → Saves the current game by calling `DataManager.save_game()`.
+- **F2** → Returns to the **start screen**.
+- **CTRL** → Toggles **ghost mode** for all players, allowing them to pass through solid tiles.
+- **TAB** → Toggles **screen view**, hiding or showing all players and their HP bars.
+- **0** → Resets the player's **velocity**.
+- **3** → Restores all players' **health**.
+- **5** → Stops all **enemies**.
+
+## Customizing the Debugger
+
+You can **extend** or **modify** the `debugger.gd` script to include additional debugging functions tailored to your needs.
+
+For instance, if you want the **TAB key** to only toggle the visibility of HP bars instead of hiding the players' sprites, you can modify the `_toggle_screen_view()` function like this:
+
+```gdscript
+func _toggle_screen_view():
+    for player: PlayerEntity in Globals.get_players():
+        # player.visible = !player.visible  # (Commented out to keep the player visible)
+        player.health_controller.hp_bar.visible = !player.health_controller.hp_bar.visible
+```
+
+## Adding Your Own Debug Functions
+
+To add **custom debugging features**, simply define a new function inside `debugger.gd` and bind it to a key within the `_unhandled_key_input(event)` function.
+
+For example, to **remove an item from the player**, you can add the following function:
+
+```gdscript
+func _remove_player_item():
+    var player = Globals.get_players()[0]
+    if player:
+        player.inventory.remove_item("key", 1)
+```
+
+Then, bind it to a key in `_unhandled_key_input(event)`:
+
+```gdscript
+if event is InputEventKey and event.pressed:
+  match event.keycode:
+    KEY_4:
+      _remove_player_item()
+```
+
+The `debugger.gd` script is **simple yet powerful**, providing essential testing utilities while being fully customizable. 
+Explore it, tweak it, and expand it to suit your development workflow!
