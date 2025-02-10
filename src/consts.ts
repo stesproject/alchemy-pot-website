@@ -4,7 +4,7 @@ export const SITE: Site = {
   AUTHOR: "Stefano Mercadante",
   TITLE: "Alchemy Pot",
   DESCRIPTION: "Alchemy Pot is a space about game development and full of useful resources for your projects.",
-  EMAIL: "stefmercadante@gmail.com",
+  EMAIL: "",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
@@ -37,9 +37,5 @@ export const SOCIALS: Socials = [
   {
     NAME: "GitHub",
     HREF: "https://github.com/stesproject",
-  },
-  {
-    NAME: "Email",
-    HREF: `mailto:${SITE.EMAIL}`,
   }
 ];
