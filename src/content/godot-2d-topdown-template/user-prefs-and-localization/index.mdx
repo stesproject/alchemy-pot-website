@@ -1,0 +1,84 @@
+---
+title: "User Prefs and Localization"
+description: "Save and load user preferences, such as music and sound effect volumes or selected language. Effortlessly implement multi-language support and game localization."
+media:
+  src: "/res/godot-2d-template-user-prefs-localization.webm"
+  alt: "Godot 2d template user prefs localization"
+date: "2024-05-20"
+---
+
+import Callout from "@/components/Callout.astro";
+import { Image } from "astro:assets";
+
+import _1_import_translation_csv from "./_1_import_translation_csv.png";
+import _2_auto_translate_mode from "./_2_auto_translate_mode.png";
+
+---
+
+## User Preferences
+
+Unlike the [Save/Load System](/godot-2d-topdown-template/save-load-system), which handles game data related to the game loop, **User Preferences (UserPrefs)** are used to store global settings unrelated to gameplay. These are ideal for saving user settings such as **music volume, sound effects volume, selected language**, or any other preferences you want to include.
+
+In the template, saving and loading user preferences is managed by the `user_prefs.gd` script. Preferences are **automatically loaded** when opening the `settings_menu.tscn` scene, handled by `settings_menu.gd`, and **automatically saved** when exiting the scene.
+
+### Available User Preferences
+
+In the `SettingsMenu` scene, the following preferences are available by default:
+
+- **Music Volume**
+- **SFX Volume**
+- **Language**
+
+You can extend this system by adding new preferences in your game and managing their values as demonstrated in `settings_menu.gd`.
+
+### How to Save and Load User Preferences
+
+1. **Load or Create User Preferences**  
+   First, create or load a `UserPrefs` instance using:
+
+   ```gdscript
+   user_prefs = UserPrefs.load_or_create()
+   ```
+
+2. **Modify Preferences**  
+   When a setting is changed, update the corresponding value in `user_prefs`:
+
+   ```gdscript
+   user_prefs.language = lang
+   ```
+
+3. **Save the Preferences**  
+   Finally, save the preferences to a file using:
+
+   ```gdscript
+   user_prefs.save()
+   ```
+
+---
+
+## Localization
+
+To make your game accessible in different languages, **Godot's built-in localization system** is used. You can find the full documentation [here](https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html).
+
+### Setting Up Translations
+
+Localization is handled via a **CSV translation file**, where each column corresponds to a language. You can refer to the `translations.csv` file included in the template as an example.
+
+Make sure to import your CSV file as **CSV Translation** in Godot. It's recommended to set the `delimiter` to **Semicolon (;)**, especially if you plan to use the same file for dialogue translations.
+
+<Image src={_1_import_translation_csv} alt="import translation csv" />
+
+For **Control nodes**, translation is handled automatically as long as `auto_translate_mode` is not set to _Disabled_.
+
+<Image src={_2_auto_translate_mode} alt="Auto translate mode" />
+
+For **dialogues** managed by the [Dialogue System](/godot-2d-topdown-template/dialogue-system), refer to the [Godot Dialogue Manager documentation on translations](https://github.com/nathanhoad/godot_dialogue_manager/blob/main/docs/Translations.md).
+
+### Adding or Removing Languages
+
+To modify the available languages, update the `LANGUAGES` array in `Const.gd`. Languages listed here will appear in the **Language** dropdown in the `SettingsMenu` scene.
+
+<Callout type="warning">
+  Ensure that each language in the `LANGUAGES` array has a corresponding column
+  in the **CSV Translation** file.
+</Callout>
