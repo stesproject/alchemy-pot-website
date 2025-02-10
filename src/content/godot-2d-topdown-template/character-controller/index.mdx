@@ -153,3 +153,26 @@ To enable interactions, a character requires the following:
 - The `collision_layer` property of the `Area2D` must match the `collision_mask` property of an `InteractionArea` defined within a `StateInteract` state.
 
 Check the [Interaction System](/godot-2d-topdown-template/interaction-system) for more details.
+
+## Health Controller
+
+The _HealthController_ is a versatile node that can be added to any character or entity (or node) to manage its health points (HP).
+It keeps track of the current HP value and provides a simple way to handle health-related events.
+If you want to display a visual representation of the entity's health, you can assign a scene to the `health_bar` property, which will automatically update based on the current HP.
+
+The behavior of the Health Controller can be customized using states from the [StateMachine](/godot-2d-topdown-template/state-machines).
+You can define what happens when HP increases, decreases, or reaches zero.
+This makes it easy to trigger effects such as damage animations, healing effects, or death sequences.
+
+By default, both the `player.tscn` and `enemy.tscn` scenes include a _HealthController_ node, allowing you to easily manage their health status.
+If needed, you can extend this system by adding a Health Controller to other entities and customizing how they react to HP changes.
+
+### Health Bars
+
+A **Health Bar** provides a visual representation of an entity's health, making it easier for players to track damage and healing.
+To display a health bar for any character or entity, assign a scene to the `health_bar` property of the _HealthController_.
+This allows the health bar to automatically update whenever HP changes.
+
+For an example of how to set up a health bar, check the pre-built `player_hud.tscn` scene.
+This scene demonstrates how to properly configure a health bar to follow an entity and visually represent its health status.
+You can use it as a reference to create custom health bars for enemies, NPCs, or other game elements.
