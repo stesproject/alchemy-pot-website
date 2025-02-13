@@ -23,7 +23,7 @@ export const ui = {
     "contacts.text.1":
       "Have a question, a project idea, or just want to say hi?",
     "contacts.text.2":
-      "Feel free to reach out! You can connect with me on social media or send me an email using the links below. I'd love to hear from you!",
+      "Feel free to reach out! You can connect with me on social media using the links below. I'd love to hear from you!",
     "docs.comments.feedback":
       "Is something unclear, or do you have suggestions to improve a part of this document? Feel free to share your thoughts leaving a comment below!",
   },
