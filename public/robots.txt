@@ -1,0 +1,6 @@
+# Allow all robots to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow specific files and directories
+Disallow: /files/cv/
