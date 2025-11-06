@@ -1,7 +1,17 @@
 ---
 const { src, ...rest } = Astro.props;
+
+// Determine the MIME type based on file extension
+const getVideoType = (src: string) => {
+  if (src.endsWith(".webm")) return "video/webm";
+  if (src.endsWith(".mp4")) return "video/mp4";
+  if (src.endsWith(".ogg")) return "video/ogg";
+  return "video/mp4"; // default fallback
+};
+
+const videoType = getVideoType(src);
 ---
 
-<video {...rest} autoplay loop muted>
-  <source src={src} />
+<video {...rest} autoplay loop muted playsinline preload="auto">
+  <source src={src} type={videoType} />
 </video>

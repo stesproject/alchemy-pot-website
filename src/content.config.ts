@@ -23,7 +23,7 @@ const projects = defineCollection({
       downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
       media: z
         .object({
-          src: image(),
+          src: z.union([image(), z.string()]),
           alt: z.string(),
         })
         .optional(),
@@ -42,7 +42,7 @@ const games = defineCollection({
       downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
       media: z
         .object({
-          src: image(),
+          src: z.union([image(), z.string()]),
           alt: z.string(),
         })
         .optional(),
@@ -62,7 +62,7 @@ const resources = defineCollection({
       featured: z.boolean().optional(),
       media: z
         .object({
-          src: image(),
+          src: z.union([image(), z.string()]),
           alt: z.string(),
         })
         .optional(),
@@ -88,7 +88,7 @@ const assets = defineCollection({
       featured: z.boolean().optional(),
       media: z
         .object({
-          src: image(),
+          src: z.union([image(), z.string()]),
           alt: z.string(),
         })
         .optional(),
@@ -110,7 +110,7 @@ const godot2dtopdowntemplate = defineCollection({
       featured: z.boolean().optional(),
       media: z
         .object({
-          src: image(),
+          src: z.union([image(), z.string()]),
           alt: z.string(),
         })
         .optional(),
