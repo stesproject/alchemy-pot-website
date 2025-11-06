@@ -20,6 +20,11 @@ export const PROJECTS: Metadata = {
   DESCRIPTION: "A collection of my projects with download links.",
 };
 
+export const GAMES: Metadata = {
+  TITLE: "Games",
+  DESCRIPTION: "A collection of my games with download links.",
+};
+
 export const RESOURCES: Metadata = {
   TITLE: "Resources",
   DESCRIPTION: "A collection of resources for game development.",

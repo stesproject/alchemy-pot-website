@@ -18,6 +18,10 @@ const featuredProjects: CollectionEntry<"projects">[] = (
   .filter((project) => !project.data.draft && project.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+const featuredGames: CollectionEntry<"games">[] = (await getCollection("games"))
+  .filter((game) => !game.data.draft && game.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
 const resources: CollectionEntry<"resources">[] =
   await getCollection("resources");
 const assets: CollectionEntry<"assets">[] = await getCollection("assets");
@@ -56,9 +60,9 @@ const featuredResources = [...resources, ...assets]
                 go-to technology for building games 👾.
               </p>
               <p>
-                Feel free to dive in by exploring the <Link href="/projects"
-                  >Projects</Link
-                >
+                Feel free to dive in by exploring the <Link href="/games"
+                  >Games</Link
+                >, <Link href="/projects">Projects</Link>
                 and <Link href="/resources">Resources</Link> sections, or check out
                 some of the featured content below to get started!
               </p>
@@ -78,6 +82,13 @@ const featuredResources = [...resources, ...assets]
           })}
           contents={featuredProjects}
           collection="projects"
+        />
+        <FeaturedContents
+          title={t("featured.content", {
+            content: t("content.games"),
+          })}
+          contents={featuredGames}
+          collection="games"
         />
         <Contacts />
       </div>

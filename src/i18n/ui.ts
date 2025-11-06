@@ -9,6 +9,7 @@ export const ui = {
   en: {
     "content.resources": "Resources",
     "content.projects": "Projects",
+    "content.games": "Games",
     "content.assets": "Assets",
     "content.download": "Get it on",
     "back.to": "Back to {to}",

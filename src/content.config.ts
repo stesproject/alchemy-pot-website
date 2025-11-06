@@ -31,6 +31,25 @@ const projects = defineCollection({
     }),
 });
 
+const games = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/games" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      draft: z.boolean().optional(),
+      featured: z.boolean().optional(),
+      downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
+      media: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      date: z.coerce.date(),
+    }),
+});
+
 const resources = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/resources" }),
   schema: ({ image }) =>
@@ -102,6 +121,7 @@ const godot2dtopdowntemplate = defineCollection({
 export const collections = {
   blog,
   projects,
+  games,
   resources,
   assets,
   "godot-2d-topdown-template": godot2dtopdowntemplate,
