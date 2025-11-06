@@ -17,7 +17,7 @@ export const ui = {
     "featured.content": "Featured {content}",
     "home.intro.1": "Welcome to {title}",
     "home.intro.2":
-      "Hi, I'm Ste, a passionate Full-Stack Developer who loves to build web apps, websites and games.",
+      "Hi, I'm Ste, a passionate Full-Stack Developer who loves to build web apps, mobile apps, websites and games.",
     "home.intro.3":
       "I built this little corner of the internet to showcase my projects and share valuable resources with you.",
     "contacts.text.1":
