@@ -49,6 +49,6 @@ export const SOCIALS: Socials = [
   },
   {
     NAME: "Resume",
-    HREF: "/files/cv/CV_Stefano_Mercadante_FullStack_Dev.pdf",
+    HREF: "/files/cv/index.pdf",
   },
 ];
