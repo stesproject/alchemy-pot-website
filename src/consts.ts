@@ -3,7 +3,8 @@ import type { Metadata, Site, Socials } from "@types";
 export const SITE: Site = {
   AUTHOR: "Stefano Mercadante",
   TITLE: "Alchemy Pot",
-  DESCRIPTION: "Alchemy Pot is a space about game development and full of useful resources for your projects.",
+  DESCRIPTION:
+    "Alchemy Pot is a space about game development and full of useful resources for your projects.",
   EMAIL: "",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
@@ -16,8 +17,7 @@ export const BLOG: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION:
-    "A collection of my projects with download links.",
+  DESCRIPTION: "A collection of my projects with download links.",
 };
 
 export const RESOURCES: Metadata = {
@@ -26,16 +26,24 @@ export const RESOURCES: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  {
-    NAME: "BlueSky",
-    HREF: "https://bsky.app/profile/stefhhh.bsky.social",
-  },
-  {
-    NAME: "Mastodon",
-    HREF: "https://mastodon.gamedev.place/@stefh",
-  },
+  // {
+  //   NAME: "BlueSky",
+  //   HREF: "https://bsky.app/profile/stefhhh.bsky.social",
+  // },
+  // {
+  //   NAME: "Mastodon",
+  //   HREF: "https://mastodon.gamedev.place/@stefh",
+  // },
   {
     NAME: "GitHub",
     HREF: "https://github.com/stesproject",
-  }
+  },
+  {
+    NAME: "LinkedIn",
+    HREF: "https://www.linkedin.com/in/stefano-mercadante",
+  },
+  {
+    NAME: "Resume",
+    HREF: "/files/cv/CV_Stefano_Mercadante_FullStack_Dev.pdf",
+  },
 ];

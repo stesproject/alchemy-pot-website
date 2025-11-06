@@ -1,16 +1,28 @@
 ---
 import { SOCIALS, SITE } from "@consts";
 import Link from "./Link.astro";
-import BlueSkyIcon from "..//icons/bluesky.svg";
-import MastodonIcon from "..//icons/mastodon.svg";
-import GithubIcon from "..//icons/github.svg";
-import EmailIcon from "..//icons/email.svg";
+import BlueSkyIcon from "../icons/bluesky.svg";
+import MastodonIcon from "../icons/mastodon.svg";
+import GithubIcon from "../icons/github.svg";
+import EmailIcon from "../icons/email.svg";
+import LinkedInIcon from "../icons/linkedin.svg";
+import ResumeIcon from "../icons/cv.svg";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const SOCIAL_ICON_SIZE = 26;
+
+// Icon mapping for cleaner component code
+const iconMap: Record<string, any> = {
+  BlueSky: BlueSkyIcon,
+  Mastodon: MastodonIcon,
+  GitHub: GithubIcon,
+  Email: EmailIcon,
+  LinkedIn: LinkedInIcon,
+  Resume: ResumeIcon,
+};
 ---
 
 <section class="animate space-y-4">
@@ -21,24 +33,21 @@ const SOCIAL_ICON_SIZE = 26;
 </section>
 <ul class="not-prose flex flex-wrap gap-2">
   {
-    SOCIALS.map((SOCIAL) => (
-      <li class="flex gap-x-2 text-nowrap" title={SOCIAL.NAME}>
-        <Link
-          href={SOCIAL.HREF}
-          aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-          rel="me"
-        >
-          {SOCIAL.NAME === "BlueSky" ? (
-            <BlueSkyIcon size={SOCIAL_ICON_SIZE} />
-          ) : SOCIAL.NAME === "Mastodon" ? (
-            <MastodonIcon size={SOCIAL_ICON_SIZE} />
-          ) : SOCIAL.NAME === "GitHub" ? (
-            <GithubIcon size={SOCIAL_ICON_SIZE} />
-          ) : SOCIAL.NAME === "Email" ? (
-            <EmailIcon size={SOCIAL_ICON_SIZE} />
-          ) : null}
-        </Link>
-      </li>
-    ))
+    SOCIALS.map((SOCIAL) => {
+      const Icon = iconMap[SOCIAL.NAME];
+      return (
+        <li class="flex gap-x-2 text-nowrap" title={SOCIAL.NAME}>
+          <Link
+            href={SOCIAL.HREF}
+            aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+            rel="me"
+          >
+            {Icon && (
+              <Icon width={SOCIAL_ICON_SIZE} height={SOCIAL_ICON_SIZE} />
+            )}
+          </Link>
+        </li>
+      );
+    })
   }
 </ul>
