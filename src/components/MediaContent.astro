@@ -17,7 +17,7 @@ const isVideo = typeof media.src === "string" && isFileVideo(media.src);
   !isVideo ? (
     <Image src={media.src as ImageMetadata} alt={media.alt} class="media pointer-events-none" />
   ) : isVideo ? (
-    <Video src={media.src as string} class="media pointer-events-none" />
+    <Video src={media.src as string} class="media pointer-events-none" key={media.src} />
   ) : null
 }
 
