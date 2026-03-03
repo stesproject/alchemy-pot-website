@@ -1,6 +1,6 @@
 ---
 title: "Character Controller"
-description: "Take full control of your characters: make them move, run, attack, jump, and flash while managing their states seamlessly."
+description: "Take full control of your characters: make them move, run, attack, jump and flash while managing their states seamlessly."
 media:
   src: "/res/godot-2d-template-character-controller.mp4"
   alt: "Godot 2d template character controller"
@@ -69,7 +69,7 @@ The actions that `StateInputListener` listens for are defined in _Project Settin
 You can customize the controls to fit your needs.
 Furthermore, the player character includes:
 
-- a `StateMachine` node with pre-built states to handle movement, attack, hurt, fall, and death.
+- a `StateMachine` node with pre-built states to handle movement, attack, hurt, fall and death.
 - a `InteractionTrigger` node to [detect interactions](/godot-2d-topdown-template/interaction-system) with other game elements.
 - a `SmokeParticles` node for visual effects when the character runs.
 - an `Inventory` node for managing items.
@@ -89,7 +89,7 @@ To create new characters, simply create a new scene inheriting from the `entity.
 This scene serves as the foundation for all characters, including the pre-built
 ones in the template. Features of the `entity.tscn` scene include:
 
-- Pre-Built animations: idle, walk, run, jump, and attack animations managed by an `AnimationPlayer` node and an `AnimationTree`.
+- Pre-Built animations: idle, walk, run, jump and attack animations managed by an `AnimationPlayer` node and an `AnimationTree`.
 - Dynamic shadow: a `Shadow` node that adjusts its size dynamically based on the character's height (e.g., when the character jumps).
 - Flash shader: a shader applied to the AnimatedSprite2D node that creates a flash effect, useful for visual feedback (e.g., when the character takes damage).
 - Collision detection:

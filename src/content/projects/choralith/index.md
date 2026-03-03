@@ -11,32 +11,51 @@ featured: true
 date: "05/25/2025"
 ---
 
-**Choralith Audio Explorer** is a software tool designed to help you efficiently manage your libraries of audio files, including both sound effects and music. It is specifically tailored to assist in finding the perfect tracks for games or any other project.
+*Choralith Audio Explorer* is a software tool designed to help you efficiently manage your libraries of audio files, including both sound effects and music. It is specifically tailored to assist in finding the perfect tracks for games or any other project.
 
-![Choralith Audio Explorer Preview](https://github.com/stesproject/choralith-audio-explorer/raw/main/res/app_preview.gif)
+[![Choralith Audio Explorer Preview](https://github.com/stesproject/choralith-audio-explorer/raw/main/res/app-preview.png)](https://youtu.be/5aTSTrot0Ig)
 
 ## Features 🌟
 
-### 📂 Asynchronous Subfolder Scanning
+- **Asynchronous subfolder scanning:** select a main directory and the app will scan for any audio files within, even if there is a very large number of files.
 
-Select a main directory, and the app will scan for any audio files within, even if there is a very large number of files.
+- **Wide format support:** compatible with .mp3, .wav, .ogg and .flac file formats.
 
-### 🎵 Wide Format Support
+- **Metadata display:** presents audio files in a minimalistic and clean table, displaying the title, artist, album and length of each track.
 
-Compatible with **`.mp3`**, **`.wav`**, **`.ogg`**, and **`.flac`** file formats.
+- **Easy track control and navigation:** click on a track to start playing it, scroll through tracks using arrow keys and press Enter to start or stop playback.
 
-### 📋 Metadata Display
+- **Easy export:** click on the "Open Directory" button to quickly access the directory at the file path.
 
-Presents audio files in a minimalistic and clean table, displaying the **title**, **artist**, **album**, and **length** of each track.
+- **Favorites System:** mark tracks as favorites and toggle the view to see only your favorite files.
 
-### 🎮 Easy Track Control and Navigation
+- **Smart Caching:** subsequent scans of the same folder are instant thanks to a local caching system using IndexedDB.
 
-Click on a track to start playing it, scroll through tracks using arrow keys, and press **Enter** to start or stop playback.
+- **Pitch Control:** adjust the pitch (and playback speed) of the audio in real-time, useful for previewing how a sound effect might sound with pitch shifting.
 
-### 📁 Easy Export
+- **Column-specific filtering:** filter by keyword directly within each column, allowing filtering by title, artist, or album.
 
-Click on the **"Open Directory"** button to quickly access the directory at the file path.
+## Installation 🛠️
 
-### 🔍 Track Filtering
+To run the program, follow these steps:
 
-Filter tracks by **keyword**, **excluded keyword**, or **maximum length** to easily find the audio files you need.
+1. Clone the repository to your local machine
+2. Navigate into the program directory
+3. Open a terminal and run the following command to install the required dependencies:
+
+`npm install`
+
+4. Still in the terminal, start the program by running:
+
+`npm run dev`
+
+NOTE: you also need Node.js installed on your machine.
+
+## Shortcuts ⌨️
+
+- **Arrow Up / Arrow Down**: navigate tracks
+- **Enter**: start / stop playback
+- **Arrow Left / Arrow Right**: rewind / forward 10s
+- **Shift + Arrow Left / Arrow Right**: decrease / increase pitch
+- **1**: reset pitch
+- **L**: toggle loop

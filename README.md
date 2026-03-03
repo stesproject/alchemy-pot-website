@@ -1,6 +1,6 @@
 # Alchemy Pot Website
 
-My portfolio website, featuring a blog, projects showcase, and resources section. The site is styled with Tailwind CSS and includes search functionality powered by Pagefind.
+My portfolio website, featuring a blog, projects showcase and resources section. The site is styled with Tailwind CSS and includes search functionality powered by Pagefind.
 
 ## 🚀 Features
 
@@ -145,7 +145,7 @@ For automatic deployments, a GitHub Action is already set up.
 
 ### Site Configuration
 
-Edit `src/consts.ts` to customize site metadata, navigation, and other settings.
+Edit `src/consts.ts` to customize site metadata, navigation and other settings.
 
 ### Styling
 

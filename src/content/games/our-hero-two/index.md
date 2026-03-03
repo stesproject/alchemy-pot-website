@@ -1,6 +1,6 @@
 ---
 title: "Our Hero! Two"
-description: "The adventure continues! Switch between three unique heroes, master new powers, and battle through wild new worlds packed with puzzles, minigames, and epic enemies. Bigger fights, funnier moments, bolder action!"
+description: "The adventure continues! Switch between three unique heroes, master new powers and battle through wild new worlds packed with puzzles, minigames and epic enemies. Bigger fights, funnier moments, bolder action!"
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/1408050/Our_Hero_Two/"
@@ -13,11 +13,11 @@ date: "10/29/2021"
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VsnNmB_7Ayw?si=ygiIVukZ-vsTgimD" title="Our Hero! Two trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Our Hero!** is back: bigger, bolder, and funnier than ever!
+**Our Hero!** is back: bigger, bolder and funnier than ever!
 
-Join **Ourhero** and his new allies in this vibrant action-adventure RPG, featuring a deeper real-time battle system, multiple playable characters, and tons of new weapons, enemies, and secrets to uncover.
+Join **Ourhero** and his new allies in this vibrant action-adventure RPG, featuring a deeper real-time battle system, multiple playable characters and tons of new weapons, enemies and secrets to uncover.
 
-Explore colorful worlds, challenge powerful foes, and master each hero's unique abilities as you embark on an epic quest to save the realm once again with a wink, a laugh, and a swing of your sword.
+Explore colorful worlds, challenge powerful foes and master each hero's unique abilities as you embark on an epic quest to save the realm once again with a wink, a laugh and a swing of your sword.
 
 ## Features
 
@@ -27,7 +27,7 @@ Fast-paced and dynamic combat returns, now with special skills and new mechanics
 
 ### 👥 Three Playable Heroes
 
-Switch between characters with distinct abilities and playstyles: combine their powers to overcome puzzles, enemies, and epic boss fights.
+Switch between characters with distinct abilities and playstyles: combine their powers to overcome puzzles, enemies and epic boss fights.
 
 ### 💥 Powerful New Skills
 
@@ -35,7 +35,7 @@ Unleash flashy new attacks and abilities to turn the tide of battle.
 
 ### 🗡️ A Whole Armory of New Weapons
 
-Discover, upgrade, and even transform your swords using the mysterious **Red Power Orbs**.
+Discover, upgrade and even transform your swords using the mysterious **Red Power Orbs**.
 
 ### 🌍 Nine All-New Acts
 
@@ -43,11 +43,11 @@ Travel through brand-new areas, with a few familiar locations making a comeback 
 
 ### 🎮 Fun Minigames
 
-Take a break from adventuring in the **Arena Deathmatch**, **Shotput**, and **Relay Race** minigames!
+Take a break from adventuring in the **Arena Deathmatch**, **Shotput** and **Relay Race** minigames!
 
 ### 😄 A Cast Full of Personality
 
-Meet charming NPCs, quirky allies, and mischievous foes in a world brimming with humor and color.
+Meet charming NPCs, quirky allies and mischievous foes in a world brimming with humor and color.
 
 ## The Heroes
 
@@ -91,9 +91,9 @@ A mysterious usurper has seized the throne, intent on draining the magical essen
 
 If his plan succeeds, the world of heroes will fall into darkness.
 
-But before his final breath, the late King gathered three champions, **Ourhero**, **Tay**, and **Fury**, to stand against the rising evil and restore balance to the land.
+But before his final breath, the late King gathered three champions, **Ourhero**, **Tay** and **Fury**, to stand against the rising evil and restore balance to the land.
 
-Sharpen your swords, ready your courage, and prepare to fight back.
+Sharpen your swords, ready your courage and prepare to fight back.
 
 **The world of heroes needs you once more.**
 

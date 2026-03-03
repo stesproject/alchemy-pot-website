@@ -20,7 +20,7 @@ import _6_draw_terrain from "./6-draw-terrain.png";
 ---
 
 Autotiles are a special type of tiles that automatically adapt their appearance based on their placement in the map.
-This system makes mapping easier by dynamically adjusting the edges and corners of terrain-like tiles such as water, grass, cliffs, and walls.
+This system makes mapping easier by dynamically adjusting the edges and corners of terrain-like tiles such as water, grass, cliffs and walls.
 Instead of placing multiple tile variations manually, auto tiles blend seamlessly to create natural-looking environments.
 
 ## Setting Up Autotiles
@@ -35,9 +35,9 @@ configuring an autotile is quick and easy:
    <Image src={_1_add_tilemap_layer} alt="add tilemap layer node" />
 2. Select the newly added `TileMapLayer` and create a new `tile_set`.
    <Image src={_2_create_new_tileset} alt="create new tileset" />
-3. Click on the newly created Tile Set, expand the **_Terrain Sets_** section, add a new terrain, and then add a new element.
+3. Click on the newly created Tile Set, expand the **_Terrain Sets_** section, add a new terrain and then add a new element.
    <Image src={_3_add_new_terrain_set} alt="add new terrain set" />
-4. Select the **_TileSet_** tab, add a new **Tile Source** of type **Atlas**, and go to the **_Select_** tab.
+4. Select the **_TileSet_** tab, add a new **Tile Source** of type **Atlas** and go to the **_Select_** tab.
    <Image src={_4_tileset_tab} alt="select tileset tab" />
 5. In the **_Select_** tab:
    - Select all your tiles.
@@ -45,7 +45,7 @@ configuring an autotile is quick and easy:
    - Expand **_Apply Terrain Template_** and choose the template that matches your tileset.
    - Select the terrain created in step (3) and click **_Apply Changes_**.
      <Image src={_5_apply_terrain_template} alt="apply terrain template" />
-6. Now, go to the **_TileMap_** tab, open the **_Terrains_** section, and select the terrain you just created.  
+6. Now, go to the **_TileMap_** tab, open the **_Terrains_** section and select the terrain you just created.  
     You can now draw in your `TileMapLayer` using autotiling!
    <Image src={_6_draw_terrain} alt="draw terrains" />
 
@@ -71,7 +71,7 @@ A `Level.tscn` scene is organized as follows:
 - **GameCamera2D**: The main game camera, with the `game_camera.gd` script attached, which allows it to follow a specified target.
 - **Layers**: Contains all `TileMapLayer` nodes.
 - **Props**: Contains the decorative elements and environmental props.
-- **Entities**: Contains all level entities, including the player, NPCs, and enemies.
+- **Entities**: Contains all level entities, including the player, NPCs and enemies.
 - **Transfers**: Contains level transition nodes. Check the [Scenes Transition](/godot-2d-topdown-template/scenes-transition) page to learn more about **Transfers**.
 - **Events**: Contains level-specific events, typically structured using a [State Machine](/godot-2d-topdown-template/state-machines).
 
@@ -89,7 +89,7 @@ The `TileMapLayer` nodes are structured as follows:
 - **water**: Used for water or other elements that sit above the base terrain.
 - **terrain2**: A secondary terrain layer, useful for elements like shadows or additional details.
 - **walls**: Defines walls and solid structures.
-- **top**: The highest layer in the hierarchy. This layer always appears above characters, props, and other elements.
+- **top**: The highest layer in the hierarchy. This layer always appears above characters, props and other elements.
 
 <Callout type="info">
   You are free to configure the pre-built layers as needed, starting from
