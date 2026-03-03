@@ -3,7 +3,7 @@ title: "Choralith Audio Explorer"
 description: "A simple and minimalistic audio library manager and explorer, made with Electron, React and Vite."
 downloadUrl:
   - label: "GitHub"
-    url: "https://github.com/stesproject/choralith-audio-explorer/releases/tag/v1.0.0"
+    url: "https://github.com/stesproject/choralith-audio-explorer/releases"
 media:
   src: "/res/choralith-audio-explorer-preview.webm"
   alt: "Choralith audio explorer preview"
@@ -34,22 +34,6 @@ date: "05/25/2025"
 - **Pitch Control:** adjust the pitch (and playback speed) of the audio in real-time, useful for previewing how a sound effect might sound with pitch shifting.
 
 - **Column-specific filtering:** filter by keyword directly within each column, allowing filtering by title, artist, or album.
-
-## Installation 🛠️
-
-To run the program, follow these steps:
-
-1. Clone the repository to your local machine
-2. Navigate into the program directory
-3. Open a terminal and run the following command to install the required dependencies:
-
-`npm install`
-
-4. Still in the terminal, start the program by running:
-
-`npm run dev`
-
-NOTE: you also need Node.js installed on your machine.
 
 ## Shortcuts ⌨️
 
