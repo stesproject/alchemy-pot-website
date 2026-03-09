@@ -4,6 +4,10 @@ description: "A colorful action-adventure with RPG elements! Run, jump and slash
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/847560/Our_Hero_First/"
+  - label: "itch.io"
+    url: "https://stesproject.itch.io/our-hero-first"
+  - label: "Game Jolt"
+    url: "https://gamejolt.com/games/ourhero-first/553960"
 media:
   src: "./hero_capsule-our-hero-first.jpg"
   alt: "our hero first capsule"

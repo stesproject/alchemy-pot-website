@@ -2,6 +2,8 @@
 title: "Top-down Tileset 48x48 - Green Forest"
 description: "A 2D top-down 48x48 pixels tileset that includes autotiles and props."
 downloadUrl:
+  - label: "itch.io"
+    url: "https://stesproject.itch.io/top-down-tileset-48x48-green-forest"
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-green-forest-2"
 media:

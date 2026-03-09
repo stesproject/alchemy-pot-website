@@ -4,6 +4,10 @@ description: "The grand finale of the Our Hero! trilogy! Upgrade your powers, ex
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/2076920/Our_Hero_Last/"
+  - label: "itch.io"
+    url: "https://stesproject.itch.io/our-hero-last"
+  - label: "Game Jolt"
+    url: "https://gamejolt.com/games/ourhero-last/751729"
 media:
   src: "./hero_capsule-our-hero-last.jpg"
   alt: "our hero last capsule"

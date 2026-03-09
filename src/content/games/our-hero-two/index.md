@@ -4,6 +4,10 @@ description: "The adventure continues! Switch between three unique heroes, maste
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/1408050/Our_Hero_Two/"
+  - label: "itch.io"
+    url: "https://stesproject.itch.io/our-hero-two"
+  - label: "Game Jolt"
+    url: "https://gamejolt.com/games/ourhero-two/750089"
 media:
   src: "./hero_capsule-our-hero-two.jpg"
   alt: "our hero two capsule"

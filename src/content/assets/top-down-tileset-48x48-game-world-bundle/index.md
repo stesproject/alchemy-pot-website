@@ -2,6 +2,8 @@
 title: "[Bundle] Top-down Tileset 48x48 - Game World"
 description: "A 2D top-down 48x48 pixels bundle that includes: King's Castle, Castle's Dungeons, Wild Valley, Green Forest, Royal Gardens."
 downloadUrl:
+  - label: "itch.io"
+    url: "https://itch.io/s/181763/top-down-tileset-48x48-game-world-bundle"
   - label: "Game Dev Market"
     url: "https://www.gamedevmarket.net/asset/top-down-tileset-48x48-game-world-bundle"
 media:

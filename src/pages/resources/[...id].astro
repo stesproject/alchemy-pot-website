@@ -12,7 +12,7 @@ const t = useTranslations(lang);
 
 export async function getStaticPaths() {
   const resources = (await getCollection("resources")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
   return resources.map((resource) => ({
     params: { id: resource.id },
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const content = Astro.props;
 const id = content.id as any;
 const resourceContents = (await getCollection(id)).sort(
-  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf()
+  (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 const { Content } = await render(content);
 ---
@@ -51,9 +51,12 @@ const { Content } = await render(content);
     {
       content.data.downloadUrl && (
         <nav class="flex gap-1">
-          <strong>{t("content.download")} </strong>
-          {content.data.downloadUrl.map((download) => (
-            <Link href={download.url}>{download.label}</Link>
+          <strong>{t("content.download")}: </strong>
+          {content.data.downloadUrl.map((download, index) => (
+            <>
+              {index > 0 && <span>|</span>}
+              <Link href={download.url}>{download.label}</Link>
+            </>
           ))}
         </nav>
       )

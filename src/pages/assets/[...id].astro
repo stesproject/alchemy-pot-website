@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 
 export async function getStaticPaths() {
   const assets = (await getCollection("assets")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
   return assets.map((asset) => ({
     params: { id: asset.id },
@@ -42,9 +42,12 @@ const { Content } = await render(content);
       {
         content.data.downloadUrl && (
           <nav class="flex gap-1">
-            <strong>{t("content.download")} </strong>
-            {content.data.downloadUrl.map((download) => (
-              <Link href={download.url}>{download.label}</Link>
+            <strong>{t("content.download")}: </strong>
+            {content.data.downloadUrl.map((download, index) => (
+              <>
+                {index > 0 && <span>|</span>}
+                <Link href={download.url}>{download.label}</Link>
+              </>
             ))}
           </nav>
         )
