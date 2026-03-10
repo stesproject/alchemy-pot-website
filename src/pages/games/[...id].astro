@@ -62,7 +62,7 @@ const { Content } = await render(content);
             <strong>{t("content.download")}: </strong>
             {content.data.downloadUrl.map((download, index) => (
               <>
-                {index > 0 && <span>|</span>}
+                {index > 0 && <span> • </span>}
                 <Link href={download.url}>{download.label}</Link>
               </>
             ))}
