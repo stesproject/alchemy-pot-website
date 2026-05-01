@@ -12,6 +12,17 @@ const blog = defineCollection({
   }),
 });
 
+const devlog = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/devlog" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    draft: z.boolean().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
   schema: ({ image }) =>
@@ -120,6 +131,7 @@ const godot2dtopdowntemplate = defineCollection({
 
 export const collections = {
   blog,
+  devlog,
   projects,
   games,
   resources,
