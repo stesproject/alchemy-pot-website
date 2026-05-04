@@ -167,6 +167,6 @@ html.dark #logo {
   @apply flex w-fit flex-nowrap rounded border border-black/15 px-3 py-1.5 no-underline transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white;
 }
 
-.button.secondary {
-  @apply border-none bg-secondary-light text-white hover:bg-secondary-light/90 dark:bg-secondary-dark dark:hover:bg-secondary-dark/90;
-}
+/* .button.secondary {
+  @apply border-none text-white hover:bg-secondary-light/90 dark:bg-secondary-dark dark:hover:bg-secondary-dark/90;
+} */

@@ -14,11 +14,11 @@
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/tailwind": "6.0.2",
     "@fontsource/geist-mono": "5.2.7",
     "@fontsource/geist-sans": "5.2.5",
+    "@tailwindcss/vite": "^4.0.0",
     "astro": "^6.2.1",
-    "astro-pagefind": "1.8.5",
+    "astro-pagefind": "^1.8.6",
     "clsx": "2.1.1",
     "tailwind-merge": "3.5.0",
     "tailwindcss": "^4.1.13",
@@ -30,5 +30,8 @@
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.7.2"
+  },
+  "overrides": {
+    "vite": "^7.1.4"
   }
 }
