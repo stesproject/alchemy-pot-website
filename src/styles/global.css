@@ -11,6 +11,13 @@
   --font-mono:
     Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+  --color-secondary-light: #be3739;
+  --color-secondary-dark: #cd5153;
+  --color-neutral: #2e2e2e;
+  --color-neutral-100: #f3f1f0;
+  --color-neutral-900: #1f2024;
+  --color-white: #f3f1f0;
+  --color-black: #1f2024;
 }
 
 /*
@@ -22,7 +29,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -172,11 +178,16 @@ html.dark #logo {
 }
 
 .button.secondary {
-  @apply border-none text-white bg-red-600 dark:bg-red-400/70 hover:bg-red-600/70 dark:hover:bg-red-400
+  @apply hover:bg-secondary-light/90 dark:bg-secondary-dark dark:hover:bg-secondary-dark/90 border-none text-white;
 }
 
 .nav {
-  @apply bg-transparent hover:bg-red-200 dark:hover:bg-red-400;
+  @apply bg-transparent hover:bg-black/5 dark:hover:bg-white/15;
   @apply rounded-md p-1 px-2;
   @apply transition-colors duration-300 ease-in-out;
+  @apply text-black dark:text-white;
+
+  &:hover {
+    @apply text-secondary-light/70 dark:text-secondary-dark/70;
+  }
 }

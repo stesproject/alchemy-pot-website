@@ -11,11 +11,9 @@ import { NAVIGATION } from "@consts";
   {
     NAVIGATION.map((item, index) => (
       <>
-        <div class="nav">
-          <Link href={item.href}>
-            {item.title}
-          </Link>
-        </div>
+        <Link href={item.href} classes="nav">
+          {item.title}
+        </Link>
         {index < NAVIGATION.length - 1 && <span>{``}</span>}
       </>
     ))
