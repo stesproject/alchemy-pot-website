@@ -1,6 +1,10 @@
 ---
 import Link from "@components/Link.astro";
 import { NAVIGATION } from "@consts";
+
+// Does not work.
+// const currentPath = Astro.url.pathname;
+// const isActive = (href: string) => currentPath.includes(href.toLowerCase());
 ---
 
 <nav class="flex items-center gap-1">
@@ -8,7 +12,9 @@ import { NAVIGATION } from "@consts";
     NAVIGATION.map((item, index) => (
       <>
         <div class="nav">
-          <Link href={item.href}>{item.title}</Link>
+          <Link href={item.href}>
+            {item.title}
+          </Link>
         </div>
         {index < NAVIGATION.length - 1 && <span>{``}</span>}
       </>
