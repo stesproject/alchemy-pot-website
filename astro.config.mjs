@@ -9,12 +9,16 @@ import pagefind from "astro-pagefind";
 export default defineConfig({
   site: "https://alchemy-pot.web.app",
   integrations: [sitemap(), mdx(), pagefind()],
-    vite: {
+  vite: {
     plugins: [tailwindcss()],
   },
   markdown: {
     shikiConfig: {
       theme: "css-variables",
     },
+  },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "it"],
   },
 });

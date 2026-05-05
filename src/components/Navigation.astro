@@ -1,32 +1,16 @@
 ---
 import Link from "@components/Link.astro";
-
-const NAVIGATION = [
-  {
-    title: "Games",
-    href: "/games",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "Resources",
-    href: "/resources",
-  },
-  {
-    title: "Devlog",
-    href: "/devlog",
-  },
-];
+import { NAVIGATION } from "@consts";
 ---
 
 <nav class="flex items-center gap-1">
   {
     NAVIGATION.map((item, index) => (
       <>
-        <Link href={item.href}>{item.title}</Link>
-        {index < NAVIGATION.length - 1 && <span>{` `}</span>}
+        <div class="nav">
+          <Link href={item.href}>{item.title}</Link>
+        </div>
+        {index < NAVIGATION.length - 1 && <span>{``}</span>}
       </>
     ))
   }

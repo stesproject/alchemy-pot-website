@@ -1,5 +1,24 @@
 import type { Metadata, Site, Socials } from "@types";
 
+export const NAVIGATION = [
+  {
+    title: "Games",
+    href: "/games",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+  },
+  {
+    title: "Resources",
+    href: "/resources",
+  },
+  {
+    title: "Devlog",
+    href: "/devlog",
+  },
+];
+
 export const SITE: Site = {
   AUTHOR: "Stefano Mercadante",
   TITLE: "Alchemy Pot",
