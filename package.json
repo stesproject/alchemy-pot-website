@@ -1,7 +1,7 @@
 {
-  "name": "astro-micro",
+  "name": "alchemy-pot-website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
