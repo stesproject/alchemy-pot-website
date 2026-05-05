@@ -3,14 +3,21 @@ import { glob } from "astro/loaders";
 
 const devlog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/devlog" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    tags: z.array(z.string()).optional(),
-    lang: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      draft: z.boolean().optional(),
+      tags: z.array(z.string()).optional(),
+      lang: z.string().optional(),
+      media: z
+        .object({
+          src: z.union([image(), z.string()]),
+          alt: z.string(),
+        })
+        .optional(),
+    }),
 });
 
 const projects = defineCollection({
