@@ -1,5 +1,5 @@
 ---
-title: "Our Hero! Last"
+title: "Our Hero! Omega"
 description: "The grand finale of the Our Hero! trilogy! Upgrade your powers, explore vast new lands and join four heroes in the ultimate battle to save the world, past, present and future. One last quest. One last legend."
 downloadUrl:
   - label: "Steam"
@@ -15,9 +15,9 @@ featured: true
 date: "10/14/2022"
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fNHW8vLso-M?si=zIYTR5yeHTbJeGDl" title="Our Hero! Last trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fNHW8vLso-M?si=zIYTR5yeHTbJeGDl" title="Our Hero! Omega trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Our Hero! Last** marks the thrilling conclusion of the **Our Hero!** trilogy, a fast-paced action-adventure RPG where courage, friendship and chaos collide in one epic final battle!
+**Our Hero! Omega** marks the thrilling conclusion of the **Our Hero!** trilogy, a fast-paced action-adventure RPG where courage, friendship and chaos collide in one epic final battle!
 
 Join **Ourhero**, **Tay**, **Fury** and a brand-new ally, **Grin**, as they embark on their most dangerous journey yet, across vast new lands filled with puzzles, secrets and explosive real-time battles.
 
@@ -89,6 +89,6 @@ A mysterious new evil rises, threatening not just the Kingdom, but the entire ra
 
 _This is it, the final adventure, the final battle, the final legend._
 
-**Let's begin… Our Hero! Last!**
+**Let's begin… Our Hero! Omega!**
 
 _The end of the trilogy. The start of a legend._

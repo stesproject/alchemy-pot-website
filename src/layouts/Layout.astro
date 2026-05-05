@@ -26,6 +26,14 @@ const { title, description, image, type } = Astro.props;
     />
   </head>
   <body>
+    <noscript>
+      <style>
+        .animate {
+          opacity: 1;
+          translate: var(--tw-translate-x) calc(var(--spacing) * 0);
+        }
+      </style>
+    </noscript>
     <Header />
     <main>
       <slot />

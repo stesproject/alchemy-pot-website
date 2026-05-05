@@ -4,14 +4,15 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { getNextPost, getPrevPost, readingTime } from "@lib/utils";
+import { getLangFromUrl } from "@i18n/utils";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import PostNavigation from "@components/PostNavigation.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Link from "@components/Link.astro";
-// import Giscus from "@components/Giscus.astro";
+import Giscus from "@components/Giscus.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog"))
+  const posts = (await getCollection("devlog"))
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
@@ -19,10 +20,11 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"devlog">;
 
-const posts = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+const lang = getLangFromUrl(Astro.url);
+const posts = (await getCollection("devlog"))
+  .filter((post) => !post.data.draft && post.data.lang === lang)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const nextPost = getNextPost(posts, Astro.params.id);
@@ -35,7 +37,7 @@ const { Content, headings } = await render(post);
 <Layout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/blog">Back to blog</BackToPrevious>
+      <BackToPrevious href="/devlog">Back to devlog</BackToPrevious>
     </div>
     <div class="my-10 space-y-1">
       <div class="animate flex items-center gap-1.5">
@@ -74,12 +76,16 @@ const { Content, headings } = await render(post);
         <PostNavigation
           prevPost={prevPost}
           nextPost={nextPost}
-          collection="blog"
+          collection="devlog"
         />
       </div>
-      <!-- <div class="mt-24">
-        <Giscus />
-      </div> -->
     </article>
+    <div class="mt-16">
+      <Giscus
+        repoName="alchemy-pot-website"
+        repoId="R_kgDONs2sTg"
+        categoryId="DIC_kwDONs2sTs4CmSRv"
+      />
+    </div>
   </Container>
 </Layout>

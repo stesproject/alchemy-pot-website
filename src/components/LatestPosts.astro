@@ -4,7 +4,7 @@ import { SITE } from "@consts";
 import ArrowCard from "./ArrowCard.astro";
 import Link from "./Link.astro";
 
-const blog = (await getCollection("blog"))
+const blog = (await getCollection("devlog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);

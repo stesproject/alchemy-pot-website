@@ -1,0 +1,124 @@
+---
+title: "A new release: Our Hero! Trilogy Reloaded"
+description: "Steam achievements, Steam Deck support, new graphics, new mechanics, performance 10x"
+date: "2026-05-05"
+draft: false
+media:
+  alt: "Ourhero trilogy reloaded preview"
+  src: "./ourhero-trilogy-reloaded.png"
+lang: "en"
+---
+
+import Video from "@/components/Video.astro";
+import { Image } from "astro:assets";
+
+import oh_old from "./0-oh-old.webm";
+import oh_new from "./1-oh-new.webm";
+import oh_trilogy from "./ourhero-trilogy-reloaded.png";
+
+---
+
+<Image src={oh_trilogy} alt="Ourhero trilogy reloaded preview" />
+
+## How It All Started
+
+We're talking about the Our Hero! trilogy, which I published on Steam a few years ago, which includes:
+- [Our Hero! First](/games/our-hero-first)
+- [Our Hero! Two](/games/our-hero-two)
+- [Our Hero! Omega](/games/our-hero-omega) (formerly known as Our Hero! Last)
+
+These are games that, before landing on Steam for the first time, I had only released on a few niche forums and websites, exclusively in Italian and with somewhat dated mechanics, partly due to my inability at the time to touch any kind of code or programming language.
+
+Then one day I decided to pick them back up, dust them off a bit, and bring them to Steam, giving them some dignity.
+
+The things I did to prepare for the release on the famous platform were:
+- Adding multilanguage support: Italian, English (and also French and Spanish for Our Hero! First)
+- Touching up some graphics (HUDs, menus...)
+- Redoing the illustrations for promotional materials (game titles, Steam assets)
+- Replacing all the music
+- Working on some scripts to improve gameplay fluidity and mechanics
+
+Those were the main tweaks I made to all three games at the time.
+
+Unfortunately, there was nothing I could do about the major limitations of the engine used to develop all three games: RPG Maker VX.
+
+RPG Maker is a somewhat clunky and limited engine, but sadly it was the only one I knew how to use when I first created these games. Over time I learned to use Unity as well (and today Godot), so I've thought many times about remaking the entire trilogy on a different engine, but in the end I always concluded it wasn't worth it. So much work, so much time, for games that were relatively unsuccessful and that were already complete, just running on a somewhat dated engine. I should already feel satisfied that I picked them up and got them onto Steam.
+
+Picked up and then left to gather dust, since marketing isn't exactly my strong suit, and indeed the number of players who have ever discovered the games is decidedly few.
+
+But it doesn't matter much! This is game dev and this is my passion. I've decided that if I'm going to do something, I do it primarily for myself.
+
+All of this is to say: yes, fair enough, I took these old games, improved them a bit, and published them on Steam, but I hadn't done them the justice I truly wanted.
+
+As I mentioned, the limitations of RPG Maker VX were still all there:
+- massive black bars on every side of the screen
+- extremely low resolution, extreme lag on many maps (to the point of making them unplayable)
+- and compatibility only on Windows (meanwhile Steam Deck had come out, and it really bothered me that the Our Hero! games couldn't be played in portable mode)
+
+Then one day a friend of mine asks me (thanks Simone!):
+
+> Why doesn't Our Hero! have Steam achievements?
+
+And I immediately replied: "Well, because in a game made with RPG Maker VX it's probably impossible to integrate them."
+
+I looked into it for a bit, apparently there is a way, but it's quite complicated.
+Is it worth it? I don't know.
+
+Some time passes.
+
+I think: "man, now we have ChatGPT, maybe if I ask it step by step I can actually pull something off."
+I ask Chat.
+Among other things, it mentions a project: **mkxp-z**.
+A whole new world opens up to me.
+
+## The New Our Hero! Release with mkxp-z
+### What is mkxp-z?
+
+[mkxp-z](https://github.com/mkxp-z/mkxp-z) is a player for older RPG Maker versions (XP, VX, Ace) that:
+- Drastically improves game performance
+- Increases resolution (supporting HD if desired)
+- Makes an RPG Maker project cross-platform (!!!), meaning it can run natively on: Windows, macOS, and Linux (Steam Deck included!)
+- Allows Steam achievements integration!
+
+I get excited. I think: "finally, it can be done!" I pick the Our Hero! trilogy back up.
+I want to release a "definitive edition"!
+
+### Toward the Definitive Edition
+
+The initial idea was simply to integrate Steam achievements and re-release the three games with mkxp-z, along with all the improvements I mentioned above.
+I would finally eliminate the massive black bars, drastically improve performance by removing all lag from the games, integrate achievements, and add the long-awaited Steam Deck support!
+
+"Unfortunately," one thing leads to another. By starting to make one improvement, I began thinking that maybe it was time to, once and for all, set aside the idea of remaking the three games in a different engine and instead release a "definitive edition" of the existing ones built with RPG Maker VX. Now, thanks to mkxp-z, that was possible.
+
+I've always been a little embarrassed to tell people "yeah, I'm a game developer, these are the games I made..." and then show them Our Hero!, with the black bars on screen, the pixelated graphics, the characters drawn so poorly that when they walk it looks like they're limping.
+
+<Video src={oh_old} class="my-0"/>
+
+And so I began this final, new, ambitious project to release the definitive version of the Our Hero! trilogy, to restore dignity to these games built on a dated engine and finally be proud of them.
+
+And it's something I'm not doing for any particular audience, given that total sales across all three games amount to just a few hundred copies. It's something I'm doing primarily for myself, to be satisfied with these games I created, so that when I play them myself, they're fun and enjoyable to me first, and then hopefully to everyone else who gets the chance to play them too.
+
+So I decided (once again) to revisit these three old games and improve them one final time, making the following changes:
+- Release of all three games with mkxp-z integration, which includes:
+  - Steam achievements!
+  - Native Windows and Linux builds! (macOS would also be possible, but it's not worth spending €100 a year to maintain Apple's developer license)
+  - Steam Deck compatibility!
+  - Higher resolution (goodbye black bars!)
+  - Performance improvements (goodbye lag!)
+- New professional illustrations for promotional materials (made by [Satsume](https://satsume.itch.io/), thank you! ♥︎)
+- New scripts to eliminate the clunkiest and most annoying mechanics in each game
+- Completely redesigned character sprites with improved animations
+- Redesigned all HUDs with a more modern look
+- Integrated lighting effects to enhance the visual atmosphere of maps
+- Added support for additional languages
+
+And that's how a job of roughly one month (just the mkxp-z integration) turned into nearly a year 😆
+
+<Video src={oh_new} class="my-0"/>
+
+I started working on it 2 months ago and today I can almost say I've completed the first game (Our Hero! First), which I'm currently putting through final testing and last-minute touches. After that I'll focus on Our Hero! Two and Our Hero! Omega, which, being somewhat more complex, I expect will require even more work 😮
+
+I started this devlog to keep track of my progress and provide explanations of how I integrated some of the features mentioned above, things like specific scripts, localization, mkxp-z integration, and Steam achievements in an RPG Maker VX project.
+
+So,
+until the next post, and happy making! 🌟
