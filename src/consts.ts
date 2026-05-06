@@ -50,14 +50,14 @@ export const RESOURCES: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  // {
-  //   NAME: "BlueSky",
-  //   HREF: "https://bsky.app/profile/stefhhh.bsky.social",
-  // },
-  // {
-  //   NAME: "Mastodon",
-  //   HREF: "https://mastodon.gamedev.place/@stefh",
-  // },
+  {
+    NAME: "BlueSky",
+    HREF: "https://bsky.app/profile/stefhhh.bsky.social",
+  },
+  {
+    NAME: "Mastodon",
+    HREF: "https://mastodon.gamedev.place/@stefh",
+  },
   {
     NAME: "GitHub",
     HREF: "https://github.com/stesproject",
