@@ -1,0 +1,144 @@
+---
+title: "Our Hero! in HD"
+description: "Tutti i miglioramenti visivi della nuova versione: grafica HD, nuovi sprites, HUD, effetti di luce e molto altro"
+date: "2026-05-11"
+draft: false
+media:
+  alt: "Ourhero new hd makeover"
+  src: "../6-title.png"
+lang: "it"
+---
+
+import Video from "@/components/Video.astro";
+import { Image } from "astro:assets";
+
+import char_old from "../0-char-old.webm";
+import char_new from "../0-char-new.webm";
+import atk_old from "../1-atk-old.png";
+import atk_new from "../1-atk-new.png";
+import char_shadow from "../2-char-shadow.png";
+import hud_old from "../3-hud-old.png";
+import hud_new from "../3-hud-new.png";
+import light_fx from "../4-lights-fx.png";
+import text_old from "../5-text-old.webm";
+import text_new from "../5-text-new.webm";
+import title from "../6-title.png";
+
+## Grafica HD
+
+Una delle principali migliorie apportate alla trilogia di Our Hero! grazie all'utilizzo del player mkxp-z è il miglioramento generale grafico,
+dato dal rendering e da come tutto viene disegnato e gestito a schermo.
+È stata apportata una gestione migliore delle texture, con supporto ad uno scaling più avanzato e con meno artefatti.
+Anche il filtro delle immagini è più pulito, così da avere meno pixel "sporchi".
+Tutto questo accompagnato da una risoluzione più alta che mantiene le proporzioni corrette e il widescreen nativo.
+
+Tantissime migliore che in pratica mi hanno convinto a fare un'ulteriore importante miglioria ai giochi: **ridisegnare tutti gli sprites da zero, e rifarne
+tutte le animazioni.**
+
+### Nuovi sprites
+
+Effettivamente, gli sprites di tutti e tre i giochi risultano un po' datati. Li disegnai diversi anni fa, quando le mie abilità tecniche erano limitate e non c'erano a disposizione gli strumenti di oggi.
+Infatti, tutti gli sprites originali sono nati prima su carta, per poi passare al digitale tramite scansione.
+Oggi posso disegnare direttamente in digitale. Utilizzo infatti un buon tablet Samsung per disegnare direttamente su schermo, con **Krita** come software principale di disegno. Ritengo infatti Krita molto potente per quanto riguarda la gestione delle animazioni, che è il naturale passaggio successivo per avere sprites che si muovono bene in gioco.
+Inoltre, essendo Krita supportato su tutti i sistemi operativi, posso benissimo aprire i file successivamente per fare ritocchi o piccoli aggiustamenti su PC, dove utilizzo una **tavoletta grafica XP-Pen**.
+
+Non sono un pixel artist, infatti tutti i nuovi sprites sono disegni fatti in 4K, per poi essere ridimensionati (ridotti) per essere supportati da RPG Maker.
+Non mi ritengo nemmeno un esperto di disegno, ma la resa finale mi convince e la ritengo migliore rispetto ai disegni precedenti.
+
+<div class="relative">
+  <Video src={char_old} class="my-0" />
+  <span data-text="old" class="caption" />
+</div>
+<div class="relative">
+  <Video src={char_new} class="my-0" />
+  <span data-text="new" class="caption" />
+</div>
+
+Di pari passo agli sprites, sono state apportate tante altre piccole migliorie, che elenco di seguito.
+
+### Posa d'attacco e spade
+
+La posa d'attacco del gioco orginale, oltre ad essere un po' bruttina, era anche in due sole direzioni.
+Inoltre, per i limiti di RPG Maker ed i miei limiti tecnici del tempo, ogni posa d'attacco era ridisegnata per ogni spada presente nel gioco!
+Ciò significa: **18 spade diverse = 18 pose d'attacco dell'eroe diverse**, una per ogni spada!
+
+Nella nuova versione, grazie ad un semplice script, la posa d'attacco dell'eroe è **una sola, in quattro direzioni**, a cui ci disegno sopra lo sprite rispettivo della spada equipaggiata.
+Decisamente meglio.
+Inoltre, anche tutti gli sprites delle spade sono stati ridisegnati da zero.
+
+<div class="flex justify-around">
+  <div class="relative">
+    <Image src={atk_old} alt="old attack pose" />
+    <span data-text="old" class="caption text-white" />
+  </div>
+  <div class="relative">
+    <Image src={atk_new} alt="new attack pose" />
+    <span data-text="new" class="caption text-white" />
+  </div>
+</div>
+
+### Ombre sotto i personaggi
+
+Tutti i personaggi hanno ora anche un'ombra disegnata sotto di loro.
+Anche in questo caso, uno script molto semplice: guardo le dimensioni dello spritesheet, se è di una determinata dimensione (ovvero la dimensione che hanno di base tutti i character del gioco),
+disegno sotto di loro uno sprite, che corrisponde a quello dell'ombra.
+Nulla di che, ma sicuramente aiuta a dare più profondità.
+
+<Image src={char_shadow} alt="shadow under characters" />
+
+### HUD
+
+Anche gli HUD sono stati aggiornati, resi più moderni e minimali.
+Devo essere sincero, ho usato come ispirazione gli HUD degli ultimi Zelda, **Breath Of The Wild** and **Tears Of The Kingdom**.
+Ritengo gli HUD di questi giochi semplici, puliti e comunque molto efficaci.
+Quindi sfondo nero opaco, disegni semplici, il più possibile avere comandi a schermo.
+
+<div class="flex justify-around">
+  <div class="relative">
+    <Image src={hud_old} alt="old game hud" />
+    <span data-text="old" class="caption text-white" />
+  </div>
+  <div class="relative">
+    <Image src={hud_new} alt="new game hud" />
+    <span data-text="new" class="caption text-white" />
+  </div>
+</div>
+
+Sono ancora indeciso se mantenere lo stesso HUD per tutti i tre giochi, o provare a disegnare qualcosa di diverso ed originale per ognuno.
+Da una parte manterrei coerenza tra tutti i giochi, ma dall'altra magari un giocatore si aspetta nuovo gioco = nuove interfacce.
+Non saprei, magari scrivetemi cosa ne pensate nei commenti.
+
+### Effetti di luce e ombre
+
+Che sia una luce che passa da una finestra, o l'ombra data dalle fronde degli alberi nella foresta, ho deciso che, grazie anche al miglioramento delle performance dato da mkxp-z, gli effetti di luce dovevano essere applicati un po' ovunque, dove ce n'era possibilità, per dare più dinamicità e, in generale, rendere più belle visivamente le mappe del gioco.
+Anche qui, lo sforzo non è eccessivo ma la resa finale offre un alto valore aggiunto.
+
+<Image src={light_fx} alt="new lights effects" />
+
+### Testi più definiti
+
+Come dicevo, mkxp-z migliora tanto il rendering e la gestione delle texture.
+Questo automaticamente aiuta anche nella resa finale dei testi del gioco, disegnandoli più puliti e definiti.
+
+<div class="relative">
+  <Video src={text_old} class="my-0" />
+  <span data-text="old" class="caption" />
+</div>
+<div class="relative">
+  <Video src={text_new} class="my-0" />
+  <span data-text="new" class="caption" />
+</div>
+
+## Nuove illustrazioni e logo
+
+Il logo e le illustrazioni di tutti e tre i giochi sono stato rifatte nuove da [Satsume](https://satsume.itch.io/), con un risultato finale che è pazzesco e rende Our Hero! veramente pronto per essere scoperto su Steam!
+
+<Image src={title} alt="new title and logo" />
+
+E con questo concludiamo tutte le migliorie apportate a questa nuova edizione della trilogia nel comparto grafico.
+*(Chissà, forse un giorno mi metterò a rifare anche tutti i tileset!)*
+
+---
+
+Ci sono altre cose nei giochi che mi sono sfuggite e vorreste vedere migliorate?
+Fatemi sapere nei commenti!

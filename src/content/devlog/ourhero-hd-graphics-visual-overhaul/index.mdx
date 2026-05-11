@@ -1,0 +1,138 @@
+---
+title: "Our Hero! gets an HD makeover"
+description: "Every visual upgrade in the new version: HD graphics, new sprites, HUDs, lighting and more"
+date: "2026-05-11"
+draft: false
+media:
+  alt: "Ourhero new hd makeover"
+  src: "./6-title.png"
+lang: "en"
+---
+
+import Video from "@/components/Video.astro";
+import { Image } from "astro:assets";
+
+import char_old from "./0-char-old.webm";
+import char_new from "./0-char-new.webm";
+import atk_old from "./1-atk-old.png";
+import atk_new from "./1-atk-new.png";
+import char_shadow from "./2-char-shadow.png";
+import hud_old from "./3-hud-old.png";
+import hud_new from "./3-hud-new.png";
+import light_fx from "./4-lights-fx.png";
+import text_old from "./5-text-old.webm";
+import text_new from "./5-text-new.webm";
+import title from "./6-title.png";
+
+## HD Graphics
+
+One of the most significant improvements brought to the Our Hero! trilogy through mkxp-z is the overall visual upgrade, from better rendering to how everything is drawn and managed on screen.
+Texture handling has been greatly improved, with support for more advanced scaling and fewer visual artifacts. Image filtering is also cleaner, resulting in sharper, less "dirty" pixels.
+All of this is paired with a higher resolution that maintains correct proportions and native widescreen support.
+
+These improvements collectively convinced me to take things one step further: **redrawing every sprite from scratch and redoing all animations.**
+
+### New Sprites
+
+The sprites across all three games were, admittedly, showing their age. I drew them years ago, when my technical skills were limited and the tools available today simply didn't exist, or weren't accessible to me.
+All the original sprites started on paper and were then digitized through scanning.
+
+Today, I draw entirely in digital. I use a Samsung tablet to draw directly on screen, with **Krita** as my main drawing software. Krita is particularly powerful when it comes to animation management, which is the natural next step for getting sprites that move well in-game.
+Since Krita is also cross-platform, I can easily open files later for touch-ups on PC, where I work with an **XP-Pen graphics tablet**.
+
+I'm not a pixel artist, all the new sprites are drawn at 4K and then scaled down to fit RPG Maker's requirements.
+I wouldn't call myself an expert artist either, but I'm genuinely happy with the results, and I think they're a clear step up from the originals.
+
+<div class="relative">
+  <Video src={char_old} class="my-0" />
+  <span data-text="old" class="caption" />
+</div>
+<div class="relative">
+  <Video src={char_new} class="my-0" />
+  <span data-text="new" class="caption" />
+</div>
+
+Alongside the new sprites, a number of other smaller improvements were made, listed below.
+
+### Attack Pose and Swords
+
+The original attack pose, besides looking a bit rough, was only drawn in two directions.
+On top of that, due to RPG Maker's limitations and my technical constraints at the time, every attack pose was redrawn for each individual sword in the game.
+That meant: **18 different swords = 18 different hero attack poses**, one for each weapon!
+
+In the new version, thanks to a simple script, there is now a **single attack pose in four directions**, with the equipped sword's sprite drawn on top of it dynamically.
+Much cleaner. All sword sprites have also been fully redrawn from scratch.
+
+<div class="flex justify-around">
+  <div class="relative">
+    <Image src={atk_old} alt="old attack pose" />
+    <span data-text="old" class="caption text-white" />
+  </div>
+  <div class="relative">
+    <Image src={atk_new} alt="new attack pose" />
+    <span data-text="new" class="caption text-white" />
+  </div>
+</div>
+
+### Character Shadows
+
+All characters now have a shadow drawn beneath them.
+Again, this is handled by a straightforward script: it checks the spritesheet dimensions, and if they match the standard size used by all in-game characters, it renders a shadow sprite underneath.
+Nothing groundbreaking, but it adds a noticeable sense of depth to every scene.
+
+<Image src={char_shadow} alt="shadow under characters" />
+
+### HUD
+
+The HUDs have been redesigned to feel more modern and minimal.
+I'll be honest: I drew heavy inspiration from the HUDs in the latest Zelda titles, **Breath of the Wild** and **Tears of the Kingdom**. I find those interfaces simple, clean, and remarkably effective.
+So: semi-transparent dark background, clean iconography, and as much on-screen information as possible without cluttering the view.
+
+<div class="flex justify-around">
+  <div class="relative">
+    <Image src={hud_old} alt="old game hud" />
+    <span data-text="old" class="caption text-white" />
+  </div>
+  <div class="relative">
+    <Image src={hud_new} alt="new game hud" />
+    <span data-text="new" class="caption text-white" />
+  </div>
+</div>
+
+One thing I'm still undecided on: should I keep the same HUD design across all three games, or create something distinct for each one? Consistency has its value, but a player might also expect a new game to bring a fresh interface.
+I genuinely don't know, let me know what you think in the comments!
+
+### Lighting and Shadow Effects
+
+Whether it's light streaming through a window or shadows cast by forest canopies, I decided that, thanks to mkxp-z's performance improvements, lighting effects should be applied wherever they made sense, to bring more dynamism and visual richness to the game's maps.
+The effort involved is relatively modest, but the final result adds a lot of atmosphere and polish.
+
+<Image src={light_fx} alt="new lights effects" />
+
+### Sharper Text
+
+As mentioned, mkxp-z significantly improves rendering and texture management.
+This automatically carries over to in-game text as well, which now appears noticeably cleaner and crisper.
+
+<div class="relative">
+  <Video src={text_old} class="my-0" />
+  <span data-text="old" class="caption" />
+</div>
+<div class="relative">
+  <Video src={text_new} class="my-0" />
+  <span data-text="new" class="caption" />
+</div>
+
+## New Illustrations and Logo
+
+The logo and illustrations for all three games have been completely redone by [Satsume](https://satsume.itch.io/), and the results are honestly stunning, Our Hero! finally looks like something you'd be proud to discover on Steam.
+
+<Image src={title} alt="new title and logo" />
+
+And with that, we've covered all the graphical improvements coming to this new edition of the trilogy.
+*(Who knows, maybe one day I'll even redo all the tilesets!)*
+
+---
+
+Is there anything else in the games you'd like to see improved?
+Let me know in the comments!
