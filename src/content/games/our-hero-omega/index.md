@@ -11,7 +11,7 @@ downloadUrl:
 media:
   src: "./hero_capsule-our-hero-last.jpg"
   alt: "our hero last capsule"
-featured: true
+featured: false
 date: "10/14/2022"
 ---
 
