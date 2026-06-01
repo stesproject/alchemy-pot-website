@@ -7,7 +7,7 @@ downloadUrl:
 media:
   src: "./2d-topdown-autotiles-fantasy-world.jpg"
   alt: "2d topdown autotiles fantasy world"
-featured: true
+featured: false
 date: "2025-01-21"
 ---
 

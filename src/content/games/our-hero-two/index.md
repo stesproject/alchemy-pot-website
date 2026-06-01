@@ -1,6 +1,6 @@
 ---
 title: "Our Hero! Two"
-description: "The adventure continues! Switch between three unique heroes, master new powers and battle through wild new worlds packed with puzzles, minigames and epic enemies. Bigger fights, funnier moments, bolder action!"
+description: "Three heroes. One mad villain. A Kingdom on the brink. Ourhero is back, bringing new playable characters, deeper combat and a whole arsenal of upgradeable swords to the beloved trilogy."
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/1408050/Our_Hero_Two/"
@@ -9,98 +9,44 @@ downloadUrl:
   - label: "Game Jolt"
     url: "https://gamejolt.com/games/ourhero-two/750089"
 media:
-  src: "./hero_capsule-our-hero-two.jpg"
+  src: "./oh-two-cover.png"
   alt: "our hero two capsule"
 featured: false
-date: "10/29/2021"
+date: "05/30/2026"
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VsnNmB_7Ayw?si=ygiIVukZ-vsTgimD" title="Our Hero! Two trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Our Hero!** is back: bigger, bolder and funnier than ever!
+## The Kingdom is in danger. Again.
 
-Join **Ourhero** and his new allies in this vibrant action-adventure RPG, featuring a deeper real-time battle system, multiple playable characters and tons of new weapons, enemies and secrets to uncover.
+The King is dead. A mysterious usurper has seized the throne with a mad plan: drain the magical essence of every weapon in existence to forge the ultimate blade - his own. If he succeeds, the world of heroes will fall into darkness. Fortunately, with his last breath, the King gathered three champions to stop him. Three very different heroes. One last hope.
 
-Explore colorful worlds, challenge powerful foes and master each hero's unique abilities as you embark on an epic quest to save the realm once again with a wink, a laugh and a swing of your sword.
+## Three heroes, one destiny
 
-## Features
+The big new addition in Our Hero! Two is them: Ourhero, Tay and Fury. Three playable characters, each with unique abilities and a crucial role in the adventure. Learn to make the most of their strengths, combine their powers to solve puzzles and take down bosses, and discover that true strength doesn't lie in a single sword!
 
-### ⚔️ Enhanced Real-Time Battle System
+- Ourhero - Brute strength, colossal blades and an appetite for meat that knows no bounds.
 
-Fast-paced and dynamic combat returns, now with special skills and new mechanics to keep every encounter fresh and exciting.
+- Tay - Detects magical portals, controls enemies with his Crystal Amulet and activates monoliths to teleport between explored areas.
 
-### 👥 Three Playable Heroes
+- Fury - Climb walls, smash rocks to uncover hidden paths and absorb the mysterious Red Power Orbs.
 
-Switch between characters with distinct abilities and playstyles: combine their powers to overcome puzzles, enemies and epic boss fights.
+## An even bigger world to explore
 
-### 💥 Powerful New Skills
+A sprawling series of brand-new acts awaits, with fresh settings and a few familiar locations making a comeback in surprising new forms. Every area is packed with enemies, puzzles, secrets and quirky characters to meet, because an adventure without someone weird to help you along the way is no adventure at all!
 
-Unleash flashy new attacks and abilities to turn the tide of battle.
+## Fight, upgrade, transform
 
-### 🗡️ A Whole Armory of New Weapons
+The real-time combat system returns richer than ever, with new special skills and fresh mechanics to keep every encounter exciting. Swords can be collected, upgraded, and with Red Power Orbs, transformed into entirely new weapons. Absorb orbs scattered across the world, defeat powerful enemies and unlock an arsenal Ourhero never dreamed of!
 
-Discover, upgrade and even transform your swords using the mysterious **Red Power Orbs**.
+## When you need a break from heroism
 
-### 🌍 Nine All-New Acts
+A handful of minigames are waiting whenever you need to step away from the adventure. Because even saving the world gets tiring sometimes!
 
-Travel through brand-new areas, with a few familiar locations making a comeback in fresh ways.
+## An even more ambitious creation
 
-### 🎮 Fun Minigames
+Every character was conceived and hand-drawn by the developer. A bigger cast, a richer world, a story that gets just a little more serious... without ever losing its smile!
 
-Take a break from adventuring in the **Arena Deathmatch**, **Shotput** and **Relay Race** minigames!
+## The second chapter of something bigger
 
-### 😄 A Cast Full of Personality
-
-Meet charming NPCs, quirky allies and mischievous foes in a world brimming with humor and color.
-
-## The Heroes
-
-### Ourhero
-
-The unstoppable sword master himself! Wielding colossal blades and a healthy appetite for meat, he's your main powerhouse on the battlefield.
-
-- The only hero capable of equipping and mastering swords
-- Specializes in brute strength and close combat
-
-### Tay
-
-**Ourhero's** trusty companion! Tay doesn't fight directly, but his support abilities are crucial for exploration and strategy.
-
-- Detects and uses magical skipping puddles
-- Controls enemies with his **Controller Crystal Amulet**
-- Activates mystical **Monoliths** to teleport between cleared areas
-
-### Fury
-
-A mechanical marvel with attitude! Though not a swordsman, his prosthetic limbs make him a force to be reckoned with.
-
-- Climb and cling to walls
-- Kick rocks open to reveal hidden paths
-- Absorb **Red Power Orbs** scattered across the world
-
-## Red Power Orbs
-
-These mysterious orbs can enhance and evolve swords, unlocking entirely new weapons and abilities.
-
-**You can obtain them by:**
-
-- Absorbing clustered orbs in the overworld using **Fury**
-- Defeating powerful enemies and bosses
-
-## Story
-
-_The King is dead and chaos stirs across the realm._
-
-A mysterious usurper has seized the throne, intent on draining the magical essence of every weapon in existence to forge the ultimate blade: his own!
-
-If his plan succeeds, the world of heroes will fall into darkness.
-
-But before his final breath, the late King gathered three champions, **Ourhero**, **Tay** and **Fury**, to stand against the rising evil and restore balance to the land.
-
-Sharpen your swords, ready your courage and prepare to fight back.
-
-**The world of heroes needs you once more.**
-
-_New allies. New powers. Same heroic spirit._
-
-**Step into Our Hero! Two and carve your legend!**
+Our Hero! Two is the second chapter of a trilogy. Ourhero and his new companions don't know it yet, but the best (and worst) is still to come!

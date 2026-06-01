@@ -7,7 +7,7 @@ downloadUrl:
 media:
   src: "./todo-blocks.png"
   alt: "To-Do Blocks preview"
-featured: true
+featured: false
 date: "10/19/2022"
 ---
 

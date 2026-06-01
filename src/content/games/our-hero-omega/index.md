@@ -1,6 +1,6 @@
 ---
 title: "Our Hero! Omega"
-description: "The grand finale of the Our Hero! trilogy! Upgrade your powers, explore vast new lands and join four heroes in the ultimate battle to save the world, past, present and future. One last quest. One last legend."
+description: "Four heroes. One final battle. The fate of every timeline at stake. Join Ourhero, Tay, Fury and newcomer Grin in the epic, action-packed conclusion of the Our Hero! trilogy."
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/2076920/Our_Hero_Omega/"
@@ -9,86 +9,46 @@ downloadUrl:
   - label: "Game Jolt"
     url: "https://gamejolt.com/games/ourhero-omega/751729"
 media:
-  src: "./hero_capsule-our-hero-last.jpg"
+  src: "./oh-omega-cover.png"
   alt: "our hero last capsule"
 featured: false
-date: "10/14/2022"
+date: "05/29/2026"
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fNHW8vLso-M?si=zIYTR5yeHTbJeGDl" title="Our Hero! Omega trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Our Hero! Omega** marks the thrilling conclusion of the **Our Hero!** trilogy, a fast-paced action-adventure RPG where courage, friendship and chaos collide in one epic final battle!
+## It was all over. Or so it seemed.
 
-Join **Ourhero**, **Tay**, **Fury** and a brand-new ally, **Grin**, as they embark on their most dangerous journey yet, across vast new lands filled with puzzles, secrets and explosive real-time battles.
+Ourhero is the new King of the Kingdom. Peace reigns, danger feels distant, until the Teorhemas Crystal is stolen again. But wasn't it destroyed? Searching for answers, Ourhero, Tay and Fury find themselves thrust into a completely new world, where the fate of every timeline - past, present and future - hangs in the balance. A new evil rises, more threatening than anything before. It's time for the final chapter!
 
-Upgrade your weapons, master powerful new abilities and uncover the shocking truth behind the stolen Crystal that threatens the fate of every world, past, present and future.
+## Four heroes, one final mission
 
-## Features
+The team grows with a brand-new, long-awaited ally: Grin. Armed with a plasma rifle and packing devastating ranged attacks, he brings a completely new tactics to the battlefield. Together with veterans Ourhero, Tay and Fury, the quartet is ready for the biggest challenge of the trilogy!
 
-### ⚔️ Refined Real-Time Battle System
+- Ourhero - Now King and still unstoppable. He wields the legendary King's Sword, upgradeable throughout the adventure.
 
-Engage in fast, fluid combat where every move counts: slash, kick, run and unleash special powers in frantic real-time action!
+- Tay - The team's magical support. His medallion summons mysterious magic puddles that reveal otherwise invisible paths, and can even control enemies from afar.
 
-### 🗡️ Weapon Evolution
+- Fury - Mechanical power in heavy armour. Smash boulders, climb walls and dig underground to uncover ancient artefacts.
 
-Upgrade and transform your weapons to unlock devastating new forms and abilities.
+- Grin - The newcomer. His plasma rifle lets him strike from a distance and turn the tide in the most critical moments.
 
-### 💥 Power-Up System
+## A world to cross in every direction
 
-Use **ESP energy** to boost your stats: increase attack, defense and max energy, or learn brand-new combat skills to dominate the battlefield.
+Our Hero! Omega expands movement like never before. Run along walls to cross ravines, scale sheer cliffs, dig underground for hidden treasures, smash through obstacles and fire projectiles, all within one fluid, seamless system. The world has never been this vertical, or this full of secrets waiting to be found!
 
-### 🧠 A True Action Adventure
+## Fight, upgrade, dominate
 
-Run on walls, climb cliffs, dig for hidden treasures, kick through obstacles, control enemies and even shoot projectiles, all with a single, seamless system.
+The real-time combat system reaches its definitive form. Weapons evolve into increasingly powerful new forms, while the ESP system lets you boost attack, defence and max energy, or unlock brand-new combat skills. Every encounter is an opportunity to grow stronger!
 
-### 🌍 9 Brand-New Acts
+## There's still plenty to discover
 
-Explore a massive new world packed with side quests, hidden puzzles, secret areas and unforgettable boss battles.
+Side quests, secret areas, hidden puzzles and memorable boss battles fill every corner of the game. The Trophy Hall rewards the toughest challenges with unlockable achievements, while the Gallery lets the most dedicated collectors gather character cards.
 
-### 🏆 Trophies & Collectibles
+## A labour of love
 
-Complete special challenges to unlock achievements in the **Trophy Hall** and collect unique character cards in the **Gallery**.
+Every character was conceived and hand-drawn by the developer. Bigger, more ambitious, a little more serious, but always with that smile that has made this trilogy unforgettable from the very first chapter.
 
-### 🕹️ The Epic Finale
+## The end of a legend
 
-Experience the climactic ending of the **Our Hero!** saga, a heartfelt, action-packed conclusion that celebrates everything the series stands for!
-
-## Characters
-
-### Ourhero
-
-Now the **King of the Kingdom**, Ourhero fights with the legendary **King's Sword**, a mighty blade that can be upgraded and transformed throughout the adventure.
-
-He's now more agile than ever, capable of running along walls to cross ravines and reach new areas.
-
-### Fury
-
-Encased in heavy armor, Fury's mechanical power shines both in and out of battle.
-
-He can kick through boulders, smash weakened enemies, climb walls and dig underground to uncover ancient artifacts.
-
-### Tay
-
-The team's magical support hero, Tay wields a mystical medallion capable of detecting magic puddles that reveal secret paths and even controlling enemies from afar.
-
-### Grin
-
-A mysterious new ally joins the team! Grin brings fresh combat tactics and unique abilities that turn the tide in critical moments.
-
-## Story
-
-_Peace reigns in the Kingdom, or so it seems._
-
-After being crowned the new ruler, **Ourhero** enjoys a moment of calm… until disaster strikes again.
-
-The **Teorhemas Crystal** has been stolen from the royal castle, but wasn't it destroyed long ago?
-
-Seeking answers, **Ourhero**, **Tay** and **Fury** set off on a journey that pulls them into a completely new world, one where the fate of all timelines hangs in the balance.
-
-A mysterious new evil rises, threatening not just the Kingdom, but the entire race of heroes, past, present and future. Guided by ancient sages and joined by a new companion, the heroes must unite for one final stand.
-
-_This is it, the final adventure, the final battle, the final legend._
-
-**Let's begin… Our Hero! Omega!**
-
-_The end of the trilogy. The start of a legend._
+Our Hero! Omega is the concluding chapter of the trilogy. Ourhero and his companions have come a long way, and it's time to settle things, once and for all!

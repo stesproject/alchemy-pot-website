@@ -78,17 +78,17 @@ const featuredResources = [...resources, ...assets]
         />
         <FeaturedContents
           title={t("featured.content", {
-            content: t("content.projects"),
-          })}
-          contents={featuredProjects}
-          collection="projects"
-        />
-        <FeaturedContents
-          title={t("featured.content", {
             content: t("content.games"),
           })}
           contents={featuredGames}
           collection="games"
+        />
+        <FeaturedContents
+          title={t("featured.content", {
+            content: t("content.projects"),
+          })}
+          contents={featuredProjects}
+          collection="projects"
         />
         <Contacts />
       </div>
