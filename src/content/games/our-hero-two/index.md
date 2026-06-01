@@ -4,10 +4,10 @@ description: "Three heroes. One mad villain. A Kingdom on the brink. Ourhero is 
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/1408050/Our_Hero_Two/"
-  - label: "itch.io"
-    url: "https://stesproject.itch.io/our-hero-two"
-  - label: "Game Jolt"
-    url: "https://gamejolt.com/games/ourhero-two/750089"
+  # - label: "itch.io"
+  #   url: "https://stesproject.itch.io/our-hero-two"
+  # - label: "Game Jolt"
+  #   url: "https://gamejolt.com/games/ourhero-two/750089"
 media:
   src: "./oh-two-cover.png"
   alt: "our hero two capsule"

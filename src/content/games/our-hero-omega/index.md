@@ -4,10 +4,10 @@ description: "Four heroes. One final battle. The fate of every timeline at stake
 downloadUrl:
   - label: "Steam"
     url: "https://store.steampowered.com/app/2076920/Our_Hero_Omega/"
-  - label: "itch.io"
-    url: "https://stesproject.itch.io/our-hero-omega"
-  - label: "Game Jolt"
-    url: "https://gamejolt.com/games/ourhero-omega/751729"
+  # - label: "itch.io"
+  #   url: "https://stesproject.itch.io/our-hero-omega"
+  # - label: "Game Jolt"
+  #   url: "https://gamejolt.com/games/ourhero-omega/751729"
 media:
   src: "./oh-omega-cover.png"
   alt: "our hero last capsule"
