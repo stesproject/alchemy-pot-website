@@ -1,24 +1,16 @@
 {
   "hosting": {
-    "source": ".",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [
+    "rewrites": [
       {
-        "source": "/files/cv/**",
-        "headers": [
-          {
-            "key": "X-Robots-Tag",
-            "value": "noindex, nofollow"
-          }
-        ]
+        "source": "**",
+        "destination": "/index.html"
       }
-    ],
-    "frameworksBackend": {
-      "region": "europe-west1"
-    }
+    ]
   }
 }
