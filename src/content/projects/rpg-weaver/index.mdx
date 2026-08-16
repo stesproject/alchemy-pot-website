@@ -1,6 +1,6 @@
 ---
 title: "RPG Weaver - RPG Maker Web Alternative & Browser 2D Engine"
-description: "RPG Weaver is a free, web-native 2D game engine and RPG Maker Web alternative. Build maps, design event systems, and playtest your game directly in your browser with zero installation."
+description: "RPG Weaver is a free, web-native 2D game engine and RPG Maker Web alternative. Build maps, design events, and playtest your game right in the browser, no install needed."
 downloadUrl:
   - label: "Web"
     url: "https://rpg-weaver.web.app/"
@@ -23,7 +23,9 @@ import events from "./rpgweaver-events.webm";
 
 # RPG Weaver: The Browser-Based RPG Maker Web Alternative
 
-**RPG Weaver** is a modern, web-native 2D game engine and map editor designed to bring tile-based RPG creation directly into the web browser. Built entirely with modern web technologies, RPG Weaver serves as a frictionless **RPG Maker Web** alternative, offering creators a complete environment to build maps, design interactive event systems, configure game databases, and playtest seamlessly, all without requiring any installation or setup.
+I've been using RPG Maker for years, so I know its strengths inside out: the sheer speed of turning an idea into a playable 2D world is genuinely unmatched. But if you've stuck with it long enough, you also know its frustrating pain points all too well.
+
+That's what pushed me to build **RPG Weaver**: a free, web-native 2D engine and map editor that runs straight in your browser. It keeps the intuitive logic and fast workflow that creators love, while cutting out the historic bottlenecks of classic engines, and there's zero installation involved.
 
 <Callout type="warning">
   RPG Weaver is currently under development and should not be considered a
@@ -32,21 +34,27 @@ import events from "./rpgweaver-events.webm";
 
 ---
 
-## Why RPG Weaver is the Ideal RPG Maker Web Solution
+## RPG Weaver as an RPG Maker Web Alternative
 
-If you are searching for a browser-based **RPG Maker Web** editor or a modern **RPG Maker alternative**, RPG Weaver delivers the classic tile-based game creation workflow with powerful web-first capabilities:
+If you're hunting for a browser-based **RPG Maker Web** editor or a modern **RPG Maker alternative**, RPG Weaver brings the classic tile-based game creation workflow you're used to, with some solid web-first upgrades on top:
 
-- **100% Web-Native & Free**: Create, edit, and playtest games directly in any browser on Windows, macOS, Linux, or ChromeOS without installing desktop software.
-- **Classic RPG Maker Logic**: Enjoy a familiar workflow with global switches, variables, self-switches, self-variables, event command chains, and multi-tile hitboxes.
-- **Modern Web Enhancements**: Benefit from fluid sub-pixel movement, customizable viewport resolutions, unlimited custom map layers, and an integrated audio manager with interactive playback controls.
+- **100% Web-Native & Free**: create, edit, and playtest your games directly in any browser, with no desktop software to install. And if you want it a bit closer to a native app feel, you can always install it as a PWA.
+- **Classic RPG Maker logic and more**: all the familiar stuff is here: global switches, variables, self-switches, self-variables(!), event command chains, multi-tile hitboxes.
+- **Modern Web Enhancements**: plus a bunch of nice extras like fluid sub-pixel movement, customizable viewport resolutions, unlimited map layers, an integrated audio manager and instant search/filtering across any list (event commands, switches, variables, resources...).
 
 ---
 
 ## Key Features
 
+### Multi-Area Events & Region Hitboxes
+
+Events are no longer stuck inside a single 1×1 tile cell. You can define multi-tile event touch boundaries using the Rectangle Tool or by setting custom width/height dimensions right in the Event Editor, which is great for doors, zone triggers, wide cutscene triggers, and large interactive objects without having to clone a bunch of dummy events.
+
+<Video src={events} class="my-0" />
+
 ### Flexible Tilesets & Collision Editing
 
-- **Multiple Tile Size Standards**: Native support for **16×16**, **32×32**, **48×48** and **64×64** pixel tilesets, allowing creators to work with any retro or modern pixel art style.
+- **Multiple Tile Size Standards**: native support for **16×16**, **32×32**, **48×48**, and **64×64** pixel tilesets, so you can freely mix retro and modern pixel art styles without any resizing hacks.
 - **Advanced Passage & Collision Control**:
   - Set global passage flags.
   - Fine-tune **4-directional passage**.
@@ -54,75 +62,68 @@ If you are searching for a browser-based **RPG Maker Web** editor or a modern **
 
 <Video src={tilesets} class="my-0" />
 
-### Custom Game Viewport & Resolution
-
-- **Flexible Viewport Resolution**: Configure custom display width and height in pixels.
-- **Responsive Scaling**: Dynamic viewport rendering keeps game graphics sharp across different screen sizes.
-
-### Integrated Sub-Pixel Movement
-
-- **Grid & Sub-Pixel Movement**: Toggle seamlessly between classic tile-by-tile grid stepping and fluid, continuous **sub-pixel movement**.
-
-### Advanced Resource Manager
-
-- **Centralized Asset Management**: Import, preview and organize all project assets in dedicated categories.
-- **Built-in Audio Player & Scrubbing**: Audition background music (BGM), sound effects (SE) and ambient audio (BGS) directly inside the editor with interactive playback scrubbing controls.
-
-### Fully Customizable Controls & Keybindings
-
-- **Input Rebinding**: Customize keyboard controls for all core game mechanics.
-- **Mouse & Touch Support**: Optional toggle for direct point-and-click movement and menu navigation.
-
-<Video src={inputs} class="my-0" />
-
 ### Unlimited Layering Stack
 
-- **Unlimited Custom Map Layers**: Add as many map layers as your project needs.
-- **Custom Layer Ordering**: Drag and drop layer stacks to define render hierarchy.
+- **Unlimited Map Layers**: no more fighting rigid layer limits. Add as many map layers as your project actually needs.
+- **Custom Layer Ordering**: drag and drop layers to set your render hierarchy and get the visual depth just right.
 
 <Video src={layers} class="my-0" />
 
+### Integrated Sub-Pixel Movement
+
+- **Grid & Sub-Pixel Movement**: switch between classic tile-by-tile grid stepping and smooth, continuous **sub-pixel movement** with precise collisions out of the box.
+
 ### Advanced Variable Scope & Logic State
 
-- **Global Switches & Variables**: Manage global project flags and numeric counters for quests, story progression and world states.
-- **Self Switches**: Per-event isolated switches for local multi-state logic.
-- **Self Variables**: Dedicated per-event local numeric variables, enabling local state counters.
-
-### Persistent Event Coordinates
-
-- **Saved Map Positions**: Enable position persistence on any event to permanently retain its updated map coordinates across game saves.
-
-### Multi-Area Events & Region Hitboxes
-
-- **Extended Event Hitboxes**: Events are no longer constrained to a single 1×1 tile cell. Define multi-tile event touch boundaries using the Rectangle Tool or by specifying custom width/height dimensions directly in the Event Editor.
-
-<Video src={events} class="my-0" />
+- **Global Switches & Variables**: keep track of global flags and numeric counters for quests, story progression, and world states.
+- **Self Switches**: per-event isolated switches for local multi-state logic.
+- **Self Variables**: per-event local numeric variables, great for self-contained reusable events and local state counters.
+- **Persistent Event Coordinates**: enable position persistence on any event so it permanently keeps its updated map coordinates across game saves.
 
 ### Powerful Event Command Library & Camera System
 
-- **Rich Command Library**: Show Message with typewriter effects, Show Choices, Input Number, Select Item, Scrolling Text, Show Picture, Move Picture, Screen Tint/Flash/Shake, Audio playback with volume/pitch/pan controls, Conditional Branches and Loops.
-- **Advanced Camera Controls**:
-  - **Change Camera Target**: Dynamically lock camera tracking onto the main player or any map event.
+- **Rich Command Library**: Show Message with typewriter effects, Set Camera target, Pictures Management, Screen Tint/Flash/Shake, Play Audio, Conditional Branches, and Loops.
+- **Advanced Camera Controls**: lock the camera onto the player or any map event dynamically.
+- **Advanced Movement Route**: let any event follow or flee from any other event.
+- **Advanced Transfer**: transfer not just the Player, but any event from one map to another.
+
+### Custom Game Viewport & Resolution
+
+- **Flexible Viewport Resolution**: set a custom display width and height to fit any aspect ratio you want.
+- **Responsive Scaling**: dynamic viewport rendering keeps everything crisp across different screen sizes.
+
+### Fully Customizable Controls & Keybindings
+
+- **Input Rebinding**: remap keyboard controls for all core game mechanics to whatever feels right.
+- **Mouse & Touch Support**: optional toggle for point-and-click movement and menus navigation.
+
+<Video src={inputs} class="my-0" />
+
+### Advanced Resource Manager
+
+- **Centralized Asset Management**: import, preview, and organize all your project assets in dedicated categories.
+- **Built-in Audio Player & Scrubbing**: audition BGM, sound effects, and ambient audio right inside the editor with interactive playback scrubbing.
 
 ---
 
 ## Roadmap & Unsupported Features
 
-RPG Weaver is continuously evolving. The following features are currently **unsupported** and scheduled for future development phases:
+RPG Weaver is still growing. Here's what's **not yet supported**, and on the roadmap for future development:
 
-- **Events Factory**: Centralized configurator to create reusable event templates across any map.
-- **Autotiling & Animated Tiles**: Bitmask auto-tiling rules for terrain borders, walls and water edges.
-- **Battle System**: Turn-based or real-time battle engine.
-- **Animation Editor**: Frame-by-frame animation timelines.
-- **Party Management**: Dynamic party formation, member swapping and reserve party status.
-- **Weather System**: Animated rain, snow and fog overlay.
-- **Inventory Logic**: Item consumption, drop tables, item categories and container logic.
-- **Icon Set Selector**: Dedicated graphic icon sheet picker for items, skills and equipment.
-- **Actor Classes & States**: Class stat growth curve generator, status ailment effects and trait buffs/debuffs.
-- **Native Executable Bundling**: One-click web and desktop exports.
+- **Events Factory**: a centralized configurator for creating reusable event templates across any map.
+- **Autotiling & Animated Tiles**: bitmask auto-tiling rules for terrain borders, walls, and water edges.
+- **Battle System**: turn-based or real-time combat.
+- **Animation Editor**: frame-by-frame animation timelines.
+- **Party Management**: dynamic party formation, member swapping, and reserve party status.
+- **Weather System**: animated rain, snow, and fog overlays.
+- **Inventory Logic**: item consumption, drop tables, item categories, and container logic.
+- **Icon Set Selector**: a dedicated graphic icon sheet picker for items, skills, and equipment.
+- **Actor Classes & States**: class stat growth curves, status ailments, and trait buffs/debuffs.
+- **Google Drive Backups**: automatic project backups synced straight to your Google Drive, so your work is always safe.
+- **Shareable Play Links**: generate a link to your game and send it to anyone, no export or upload required, so friends and testers can jump in and play instantly.
 
 ---
 
 ## Support Ongoing Development
 
-RPG Weaver is a project built with passion for the game development community. If you enjoy using the editor or would like to support ongoing engine development, consider supporting it buying me a coffee. ↙
+RPG Weaver is a passion project built for the game development community. If you're enjoying the editor or just want to help keep things moving, consider buying me a coffee. ↙
