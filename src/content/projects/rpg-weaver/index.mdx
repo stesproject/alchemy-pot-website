@@ -21,7 +21,7 @@ import events from "./rpgweaver-events.webm";
 
 ---
 
-# RPG Weaver: The Browser-Based RPG Maker Web Alternative
+# RPG Weaver: a Browser-Based RPG Maker Web Alternative
 
 I've been using RPG Maker for years, so I know its strengths inside out: the sheer speed of turning an idea into a playable 2D world is genuinely unmatched. But if you've stuck with it long enough, you also know its frustrating pain points all too well.
 
@@ -39,8 +39,8 @@ That's what pushed me to build **RPG Weaver**: a free, web-native 2D engine and 
 If you're hunting for a browser-based **RPG Maker Web** editor or a modern **RPG Maker alternative**, RPG Weaver brings the classic tile-based game creation workflow you're used to, with some solid web-first upgrades on top:
 
 - **100% Web-Native & Free**: create, edit, and playtest your games directly in any browser, with no desktop software to install. And if you want it a bit closer to a native app feel, you can always install it as a PWA.
-- **Classic RPG Maker logic and more**: all the familiar stuff is here: global switches, variables, self-switches, self-variables(!), event command chains, multi-tile hitboxes.
-- **Modern Web Enhancements**: plus a bunch of nice extras like fluid sub-pixel movement, customizable viewport resolutions, unlimited map layers, an integrated audio manager and instant search/filtering across any list (event commands, switches, variables, resources...).
+- **Classic RPG Maker logic and more**: all the familiar stuff is here: autotiling, global switches and variables, self-switches (and self-variables!), conditional branches and loops, timers, key input checks, sound effects, pictures display, show messages (with typewriter!), advanced movement routes, and much more.
+- **Modern Web Enhancements**: plus a bunch of nice extras like customizable inputs, unlimited map layers, fluid sub-pixel movement, customizable viewport resolutions, instant search/filtering across any list (event commands, switches, variables, assets...) and so much more!
 
 ---
 
@@ -54,7 +54,8 @@ Events are no longer stuck inside a single 1×1 tile cell. You can define multi-
 
 ### Flexible Tilesets & Collision Editing
 
-- **Multiple Tile Size Standards**: native support for **16×16**, **32×32**, **48×48**, and **64×64** pixel tilesets, so you can freely mix retro and modern pixel art styles without any resizing hacks.
+- **Multiple Tile Size Standards**: native support for **16×16**, **32×32**, **48×48**, and **64×64** pixel tilesets, so you can use retro or modern pixel art styles.
+- **Advanced Tileset Configuration**: configure tiling mode, tileset properties and decide the number of frames and animation speed for animated tiles.
 - **Advanced Passage & Collision Control**:
   - Set global passage flags.
   - Fine-tune **4-directional passage**.
@@ -71,18 +72,15 @@ Events are no longer stuck inside a single 1×1 tile cell. You can define multi-
 
 ### Integrated Sub-Pixel Movement
 
-- **Grid & Sub-Pixel Movement**: switch between classic tile-by-tile grid stepping and smooth, continuous **sub-pixel movement** with precise collisions out of the box.
+- **Grid & Sub-Pixel Movement**: switch between classic tile-by-tile grid stepping and smooth, continuous **sub-pixel movement**.
 
 ### Advanced Variable Scope & Logic State
 
-- **Global Switches & Variables**: keep track of global flags and numeric counters for quests, story progression, and world states.
-- **Self Switches**: per-event isolated switches for local multi-state logic.
-- **Self Variables**: per-event local numeric variables, great for self-contained reusable events and local state counters.
+- **Self Variables**: other than global switches and variables and self-switches, RPG Weaver also features per-event local variables, great for self-contained reusable events and local state counters.
 - **Persistent Event Coordinates**: enable position persistence on any event so it permanently keeps its updated map coordinates across game saves.
 
-### Powerful Event Command Library & Camera System
+### Advanced Event Commands & Camera System
 
-- **Rich Command Library**: Show Message with typewriter effects, Set Camera target, Pictures Management, Screen Tint/Flash/Shake, Play Audio, Conditional Branches, and Loops.
 - **Advanced Camera Controls**: lock the camera onto the player or any map event dynamically.
 - **Advanced Movement Route**: let any event follow or flee from any other event.
 - **Advanced Transfer**: transfer not just the Player, but any event from one map to another.
@@ -90,7 +88,6 @@ Events are no longer stuck inside a single 1×1 tile cell. You can define multi-
 ### Custom Game Viewport & Resolution
 
 - **Flexible Viewport Resolution**: set a custom display width and height to fit any aspect ratio you want.
-- **Responsive Scaling**: dynamic viewport rendering keeps everything crisp across different screen sizes.
 
 ### Fully Customizable Controls & Keybindings
 
@@ -102,6 +99,7 @@ Events are no longer stuck inside a single 1×1 tile cell. You can define multi-
 ### Advanced Resource Manager
 
 - **Centralized Asset Management**: import, preview, and organize all your project assets in dedicated categories.
+- **Advanced Filters & Search**: filter and search across all your project assets and instantly find exactly what you're looking for.
 - **Built-in Audio Player & Scrubbing**: audition BGM, sound effects, and ambient audio right inside the editor with interactive playback scrubbing.
 
 ---
@@ -111,7 +109,6 @@ Events are no longer stuck inside a single 1×1 tile cell. You can define multi-
 RPG Weaver is still growing. Here's what's **not yet supported**, and on the roadmap for future development:
 
 - **Events Factory**: a centralized configurator for creating reusable event templates across any map.
-- **Autotiling & Animated Tiles**: bitmask auto-tiling rules for terrain borders, walls, and water edges.
 - **Battle System**: turn-based or real-time combat.
 - **Animation Editor**: frame-by-frame animation timelines.
 - **Party Management**: dynamic party formation, member swapping, and reserve party status.
