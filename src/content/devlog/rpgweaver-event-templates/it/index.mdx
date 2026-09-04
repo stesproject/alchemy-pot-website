@@ -1,0 +1,42 @@
+---
+title: "Dite addio al copia-incolla: gli Event Template sono finalmente arrivati!"
+description: "Gli Event Template sono blueprint di eventi riutilizzabili per mantenere sincronizzato l'intero gioco, senza noiose modifiche manuali."
+date: "2026-09-03"
+draft: false
+media:
+  alt: "RPG Weaver event templates"
+  src: "../rpgweaver-event-templates.png"
+lang: "it"
+---
+
+Se avete mai dedicato del tempo a sviluppare un RPG, conoscete benissimo questa frustrazione:
+
+Create il baule del tesoro perfetto. L'animazione di apertura è impeccabile, il suono è azzeccatissimo e la logica dei self-switch funziona a meraviglia. Decisamente soddisfatti del risultato, copiate e incollate quel baule 40 volte nei vostri dungeon.
+
+Ed ecco la nota dolente. Vi siete dimenticati di assegnare l'esperienza, oppure volete regolare il volume dell'effetto sonoro, o c'è un piccolo refuso nella finestra di messaggio. Vi ritrovate così ad aggiustare 40 eventi identici, con la consapevolezza di doverli aprire e modificare a mano uno per uno.
+
+Ci siamo passati tutti ed è, sinceramente, un lavoro noioso ed estenuante. Così mi sono deciso a risolvere il problema una volta per tutte in RPG Weaver con gli Event Template!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-XATE27l1Lc?si=6roc0EZk1VY-tZ1r" title="RPG Weaver event templates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Come cambia il workflow?
+
+Pensate agli Event Template come a dei progetti vivi. Invece di duplicare eventi grezzi, salvate un evento una sola volta nella vostra libreria dei template (porte, mercanti, torce, punti di salvataggio, bauli...) e poi vi basta piazzarli sulle mappe ogni volta che ne avete bisogno.
+
+Ed è qui che avviene la magia: quando modificate il template originale, ogni singola copia in tutto il vostro gioco si aggiorna automaticamente. Cambiate l'effetto sonoro o ritoccate una linea di dialogo nel template, e boom: tutti e 40 i bauli sparsi in 10 mappe diverse si aggiornano all'istante. Niente ricerche disperate tra le mappe, niente noiose modifiche manuali.
+
+## E se avessi bisogno di un evento leggermente diverso?
+
+Sappiamo bene che i giochi non sono fatti di cloni tutti identici, quindi ho ben pensato di integrare direttamente nel sistema quelli che definisco override granulari.
+
+Mettiamo che avete un template per un baule del tesoro, ma che questo specifico baule nella tana del drago debba rilasciare una spada leggendaria invece di 50 monete d'oro. Vi basterà aprire quel baule e modificare il comando della ricompensa. RPG Weaver è abbastanza intelligente da memorizzare solo ciò che avete modificato esplicitamente. Questo significa che il baule manterrà il suo bottino leggendario unico, ma se in seguito deciderete di aggiornare l'effetto sonoro o la grafica di apertura nel template principale, queste modifiche verranno comunque applicate senza problemi!
+
+Se doveste cambiare idea e volerlo riportare allo stato originale, un rapido clic su Reset to Source cancellerà le vostre modifiche e lo risincronizzerà all'istante. E se un evento finisce per evolversi in una cutscene narrativa complessa e personalizzata al 100%, potete semplicemente duplicarlo o eliminare il template principale: tutte le istanze continueranno a esistere senza problemi come eventi del tutto funzionali e indipendenti.
+
+## Pronti a velocizzare lo sviluppo dei vostri giochi?
+
+Questa è stata sinceramente una delle funzionalità più divertenti da sviluppare, perché rende il world-building fluido e piacevole invece di una noiosa incombenza. Si può così arricchire interi villaggi e dungeon con oggetti interattivi in una frazione del tempo.
+
+Date un'occhiata al nuovo aggiornamento, iniziate a trasformare i vostri eventi preferiti in template e fatemi sapere quanto tempo vi fa risparmiare! Come sempre, lasciate i vostri pensieri e feedback nei commenti.
+
+Ci vediamo al prossimo aggiornamento, e happy weaving! :3
