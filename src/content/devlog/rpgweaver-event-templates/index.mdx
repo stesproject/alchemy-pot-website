@@ -11,7 +11,7 @@ lang: "en"
 
 If you've spent any time building RPGs, you know this exact pain:
 
-You build the perfect treasure chest. The opening animation is crisp, the chime sounds just right, and the self-switch logic works like a charm. Feeling pretty good about yourself, you copy and paste that chest 40 times across your dungeons.
+You build the perfect treasure chest. The opening animation is crisp, the chime sounds just right and the self-switch logic works like a charm. Feeling pretty good about yourself, you copy and paste that chest 40 times across your dungeons.
 
 Then it hits you. You forgot to award experience, or you want to tweak the sound effect volume, or there's a tiny typo in the message window. Now you're staring at 40 identical events, realizing you have to click through and manually fix every single one of them.
 
@@ -21,9 +21,9 @@ We've all been there, and honestly, it's soul-crushing busywork. So we decided t
 
 ## What does this actually mean for your workflow?
 
-Think of Event Templates as living blueprints. Instead of mindlessly duplicating raw events, you save an event once into your template library (doors, shopkeepers, torches, save points, treasure chests...) and then you just plop them onto your maps whenever you need them.
+Think of Event Templates as living blueprints. Instead of mindlessly duplicating events, you save an event once into your template library (doors, shopkeepers, torches, save points, treasure chests...) and then you just plop them onto your maps whenever you need them.
 
-Here is the magical part: when you tweak the original template, every single copy across your whole game updates automatically. Change the sound effect or adjust a dialog line in the template, and boom, all 40 chests on 10 different maps are updated instantly. No hunting through map trees, no tedious manual edits.
+Here is the magical part: when you tweak the original template, every single copy across your whole game updates automatically. Change the sound effect or adjust a dialog line in the template and boom, all 40 chests on 10 different maps are updated instantly. No hunting through maps, no tedious manual edits.
 
 ## But what if I need one event to be a little different?
 
@@ -31,7 +31,15 @@ We know games aren't made of identical clones, so we built what we call granular
 
 Say you have a template for a treasure chest, but this specific chest in the dragon's lair should drop a legendary sword instead of 50 gold. You can just open that chest and edit the reward command. RPG Weaver is smart enough to remember only the things you explicitly changed. That means your chest keeps its unique legendary loot, but if you later decide to update the chest's sound effect or opening graphic in the master template, it will still pull in those changes seamlessly!
 
-If you ever change your mind and want it back to normal, a quick click on Reset to Source wipes your custom tweaks and snaps it right back in sync. And if an event ends up evolving into a full-blown custom story cutscene, you can simply duplicate it or delete the master template, and all your instances safely persist as fully functional, independent events.
+If you ever change your mind and want it back to normal, a quick click on Reset to Source wipes your custom tweaks and snaps it right back in sync. And if an event ends up evolving into a full-blown custom story cutscene, you can simply click Detach from Template to turn it into a standard, independent event. (And don't worry: if you ever un-star or delete a master template, all existing instances automatically detach and safely persist as fully functional events, so nothing in your game ever breaks!)
+
+## Take it to the next level: Spawn Events at runtime!
+
+Placing templates on maps in the editor is already a game-changer, but we wanted to take it a step further: what if you need to spawn them dynamically during gameplay?
+
+Say hello to the brand-new "Spawn Event" command!
+
+Have a template for an enemy, a wandering NPC, a dropped loot pouch, or a triggered trap? Now you can summon it into the game on the fly. Simply select your template from the list and designate where it should spawn on the current map, by either coordinates or variables!
 
 ## Ready to speed up your game dev?
 
