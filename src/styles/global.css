@@ -178,7 +178,7 @@ html.dark #logo {
 }
 
 .button.secondary {
-  @apply hover:bg-secondary-light/90 dark:bg-secondary-dark dark:hover:bg-secondary-dark/90 border-none text-white;
+  @apply bg-secondary-light hover:bg-secondary-light/90 dark:bg-secondary-dark dark:hover:bg-secondary-dark/90 border-none text-white;
 }
 
 .nav {

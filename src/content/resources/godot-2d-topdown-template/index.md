@@ -22,7 +22,7 @@ Explore the documentation below or play the web demo to get a grasp of the avail
 
 <div class="w-full flex justify-center pb-6">
   <a
-    href="https://alchemy-pot.web.app/files/godot-2d-topdown-template/play"
+    href="https://stesproject.itch.io/godot-2d-top-down-template-demo"
     target="_blank"
     class="button secondary"
   >
