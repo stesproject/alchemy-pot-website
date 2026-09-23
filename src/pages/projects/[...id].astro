@@ -58,7 +58,7 @@ const { Content } = await render(content);
         </div>
       </div>
       {
-        content.data.downloadUrl && (
+        content.data.downloadUrl && content.data.downloadUrl.length > 0 && (
           <nav class="flex gap-1">
             <strong>{t("content.download")}: </strong>
             {content.data.downloadUrl.map((download, index) => (
