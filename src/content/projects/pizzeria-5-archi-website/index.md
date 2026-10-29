@@ -12,7 +12,7 @@ featured: false
 date: "09/23/2026"
 ---
 
-Here is a project very close to home: the website for **[Pizzeria 5 Archi](https://pizzeria5archi.com/)**, an authentic craft pizzeria in the historical center of Vasto (Abruzzo).
+Here is a project very close to home: the website for Pizzeria 5 Archi, an authentic craft pizzeria in the historical center of Vasto (Abruzzo).
 
 If you love genuine Italian pizza, this place is special: 48-hour slow dough fermentation, a roaring wood-fired oven cooking pizzas in 90 seconds, and incredible local ingredients like artisanal *ventricina vastese* and *caciocavallo*.
 
