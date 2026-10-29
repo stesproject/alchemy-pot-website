@@ -14,6 +14,7 @@ export const ui = {
     "content.games": "Games",
     "content.assets": "Assets",
     "content.download": "Get it on",
+    "content.check_it_out": "Check it out",
     "back.to": "Back to {to}",
     top: "top",
     "docs.index": "Index",

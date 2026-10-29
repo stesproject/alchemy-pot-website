@@ -32,6 +32,7 @@ const projects = defineCollection({
         .enum(["personal-tools", "case-studies"])
         .optional()
         .default("personal-tools"),
+      downloadLabel: z.string().optional(),
       downloadUrl: z
         .array(z.object({ label: z.string(), url: z.string() }))
         .optional()

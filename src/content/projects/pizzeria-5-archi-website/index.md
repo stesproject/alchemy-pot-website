@@ -36,10 +36,3 @@ I built the site with **[Astro](https://astro.build)** and **TypeScript**:
 - **Local SEO & Rich Schema**: Built-in `Schema.org/Restaurant` structured data so Google immediately understands opening hours, cuisine types, and geolocation.
 - **One-Tap Action**: Instant click-to-call buttons for reservations, straightforward allergen disclosures, and quick menu browsing.
 
----
-
-### The Result
-
-A web presence that feels as welcoming and artisanal as walking into the pizzeria itself, boasting **100/100 Lighthouse scores** across Performance, SEO, and Accessibility.
-
-Take a look at [pizzeria5archi.com](https://pizzeria5archi.com/) and let me know your thoughts!

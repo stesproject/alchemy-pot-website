@@ -33,4 +33,4 @@ Instead of just drawing safe loops around obstacles, I wanted to build real risk
 
 I really wanted to capture that addictive arcade sweet spot: pick up and play in seconds, but hard to master once the screen fills with crisscrossing flight paths.
 
-You can play **Planet Base** for free right in your browser on [Wavedash](https://wavedash.com/games/planet-base). Let me know your high score and what you think of the game!
+Let me know your high score and what you think of the game!

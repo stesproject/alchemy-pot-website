@@ -40,10 +40,3 @@ I chose **[Astro](https://astro.build/)** for its zero-JavaScript-by-default arc
 - **Bilingual i18n**: Full Italian and English support with clean localized routing and dynamic metadata to welcome travelers during the summer season.
 - **Edge Performance**: Deployed directly to Cloudflare for instantaneous sub-second page loads anywhere in the world.
 
----
-
-### The Result
-
-The new site loads virtually instantly, has zero plugin clutter, and serves as the perfect teaser before guests ever step through the secret door. 
-
-Check out the live site at [enigmisecretbar.com](https://enigmisecretbar.com/) and see if you can solve the riddles.
