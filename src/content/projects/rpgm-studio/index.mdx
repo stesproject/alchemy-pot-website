@@ -43,7 +43,9 @@ You can open your original RPG Maker projects directly, with **zero destructive 
 
 ## What Makes It Special
 
-When building RPGM Studio, the goal was simple: **kill the everyday frustrations of making games.** Here is a tour of what it brings to your workflow.
+When building RPGM Studio, the goal was simple: **kill the everyday frustrations of making games.**
+
+I'm actually using it every day to work on my own RPG Maker VX project (the definitive edition of [Our Hero! Two](/games/our-hero-two)), so practically every feature in the editor came directly from real friction and headaches I ran into along the way. Here is a tour of what it brings to your workflow:
 
 ---
 
@@ -55,11 +57,11 @@ No more clicking through dozens of maps and hundreds of events one by one just t
 
 <Video src={filter_anything} class="my-0" />
 
-- **Deep project-wide search**: find every spot-across maps or Common Events-where a Switch or Variable is read or triggered, or where a specific graphic or audio asset is used.
+- **Deep project-wide search**: find every spot across maps or Common Events where a Switch or Variable is read or triggered, or where a specific graphic or audio asset is used.
 
 <Video src={global_search} class="my-0" />
 
-- **Fearless bulk replace**: batch-replace Switch and Variable references, or rename graphic and audio files across your entire project (or scoped to just a single map) in one click.
+- **Fearless bulk replace**: batch-replace Switch and Variable references, or rename graphic and audio files across your entire project (or scoped to just a single map) in one click. In a large project like *Our Hero!*, tracking down every switch or renaming an asset across hundreds of maps used to take hours. Now it takes seconds.
 
 <Video src={search_and_replace} class="my-0" />
 
@@ -67,15 +69,15 @@ No more clicking through dozens of maps and hundreds of events one by one just t
 
 ### Supercharged Events: Multi-Tile, Templates & Stacked
 
-- **Events bigger than 1×1 tile**: set the width and height of any event so it covers a larger area-ideal for wide doors, area triggers, or big bosses. When you reopen the project in RPG Maker, it automatically becomes a set of copies of that event filling the area you defined.
+- **Events bigger than 1x1 tile**: set the width and height of any event so it covers a larger area: ideal for wide doors, area triggers, or big bosses. When you reopen the project in RPG Maker, it automatically becomes a set of copies of that event filling the area you defined.
 
 <Video src={wide_events} class="my-0" />
 
-- **Event templates**: save doors, chests, enemies, save points, or NPCs as a reusable template with one click, then drop identical instances anywhere in your project.
+- **Event templates**: save doors, chests, enemies, save points, or NPCs as a reusable template with one click, then drop identical instances anywhere in your project. Doors, chests and NPCs become a single click instead of constant copy-pasting.
 
 <Video src={event_templates} class="my-0" />
 
-- **Stacked events**: here's a fun fact-RPG Maker actually supports stacking multiple events on the same tile natively, but its own editor doesn't let you do it! RPGM Studio unlocks this capability cleanly, and everything carries over seamlessly when you reopen the project in RPG Maker.
+- **Stacked events**: RPG Maker actually supports stacking multiple events on the same tile natively, but its own editor doesn't let you do it! RPGM Studio unlocks this capability cleanly, and everything carries over seamlessly when you reopen the project in RPG Maker.
 
 <Video src={stacked_events} class="my-0" />
 
@@ -91,7 +93,7 @@ No more clicking through dozens of maps and hundreds of events one by one just t
 
 <Video src={passability_overlay} class="my-0" />
 
-- **Show Picture with drag & drop**: placing HUDs, menus, and illustrations by typing X/Y coordinates blindly is over. Just drag the image with your mouse inside the interactive preview, watch the coordinates update live, and see exactly where it will land on screen.
+- **Show Picture with drag & drop**: placing HUDs, menus, and illustrations by typing X/Y coordinates blindly is over. Just drag the image with your mouse inside the interactive preview, watch the coordinates update live, and see exactly where it will land on screen. I got tired of guessing coordinates and reloading the game repeatedly just to align UI elements.
 
 <Video src={show_picture_preview} class="my-0" />
 
@@ -99,7 +101,7 @@ No more clicking through dozens of maps and hundreds of events one by one just t
 
 ### A Real Script Editor
 
-Say goodbye to cramped script windows. RPGM Studio includes a powerful built-in code editor-**VS Code style**-with syntax highlighting, a minimap, instant filtering, and clean, tidy file management. Because scripts are organized cleanly as individual files, it's also a dream if you use version control like **Git**.
+Say goodbye to cramped script windows. RPGM Studio includes a powerful built-in code editor (VS Code style) with syntax highlighting, a minimap, instant filtering, and clean file management. Because scripts are organized cleanly as individual files on disk, it plays nicely with Git, making versioning and tracking changes to custom scripts effortless.
 
 <Image src={script_editor} alt="Built-in Ruby script editor in RPGM Studio" />
 
@@ -109,7 +111,7 @@ Say goodbye to cramped script windows. RPGM Studio includes a powerful built-in 
 
 **[mkxp-z](https://github.com/mkxp-z/mkxp-z)** is a free, open-source, cross-platform game runner for RPG Maker XP, VX and VX Ace. It replaces the old Windows-only `Game.exe` with a modern engine that runs your games natively on Windows, macOS and Linux, bringing high performance and up-to-date Ruby support.
 
-RPGM Studio integrates fully with it: configure all its settings visually from the editor and launch playtests straight through it with a single click.
+RPGM Studio integrates fully with it: configure all its settings visually from the editor and launch playtests straight through it with a single click. For me, developing on macOS, this is what lets me playtest natively without relying on a Windows VM or the old Windows-only `Game.exe`.
 
 <Image src={mkxpz_settings} alt="mkxp-z visual settings configuration in RPGM Studio" />
 
@@ -125,4 +127,5 @@ Last but not least, you get a modern, clean, responsive interface with both a **
 
 ## Try RPGM Studio!
 
-Questions, bugs or ideas? We'd love to hear them in the comments below. Happy making!
+Questions, bugs or ideas? Feel free to reach out or leave a comment below and...
+Happy making!
