@@ -1,0 +1,57 @@
+---
+title: "Usare un nuovo editor per il mio gioco RPG Maker VX su macOS: un grande salto di qualità"
+description: "Come il rilancio della serie Our Hero! su macOS mi ha spinto a creare un editor nativo e multipiattaforma per RPG Maker XP, VX e VX Ace."
+date: "2026-10-29"
+draft: false
+media:
+  alt: "Anteprima dell'interfaccia dell'editor RPGM Studio"
+  src: "../rpgm-studio-editor-preview.webp"
+lang: "it"
+---
+
+import Video from "@/components/Video.astro";
+import hero_main from "../hero-main.webm";
+
+Nell'ultimo periodo ho ripreso in mano i miei vecchi giochi della serie Our Hero! con l'intenzione di rilasciarli in versione aggiornata su [Steam](https://store.steampowered.com/search/?developer=Ste%27s%20Project). Essendo progetti nati originariamente su RPG Maker VX, questo ha significato una cosa inevitabile: dover rimettere mano all'editor dopo tanti tanti anni.
+
+## Il dilemma del Mac e i workaround con CrossOver
+
+Come se già l'editor di per sé non fosse decisamente datato (chiunque abbia gestito un progetto corposo conosce bene i limiti storici dei vari RPG Maker), nel frattempo sono anche passato a macOS e, come ben sappiamo, i vecchi RPG Maker sono disponibili esclusivamente per Windows.
+
+Inizialmente me la sono cavata utilizzando CrossOver, un software per Mac che mi ha permesso di avviare l'editor di RPG Maker tramite Steam in un ambiente compatibile Windows. Tra limitazioni dell'ambiente emulato, scorciatoie tastiera non native e le note limitazioni del flusso di lavoro originale, ho presto sentito il bisogno di esplorare una strada più moderna e confortevole.
+
+## Il cambio di rotta rispetto a RPG Weaver
+
+Prima di arrivare a questo, avevo lavorato per un periodo a [RPG Weaver](https://rpg-weaver.web.app/), un mio tool moderno per creare da zero un RPG 2D basato interamente su web. Tuttavia mi sono reso presto conto che tentare di competere con un ecosistema storico, solido e amato come RPG Maker era una battaglia persa in partenza.
+
+Ho quindi deciso di cambiare approccio: sfruttare tutta l'esperienza e l'architettura sviluppate su quel progetto per creare qualcosa di realmente utile per chi usa già RPG Maker ogni giorno.
+
+È nato così **[RPGM Studio](/projects/rpgm-studio)**!
+
+<Video src={hero_main} class="my-0" />
+
+## Un editor desktop nativo e multipiattaforma
+
+RPGM Studio è un editor desktop leggero e reattivo, sviluppato su misura per **RPG Maker XP, VX e VX Ace**.
+
+Il pilastro fondamentale è l'assenza di conversioni distruttive: apre direttamente i file di progetto originali, senza formati proprietari o lock-in. Questo significa che potete passare da RPGM Studio all'editor ufficiale di RPG Maker in qualsiasi momento, senza rischiare di perdere alcun dato.
+
+In più, gira in modo nativo su **macOS, Windows e Linux**.
+
+## Nato dalle frustrazioni reali su Our Hero! Two
+
+Lo sto utilizzando ogni giorno per lavorare alla Definitive Edition di [Our Hero! Two](/games/our-hero-two). Praticamente ogni singola funzionalità presente nell'editor è nata da reali frustrazioni e perdite di tempo in cui mi sono imbattuto lavorando su quel vecchio progetto.
+
+Ecco cosa mi ha aiutato di più nel lavoro quotidiano:
+
+- **Ricerca globale e sostituzione di massa per switch, variabili e asset:** In un progetto di grandi dimensioni, trovare dove viene utilizzato o attivato uno switch richiedeva ore. Ora la ricerca istantanea in tutto il progetto e il rimpiazzo con un clic fanno risparmiare tantissimo tempo.
+- **Eventi più grandi di 1x1 tile, template di eventi ed eventi sovrapposti:** Porte, bauli, nemici o NPC possono essere salvati come template riutilizzabili con un clic, anziché passare ore a fare copia-incolla. Si possono inoltre sovrapporre più eventi sullo stesso tile in modo pulito.
+- **Strumenti visivi direttamente sulla mappa:** I percorsi di movimento autonomo vengono disegnati direttamente sulla mappa (basta contare i passi a mente!), c'è un overlay di passabilità per individuare subito gli errori di collisione, e il posizionamento con drag and drop per il comando "Mostra Immagine" evita di dover indovinare le coordinate X/Y alla cieca.
+- **Un vero editor di script in stile VS Code:** Evidenziazione della sintassi, minimappa e file script separati su disco, perfetti per tenere traccia delle modifiche con Git.
+- **Supporto integrato a mkxp-z:** Configurazione visiva di [mkxp-z](https://github.com/mkxp-z/mkxp-z), che mi permette di lanciare il playtest del gioco nativamente su Mac a prestazioni elevate, senza dipendere dal vecchio `Game.exe` per Windows.
+
+## Provate RPGM Studio
+
+Se state ancora lavorando su progetti RPG Maker XP, VX o VX Ace, date un'occhiata alla [scheda del progetto](/projects/rpgm-studio) o visitate il [sito ufficiale](https://rpgm-studio.web.app).
+
+Fatemi sapere cosa ne pensate nei commenti qui sotto con le vostre impressioni o suggerimenti!
