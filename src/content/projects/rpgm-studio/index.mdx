@@ -1,0 +1,128 @@
+---
+title: "RPGM Studio - The RPG Maker Editor You've Always Wanted"
+description: "A native, lightweight, blazing-fast, cross-platform desktop editor built specifically for RPG Maker XP, VX and VX Ace."
+category: "personal-tools"
+downloadUrl:
+  - label: "Website"
+    url: "https://rpgm-studio.web.app"
+media:
+  src: "./rpgm-studio.webp"
+  alt: "RPGM Studio logo"
+featured: true
+date: "10/26/2026"
+---
+
+import Video from "@/components/Video.astro";
+import { Image } from "astro:assets";
+
+import hero_main from "./hero-main.webm";
+import filter_anything from "./filter-anything.webm";
+import global_search from "./global-search.webm";
+import search_and_replace from "./search-and-replace.webm";
+import wide_events from "./wide-events.webm";
+import event_templates from "./event-templates.webm";
+import stacked_events from "./stacked-events.webm";
+import movement_routes from "./movement-routes.webp";
+import passability_overlay from "./passability-overlay.webm";
+import show_picture_preview from "./show-picture-preview.webm";
+import script_editor from "./script-editor.webp";
+import mkxpz_settings from "./mkxpz-settings.webp";
+import theme_light from "./theme-light.webp";
+
+---
+
+# RPGM Studio: The RPG Maker Editor You've Always Wanted
+
+**RPGM Studio** is a native, lightweight, blazing-fast, cross-platform desktop editor built specifically for **RPG Maker XP, VX and VX Ace**.
+
+You can open your original RPG Maker projects directly, with **zero destructive conversion**. That means you can jump back and forth and reopen them in the original RPG Maker editors at any time without losing a single byte of data. Best of all, it runs **100% natively on macOS, Windows and Linux**!
+
+<Video src={hero_main} class="my-0" />
+
+---
+
+## What Makes It Special
+
+When building RPGM Studio, the goal was simple: **kill the everyday frustrations of making games.** Here is a tour of what it brings to your workflow.
+
+---
+
+### Global Search, Bulk Replace & Instant Filters
+
+No more clicking through dozens of maps and hundreds of events one by one just to find where a switch gets flipped.
+
+- **Filter anything in real time**: maps (by name or ID), events on a map, event commands, and every single tab of the database (items, skills, animations, you name it).
+
+<Video src={filter_anything} class="my-0" />
+
+- **Deep project-wide search**: find every spot-across maps or Common Events-where a Switch or Variable is read or triggered, or where a specific graphic or audio asset is used.
+
+<Video src={global_search} class="my-0" />
+
+- **Fearless bulk replace**: batch-replace Switch and Variable references, or rename graphic and audio files across your entire project (or scoped to just a single map) in one click.
+
+<Video src={search_and_replace} class="my-0" />
+
+---
+
+### Supercharged Events: Multi-Tile, Templates & Stacked
+
+- **Events bigger than 1×1 tile**: set the width and height of any event so it covers a larger area-ideal for wide doors, area triggers, or big bosses. When you reopen the project in RPG Maker, it automatically becomes a set of copies of that event filling the area you defined.
+
+<Video src={wide_events} class="my-0" />
+
+- **Event templates**: save doors, chests, enemies, save points, or NPCs as a reusable template with one click, then drop identical instances anywhere in your project.
+
+<Video src={event_templates} class="my-0" />
+
+- **Stacked events**: here's a fun fact-RPG Maker actually supports stacking multiple events on the same tile natively, but its own editor doesn't let you do it! RPGM Studio unlocks this capability cleanly, and everything carries over seamlessly when you reopen the project in RPG Maker.
+
+<Video src={stacked_events} class="my-0" />
+
+---
+
+### See Your Game Right on the Map
+
+- **Visual movement routes**: stop counting Movement Route steps in your head! In RPGM Studio, events with autonomous movement routes draw their full path right on the map canvas.
+
+<Image src={movement_routes} alt="Movement routes drawn directly on the map in RPGM Studio" />
+
+- **Passability overlay**: flip a toggle and every non-walkable tile lights up immediately, so collision bugs have nowhere to hide.
+
+<Video src={passability_overlay} class="my-0" />
+
+- **Show Picture with drag & drop**: placing HUDs, menus, and illustrations by typing X/Y coordinates blindly is over. Just drag the image with your mouse inside the interactive preview, watch the coordinates update live, and see exactly where it will land on screen.
+
+<Video src={show_picture_preview} class="my-0" />
+
+---
+
+### A Real Script Editor
+
+Say goodbye to cramped script windows. RPGM Studio includes a powerful built-in code editor-**VS Code style**-with syntax highlighting, a minimap, instant filtering, and clean, tidy file management. Because scripts are organized cleanly as individual files, it's also a dream if you use version control like **Git**.
+
+<Image src={script_editor} alt="Built-in Ruby script editor in RPGM Studio" />
+
+---
+
+### Native mkxp-z Support
+
+**[mkxp-z](https://github.com/mkxp-z/mkxp-z)** is a free, open-source, cross-platform game runner for RPG Maker XP, VX and VX Ace. It replaces the old Windows-only `Game.exe` with a modern engine that runs your games natively on Windows, macOS and Linux, bringing high performance and up-to-date Ruby support.
+
+RPGM Studio integrates fully with it: configure all its settings visually from the editor and launch playtests straight through it with a single click.
+
+<Image src={mkxpz_settings} alt="mkxp-z visual settings configuration in RPGM Studio" />
+
+---
+
+### Light & Dark Themes
+
+Last but not least, you get a modern, clean, responsive interface with both a **Dark** and a **Light** theme, so you can build your game comfortably just the way you like.
+
+<Image src={theme_light} alt="RPGM Studio in Light Theme" />
+
+---
+
+## Try RPGM Studio!
+
+Questions, bugs or ideas? We'd love to hear them in the comments below. Happy making!

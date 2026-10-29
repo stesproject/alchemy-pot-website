@@ -1,82 +1,45 @@
 ---
 title: "Pizzeria 5 Archi Website"
-description: "How I built an ultra-light, editorial web experience for Pizzeria 5 Archi using Astro, TypeScript, and modern web standards."
+description: "An ultra-fast, editorial web presence I crafted for Pizzeria 5 Archi in Vasto using Astro and modern web standards."
+category: "case-studies"
 downloadUrl:
   - label: "Website"
-    url: "https://pizzeria5archi.it"
+    url: "https://pizzeria5archi.com/"
+media:
+  src: "./pizzeria-5-archi-preview.webp"
+  alt: "Pizzeria 5 Archi website preview"
 featured: false
 date: "09/23/2026"
 ---
 
-# Case Study: Crafting a Blazing-Fast Web Presence for Pizzeria 5 Archi
+Here is a project very close to home: the website for **[Pizzeria 5 Archi](https://pizzeria5archi.com/)**, an authentic craft pizzeria in the historical center of Vasto (Abruzzo).
 
-When designing a website for a local restaurant, the goal is simple: **get hungry customers to the information they need—fast—while capturing the soul and warmth of the dining room.**
-
-Here is the story behind the new website for **[Pizzeria 5 Archi](https://pizzeria5archi.it)**, and how I built an ultra-light, editorial web experience using **Astro**, **TypeScript**, and modern web standards.
+If you love genuine Italian pizza, this place is special: 48-hour slow dough fermentation, a roaring wood-fired oven cooking pizzas in 90 seconds, and incredible local ingredients like artisanal *ventricina vastese* and *caciocavallo*.
 
 ---
 
-### A Slice of Vasto: About Pizzeria 5 Archi
+### Why Most Restaurant Sites Frustrate Me
 
-Tucked away in the historic coastal town of **Vasto (Abruzzo, Italy)**, **Pizzeria 5 Archi** is an authentic, craft pizzeria built on a few straightforward principles: patience, respect for ingredients, and genuine conviviality. 
+We’ve all experienced it: you're hungry on your phone, click a restaurant link, and get hit with a 5-second loading spinner, a giant unreadable PDF menu, or megabytes of heavy client scripts just to show opening hours.
 
-Unlike industrial pizza places, everything here revolves around the craft:
-- **48-hour dough fermentation** for airy, easily digestible crusts.
-- A roaring **wood-fired oven** cooking pizzas in 90 seconds.
-- Exceptional **local Abruzzese ingredients**, from artisanal *ventricina vastese* and *caciocavallo* to local extra-virgin olive oil and San Marzano tomatoes.
-
-Their physical experience is warm, rustic, and welcoming. The challenge was translating that tactile craftsmanship onto the web without the sluggishness and clutter common to restaurant sites.
+My goal for Pizzeria 5 Archi was the exact opposite: **make it fast, warm, and effortless** for hungry guests to browse the menu and book a table or takeaway (*asporto*).
 
 ---
 
-### The Goal & The Problem with Modern Restaurant Sites
+### How I Built It
 
-Too many restaurant websites fall into the same traps:
-1. Massive, uncompressed food photos causing 5-second load times on mobile.
-2. Clunky PDF menus that are impossible to read on a phone.
-3. Heavy JavaScript frameworks shipping megabytes of client runtime just to render static text and opening hours.
+I built the site with **[Astro](https://astro.build)** and **TypeScript**:
 
-For **Pizzeria 5 Archi**, the site needed to be **mobile-first, instant to load, accessible, and optimized for local search**—making it effortless for guests to browse the menu and call directly for a table or takeaway (*asporto*).
-
----
-
-### How I Built It: Architecture & Tech Stack
-
-To ensure unmatched performance and zero maintenance overhead, I chose a static-first architecture:
-
-#### 1. Zero-JS by Default with Astro 7
-I built the site using **[Astro](https://astro.build)**. Because 99% of a restaurant's content is informational, Astro's Islands architecture is the perfect fit:
-- **Zero client-side JavaScript** framework runtime shipped to the browser.
-- Pure static HTML and CSS generated at build time.
-- Smooth scroll and subtle reveal animations powered by a lightweight native `IntersectionObserver` that respects `prefers-reduced-motion`.
-
-#### 2. Editorial Typography & Warm Visual Identity
-Instead of a generic template look, the design uses a bespoke warm palette:
-- **Color tokens**: Cream backgrounds (`#fcf9f5`), deep charcoal text, and ember-orange accents (`#b8521e`) reminiscent of wood embers and oven flames.
-- **Self-Hosted Typography**: Loaded via `@fontsource` using *Cormorant Garamond* for editorial display headings and *Source Sans 3* for crisp readability. Self-hosting the fonts in `.woff2` format eliminates external Google Fonts roundtrips, preserves user privacy (GDPR compliant), and avoids layout shifts.
-
-#### 3. Image Optimization with Sharp (`astro:assets`)
-High-resolution photos of food and ovens are crucial for appetite appeal, but they shouldn't cost megabytes of bandwidth:
-- All assets are processed through Astro's image pipeline using **Sharp**.
-- Automatically converted to modern **WebP** formats with responsive sizes and explicit aspect ratios, completely eliminating Cumulative Layout Shift (CLS).
-
-#### 4. Local SEO & Rich Structured Data
-For a local business, search visibility is everything. The site includes:
-- Embedded **Schema.org `Restaurant` JSON-LD**, declaring cuisine types, opening hours, geolocation, and price ranges directly to Google.
-- Automatic XML sitemap generation (`@astrojs/sitemap`) and dynamic `robots.txt`.
-- Open Graph and Twitter Card tags with dedicated social sharing previews (`/og.png`).
-
-#### 5. Streamlined User Flow
-No unnecessary multi-step booking forms that customers abandon. The UI features:
-- Prominent **click-to-call** buttons for instant table reservations and takeaway orders.
-- Clear opening hours and allergen notices (compliant with EU Reg. 1169/2011).
-- Accessible keyboard navigation and semantic HTML landmarks.
+- **Zero JS Overhead**: Generates pure static HTML and CSS. No bulky framework runtimes shipped to the user's phone, paired with smooth native scroll animations.
+- **Editorial & Tactile Aesthetic**: Warm cream backgrounds, charcoal text, and ember-orange accents that evoke wood fire and stone arches, using self-hosted fonts (*Cormorant Garamond* & *Source Sans 3*).
+- **Optimized Visuals via Sharp**: Appetite appeal is essential, so all food and oven imagery is automatically processed into responsive modern WebP formats with zero layout shifts.
+- **Local SEO & Rich Schema**: Built-in `Schema.org/Restaurant` structured data so Google immediately understands opening hours, cuisine types, and geolocation.
+- **One-Tap Action**: Instant click-to-call buttons for reservations, straightforward allergen disclosures, and quick menu browsing.
 
 ---
 
 ### The Result
 
-The result is a digital presence that feels as artisanal and refined as the pizza itself:
-- **100/100 Lighthouse scores** across Performance, Accessibility, Best Practices, and SEO.
-- Sub-second page loads even on spotty 4G mobile connections.
-- An intuitive, elegant experience that helps Pizzeria 5 Archi welcome guests both online and at the table.
+A web presence that feels as welcoming and artisanal as walking into the pizzeria itself, boasting **100/100 Lighthouse scores** across Performance, SEO, and Accessibility.
+
+Take a look at [pizzeria5archi.com](https://pizzeria5archi.com/) and let me know your thoughts!

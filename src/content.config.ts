@@ -28,6 +28,10 @@ const projects = defineCollection({
       description: z.string(),
       draft: z.boolean().optional(),
       featured: z.boolean().optional(),
+      category: z
+        .enum(["personal-tools", "case-studies"])
+        .optional()
+        .default("personal-tools"),
       downloadUrl: z
         .array(z.object({ label: z.string(), url: z.string() }))
         .optional()

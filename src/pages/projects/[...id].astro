@@ -52,6 +52,13 @@ const { Content } = await render(content);
       </h1>
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
+          <strong>Category: </strong>
+          <span>
+            {content.data.category === "case-studies"
+              ? t("projects.category.cases")
+              : t("projects.category.personal")}
+          </span>
+          <span class="mx-1">•</span>
           <strong>Release date: </strong><FormattedDate
             date={content.data.date}
           />
