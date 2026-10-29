@@ -28,7 +28,15 @@ const projects = defineCollection({
       description: z.string(),
       draft: z.boolean().optional(),
       featured: z.boolean().optional(),
-      downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
+      category: z
+        .enum(["personal-tools", "case-studies"])
+        .optional()
+        .default("personal-tools"),
+      downloadLabel: z.string().optional(),
+      downloadUrl: z
+        .array(z.object({ label: z.string(), url: z.string() }))
+        .optional()
+        .default([]),
       media: z
         .object({
           src: z.union([image(), z.string()]),
@@ -47,7 +55,10 @@ const games = defineCollection({
       description: z.string(),
       draft: z.boolean().optional(),
       featured: z.boolean().optional(),
-      downloadUrl: z.array(z.object({ label: z.string(), url: z.string() })),
+      downloadUrl: z
+        .array(z.object({ label: z.string(), url: z.string() }))
+        .optional()
+        .default([]),
       media: z
         .object({
           src: z.union([image(), z.string()]),

@@ -58,9 +58,15 @@ const { Content } = await render(content);
         </div>
       </div>
       {
-        content.data.downloadUrl && (
+        content.data.downloadUrl && content.data.downloadUrl.length > 0 && (
           <nav class="flex gap-1">
-            <strong>{t("content.download")}: </strong>
+            <strong>
+              {content.data.downloadLabel ??
+                (content.data.category === "case-studies"
+                  ? t("content.check_it_out")
+                  : t("content.download"))}
+              :{" "}
+            </strong>
             {content.data.downloadUrl.map((download, index) => (
               <>
                 {index > 0 && <span> • </span>}
